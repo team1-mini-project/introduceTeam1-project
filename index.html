@@ -1,20 +1,342 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E1I5조 우리 팀을 소개해요</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/layout.css">
-</head>
-<body>
-  <div class="wrap">
-    <div class="layout-1280">
-      <div class="test-area">테스트 영역 입니다.</div><!-- 이 부분은 지우고 작업해주세요~ -->
-      <div class="test-area">테스트 영역 입니다.</div><!-- 이 부분은 지우고 작업해주세요~ -->
-      <div class="test-area">테스트 영역 입니다.</div><!-- 이 부분은 지우고 작업해주세요~ -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E1I5조 우리 팀을 소개해요</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <style>
+      .wrap {
+        /* position: relative; */
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal_wrap {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+      }
+
+      .modal {
+        position: absolute;
+        z-index: 2000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 600px;
+        height: 800px;
+        background-color: white;
+
+        border: 1px solid gray;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .modal > h3 {
+        margin-top: 20px;
+        font-size: 2rem;
+      }
+
+      /* 닫기 버튼 */
+      /* 닫기 버튼 표시줄 */
+      .mybtn {
+        width: 100%;
+
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+      }
+      /* 닫기 버튼 */
+      .mybtn > button {
+        background-color: #fff;
+        position: fixed;
+        z-index: 3000;
+        top: 10px;
+        right: 10px;
+
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+
+      .modal_profile {
+        width: 90%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: center; */
+      }
+
+      .modal_pic > img {
+        width: 250px;
+        height: 250px;
+
+        border-radius: 20px;
+      }
+
+      .twopoint {
+        margin-left: 40px;
+      }
+
+      .modal_tmiphoto > img {
+        width: 250px;
+      }
+      .tmi_info {
+        /* background-color: red; */
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tmi_info > h4 {
+        margin-top: 20px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .tmi_content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      /* 프로필 카드 ====================================== */
+      /* 프로필 카드 */
+      .propfile_wrap {
+        width: 1280px;
+        margin-top: 20px;
+        padding: 20px;
+
+        border: 1px solid black;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile_middle {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      .profile {
+        width: 300px;
+
+        background-color: white;
+        padding: 50px;
+
+        border: 1px solid gray;
+        border-radius: 50px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile:hover,
+      .profile:focus {
+        box-shadow: 2px 3px 0px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 프로필 사진 */
+      .profile_pic {
+        background-color: white;
+        width: 240px;
+        height: 240px;
+
+        /*사진 */
+        background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-position: center;
+        background-size: cover;
+
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: 1px solid gray;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      /* 프로필 내용 */
+      .content {
+        background-color: white;
+        width: 240px;
+        height: 240px;
+
+        border-radius: 20px;
+        border: 1px solid gray;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script type="module">
+      // Firebase SDK 라이브러리 가져오기
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import {
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+      // 1.Firebase 구성 정보 설정
+      //- config를 내용을 넣으면 파이어베이스 쓸 준비가 됐어.
+      const firebaseConfig = {
+        apiKey: "AIzaSyBXp4ZmPiC0GBan6blFnr33vhhNI2jmoik",
+        authDomain: "mybase-7a11b.firebaseapp.com",
+        projectId: "mybase-7a11b",
+        storageBucket: "mybase-7a11b.appspot.com",
+        messagingSenderId: "794357586142",
+        appId: "1:794357586142:web:b70f156de84702c9bd0a4f",
+        measurementId: "G-8K07XMESD7",
+      };
+
+      // Firebase 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      //모달 열기
+      $("#profile_card").click(async function () {
+        $("#modal_cardwrap").show();
+        $("#modal_card").show();
+      });
+
+      //postingbox-닫기버튼
+      $("#close_btn").click(async function () {
+        $("#modal_cardwrap").hide();
+      });
+
+      /* -------------------------------------- */
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="layout-1280">
+        <div class="test-area">테스트 영역 입니다.</div>
+        <!-- 이 부분은 지우고 작업해주세요~ -->
+        <div class="test-area">
+          <div class="wrap">
+            <!-- 모달 -->
+            <div class="modal_wrap" id="modal_cardwrap">
+              <div class="modal" id="modal_card">
+                <div class="mybtn">
+                  <button type="button" class="closebtn" id="close_btn">
+                    X
+                  </button>
+                </div>
+                <h3>팀원명</h3>
+                <!-- 모달 - 프로필사진 -->
+                <div class="modal_profile">
+                  <div class="modal_pic">
+                    <img
+                      src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="팀원이름"
+                    />
+                  </div>
+                  <!-- 장점과 협업스타일 -->
+                  <div class="twopoint">
+                    <div class="good_point">
+                      <h4>장점</h4>
+                      <ul>
+                        <li>내용입니다1</li>
+                        <li>내용입니다2</li>
+                        <li>내용입니다3</li>
+                      </ul>
+                    </div>
+
+                    <div class="style_point">
+                      <h4>협업스타일</h4>
+                      <ul>
+                        <li>내용1</li>
+                        <li>내용2</li>
+                        <li>내용3</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="tmi_info">
+                  <h4>나의 TMI</h4>
+                  <div class="tmi_content">
+                    <div class="modal_tmiphoto">
+                      <img
+                        src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="tmi사진"
+                      />
+                    </div>
+                    <div>
+                      <ul>
+                        <li>내용입니다1</li>
+                        <li>내용입니다1</li>
+                        <li>내용입니다1</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- test -->
+            <!-- 프로필 카드 -->
+            <div class="propfile_wrap">
+              <div class="profile" id="profile_card">
+                <div class="profile_pic">v프로필 사진</div>
+                <div class="content">내용입니다</div>
+              </div>
+              <div class="profile profile_middle" id="profile_card">
+                <div class="profile_pic">v프로필 사진</div>
+                <div class="content">내용입니다</div>
+              </div>
+              <div class="profile" id="profile_card">
+                <div class="profile_pic">v프로필 사진</div>
+                <div class="content">내용입니다</div>
+              </div>
+            </div>
+
+            <!-- 프로필 카드 -->
+          </div>
+        </div>
+        <!-- 이 부분은 지우고 작업해주세요~ -->
+        <div class="test-area">테스트 영역 입니다.</div>
+        <!-- 이 부분은 지우고 작업해주세요~ -->
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
