@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .guestbook {
+            width: 1280px;
+        }
+
+        .guestbook_start {
+            font-size: 30px;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .guestbook_box {
+            width: 1280px;
+            height: 260px;
+            background-color: #FFE8A3;
+        }
+
+        .nickname_pw_box {
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            padding-left: 20px;
+            line-height: 42px;
+            padding: 18px 0 10px 25px;
+        }
+
+        
+
+        .savebtn {
+            width: 94px;
+            height: 41px;
+            background-color: #F24822;
+            border-radius: 10px;
+            border-color: transparent;
+            float: right;
+            margin: 15px 30px 0 0;
+            color: white;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 45px;
+        }
+
+
+        .box-text {
+            width: 167px;
+            height: 42px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: left;
+            margin-right: 10px;
+            border: 0;
+            font-size: 15px;
+            padding-left: 15px;
+            box-sizing: border-box;
+        }
+
+        .leave_comments {
+            display: block;
+            margin: auto;
+            width: 1231px;
+            height: 115px;
+            background-color: white;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 15px;
+            padding-left: 15px;
+            padding-top: 15px;
+            box-sizing: border-box;
+            resize: none;
+            outline: none;
+            border-color: transparent;
+        }
+
+
+        .recorded_comments_box {
+            width: 1210px;
+            height: 195px;
+            margin: 20px auto 0 auto;
+            /* border: 1px solid green; */
+
+        }
+
+        .name {
+            padding: 5px 0 5px 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .date {
+            color: grey;
+        }
+
+
+        .comments_content {
+            width: 1210px;
+            height: 100px;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+            padding: 15px 0 0 23px;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        .deletebtn {
+            width: 94px;
+            height: 41px;
+            background-color: #F24822;
+            border-radius: 10px;
+            border-color: transparent;
+            float: right;
+            margin: 10px 5px 0 0;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 45px;
+        }
+
+        .pw_check {
+            width: 167px;
+            height: 42px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 15px;
+            padding-left: 15px;
+            box-sizing: border-box;
+            border: 1px solid lightgrey;
+            margin: 10px 10px 0 0;
+                
+        }
+
+        .delete {
+            display: flex;
+            flex-direction: row;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guestbook">
+        <div class="guestbook_start">방명록을 남겨보세요.</div>
+        <div class="guestbook_box">
+            <div class="nickname_pw_box">
+                <input type="text" class="box-text" placeholder="닉네임"></input>
+                <input type="password" class="box-text" placeholder="비밀번호"></input>
+            </div>
+            <textarea type="text" class="leave_comments"></textarea>
+
+            <button type="button" class="savebtn">남기기</button>
+        </div>
+
+        <div class="recorded_comments_box">
+            <span class="name">홍길동</span>
+            <span class="date">nnnn.mm.xx</span>
+            <div class="comments_content">
+                안녕
+            </div>
+            <div class="delete">
+                <input class="pw_check" type="password" placeholder="비밀번호"></input>
+                <button type="button" class="deletebtn">삭제</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
