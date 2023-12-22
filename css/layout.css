@@ -16,8 +16,8 @@
     height: 450px;
 }
 /* 카드 테두리 둥글게 ㅡ 적용 안됨 */
-.h-100 {
-    border-radius: 50px;
+.h-100:hover {
+    background-color: rgb(247, 215, 247);
 }
 /* 사진 업로드, 더보기 버튼 전체 영역 */
 .cardBtn1 {
@@ -43,7 +43,7 @@
 /* 프로필 카드 내 이미지 */
 .h-100 > img {
     border-radius: 20px;
-    border: 1px solid rgb(215, 214, 214);
+    border: 1px solid rgb(204, 204, 204);
     margin: 7px auto 13px auto; 
     width: 270px; 
     height: 240px;
