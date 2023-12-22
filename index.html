@@ -10,25 +10,27 @@
             width: 1280px;
         }
 
-        .guestbook_start {
+        .guestbook-start {
             font-size: 30px;
             text-align: center;
             padding-bottom: 25px;
         }
 
-        .guestbook_box {
+        .guestbook-box {
             width: 1280px;
             height: 260px;
             background-color: #FFE8A3;
+            border-radius: 5px;
         }
 
-        .nickname_pw_box {
+        .nickname-pw-box {
             display: flex;
             flex-direction: row;
             justify-items: center;
             padding-left: 20px;
             line-height: 42px;
             padding: 18px 0 10px 25px;
+
         }
 
         
@@ -51,6 +53,7 @@
 
 
         .box-text {
+            outline: 1px solid lightgray;
             width: 167px;
             height: 42px;
             background-color: white;
@@ -63,7 +66,7 @@
             box-sizing: border-box;
         }
 
-        .leave_comments {
+        .leave-comments {
             display: block;
             margin: auto;
             width: 1231px;
@@ -76,12 +79,12 @@
             padding-top: 15px;
             box-sizing: border-box;
             resize: none;
-            outline: none;
+            outline: 1px solid lightgray;
             border-color: transparent;
         }
 
 
-        .recorded_comments_box {
+        .recorded-comments-box {
             width: 1210px;
             height: 195px;
             margin: 20px auto 0 auto;
@@ -100,7 +103,7 @@
         }
 
 
-        .comments_content {
+        .comments-content {
             width: 1210px;
             height: 100px;
             border: 1px solid lightgray;
@@ -127,7 +130,7 @@
             line-height: 45px;
         }
 
-        .pw_check {
+        .pw-check {
             width: 167px;
             height: 42px;
             background-color: white;
@@ -151,25 +154,25 @@
 
 <body>
     <div class="guestbook">
-        <div class="guestbook_start">방명록을 남겨보세요.</div>
-        <div class="guestbook_box">
-            <div class="nickname_pw_box">
+        <div class="guestbook-start">방명록을 남겨보세요.</div>
+        <div class="guestbook-box">
+            <div class="nickname-pw-box">
                 <input type="text" class="box-text" placeholder="닉네임"></input>
                 <input type="password" class="box-text" placeholder="비밀번호"></input>
             </div>
-            <textarea type="text" class="leave_comments"></textarea>
+            <textarea type="text" class="leave-comments"></textarea>
 
             <button type="button" class="savebtn">남기기</button>
         </div>
 
-        <div class="recorded_comments_box">
+        <div class="recorded-comments-box">
             <span class="name">홍길동</span>
             <span class="date">nnnn.mm.xx</span>
-            <div class="comments_content">
+            <div class="comments-content">
                 안녕
             </div>
             <div class="delete">
-                <input class="pw_check" type="password" placeholder="비밀번호"></input>
+                <input class="pw-check" type="password" placeholder="비밀번호"></input>
                 <button type="button" class="deletebtn">삭제</button>
             </div>
         </div>
