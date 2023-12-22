@@ -13,12 +13,11 @@
 .nav .nav-item + .nav-item{margin-left: 20px;}
 .nav-item:hover{color:#ff6c00}
 
-
+/* ================================== */
 /* 메인 제목 */
 .title-main {
     text-align: center;
     padding: 25px;
-    
 }
 
 #title-main-big {
@@ -82,8 +81,7 @@
     padding: 10px;
     line-height: 20px;
 }
-
-
+/* ================================== */
 /* 프로필 카드 전체 영역 */
 .profileCards {
     width: 1000px;
