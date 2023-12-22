@@ -12,3 +12,68 @@
 .nav .nav-item{display: inline-block;transition: all .3s; color:#000; cursor: pointer;}
 .nav .nav-item + .nav-item{margin-left: 20px;}
 .nav-item:hover{color:#ff6c00}
+
+/* 프로필 카드 전체 영역 */
+.profileCards {
+    width: 1000px;
+    margin: auto;
+    padding: 30px 0px 30px 0px;
+}
+/* 각 프로필 카드 높이 */
+.cardEach {
+    height: 450px;
+}
+/* 카드 테두리 둥글게 ㅡ 적용 안됨 */
+.h-100 {
+    border-radius: 50px;
+}
+/* 사진 업로드, 더보기 버튼 전체 영역 */
+.cardBtn1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin: 10px 10px auto auto;
+}
+/* 사진 업로드, 더보기 버튼 크기 및 글꼴 */
+.cardBtn1 > button {
+    width: 60px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+
+    font-size: 12px;
+    color: white;
+}
+/* 프로필 카드 내 이미지 */
+.h-100 > img {
+    border-radius: 20px;
+}
+/* 프로필 카드 본인 소개 */
+.card-body {
+    margin: 0px 30px 0px 30px;
+}
+/* 프로필 카드 아래 url 버튼의 전체 영역 */
+.profileBtn {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    margin: auto 10px 10px auto;
+}
+/* 프로필 카드 아래 url 버튼 크기조절 */
+.profileBtn > button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 100%;
+}
+/* 프로필 카드 아래 url 버튼 이미지 */
+.btnImg {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin: 5px;
+}
