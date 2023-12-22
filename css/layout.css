@@ -350,3 +350,218 @@
 	padding-top: 30px;
 	flex-direction: column;
 }
+
+/* ===================== */
+.modal_wrap {
+	background-color: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+
+	padding: 20px;
+}
+
+/* 닫기 버튼 */
+.mybtn > button {
+	background-color: #fff;
+	position: fixed;
+	z-index: 3000;
+	top: 10px;
+	right: 10px;
+
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+
+.modal_profile {
+	width: 90%;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.modal-box {
+	position: fixed;
+	z-index: 2000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 600px;
+	height: 80%;
+	background-color: white;
+
+	border: 1px solid gray;
+	border-radius: 20px;
+
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+}
+
+.modal-box > h3 {
+	margin-top: 20px;
+	font-size: 2rem;
+}
+
+/* 닫기 버튼 */
+/* 닫기 버튼 표시줄 */
+.mybtn {
+	background-color: green;
+	width: 100%;
+
+	/* background-color: rgba(0, 0, 0, 0.5); */
+	border-radius: 20px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: right;
+}
+
+.modal_pic {
+	width: 250px;
+	height: 250px;
+}
+
+.modal_pic > img {
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.twopoint {
+	margin-left: 40px;
+}
+
+/* 모달창 - tmi 정보 */
+.tmi_info {
+	/* background-color: red; */
+	width: 90%;
+
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 나의 TMI 헤더 */
+.tmi_info > h4 {
+	width: 100%;
+	text-align: left;
+}
+
+/* 나의 TMI content*/
+.tmi_content {
+	width: 100%;
+	background-color: aquamarine;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.tmi_content > ul {
+	border-radius: 20px;
+}
+
+/* 나의 TMI 사진 */
+.modal_tmiphoto > img {
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.tmi_comment {
+	background-color: pink;
+	width: 50%;
+
+	margin: 0 0px 0 20px;
+	padding: 20px;
+
+	border-radius: 20px;
+}
+/* 프로필 카드 ====================================== */
+/* 프로필 카드 */
+.propfile_wrap {
+	width: 1280px;
+	margin-top: 20px;
+	padding: 20px;
+
+	border: 1px solid black;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.profile_middle {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.profile {
+	width: 300px;
+
+	background-color: white;
+	padding: 50px;
+
+	border: 1px solid gray;
+	border-radius: 50px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.profile:hover,
+.profile:focus {
+	box-shadow: 2px 3px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 프로필 카드 - 프로필 사진 */
+.profile_pic {
+	background-color: white;
+	width: 240px;
+	height: 240px;
+
+	/*사진 */
+	background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-position: center;
+	background-size: cover;
+
+	margin-bottom: 20px;
+	border-radius: 20px;
+	border: 1px solid gray;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/* 프로필 내용 */
+.content {
+	background-color: white;
+	width: 240px;
+	height: 240px;
+
+	border-radius: 20px;
+	border: 1px solid gray;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

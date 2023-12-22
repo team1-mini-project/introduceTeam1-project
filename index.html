@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="./css/reset.css">
-<link rel="stylesheet" href="./css/layout.css">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +9,13 @@
   <link rel="stylesheet" href="./css/layout.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-      </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -74,7 +68,7 @@
         <div class="profileCards">
           <div class="row row-cols-1 row-cols-md-3 g-4">
             <!-- 프로필 카드 1번 -->
-            <div class="col cardEach">
+            <div class="col cardEach profile-card">
               <div class="card h-100">
                 <div class="cardBtn1">
                   <button type="button" class="btn btn-info">업로드</button>
@@ -196,6 +190,65 @@
           </div>
         </div>
       </div>
+
+      <div class="modal_wrap" id="modal_cardwrap">
+        <div class="modal-box" id="modal_card">
+          <div class="mybtn">
+            <button type="button" class="closebtn" id="close_btn">
+              X
+            </button>
+          </div>
+          <h3>팀원명</h3>
+          <!-- 모달 - 프로필사진 -->
+          <div class="modal_profile">
+            <div class="modal_pic">
+              <img
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="팀원이름"
+              />
+            </div>
+            <!-- 장점과 협업스타일 -->
+            <div class="twopoint">
+              <div class="good_point">
+                <h4>장점</h4>
+                <ul>
+                  <li>내용입니다1</li>
+                  <li>내용입니다2</li>
+                  <li>내용입니다3</li>
+                </ul>
+              </div>
+
+              <div class="style_point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>내용1</li>
+                  <li>내용2</li>
+                  <li>내용3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- tmi -->
+          <div class="tmi_info">
+            <h4>나의 TMI</h4>
+            <div class="tmi_content">
+              <div class="modal_tmiphoto">
+                <img
+                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="tmi사진"
+                />
+              </div>
+              <div class="tmi_comment">
+                <ul>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div id="box3" class="guestbook">
         <div class="guestbook-start">방명록을 남겨보세요.</div>
@@ -248,6 +301,17 @@
         behavior: 'smooth'
       });
     }
+
+    //모달 열기
+    $(".profile-card").click(async function () {
+      $("#modal_cardwrap").show();
+      $("#modal_card").show();
+    });
+
+    //postingbox-닫기버튼
+    $("#close_btn").click(async function () {
+      $("#modal_cardwrap").hide();
+    });
   </script>
 
   <script type="module">
