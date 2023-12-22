@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/layout.css">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +13,17 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/layout.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="wrap">
     <header class="header">
@@ -24,7 +39,7 @@
       </div>
     </header>
     <div class="layout-1280">
-      <div class="title-main">
+      <div id="box1" class="title-main">
         <div id="title-main-big">E1I5</div>
         <div id="title-main-small">우리 팀을 소개합니다</div>
       </div>
@@ -181,20 +196,156 @@
           </div>
         </div>
       </div>
+      
+      <div id="box3" class="guestbook">
+        <div class="guestbook-start">방명록을 남겨보세요.</div>
+        <div class="guestbook-box">
+          <div class="nickname-pw-box">
+            <input type="text" id="nickname" class="box-text" placeholder="닉네임"></input>
+            <input type="password" id="pw" class="box-text" placeholder="비밀번호"></input>
+          </div>
+          <textarea type="text" id="content" class="leave-comments"></textarea>
 
-      <div id="box3" class="test-area">테스트 영역 입니다.</div><!-- 이 부분은 지우고 작업해주세요~ -->
+          <button type="button" id="savebtn" class="savebtn">남기기</button>
+        </div>
+
+        <div id="recorded-comments" class="recorded-comments">
+          <!-- <div class="recorded-comments-box">
+              <span class="name">홍길동</span>
+              <span class="date">nnnn.mm.xx</span>
+              <div class="comments-content">
+                  안녕
+              </div>
+              <div class="delete">
+                  <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                  <button type="button" class="deletebtn">삭제</button>
+              </div>
+          </div>
+          <div class="recorded-comments-box">
+              <span class="name">홍길동</span>
+              <span class="date">nnnn.mm.xx</span>
+              <textarea readonly class="comments-content">
+
+              </textarea>
+              <div class="delete">
+                  <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                  <button type="button" class="deletebtn">삭제</button>
+              </div>
+          </div> -->
+
+        </div>
+
+      </div>
     </div>
   </div>
 
   <script>
     //스크롤 기능 작업
-    function scrollPage(target){
+    function scrollPage(target) {
       let position = document.querySelector(target).offsetTop;
       window.scroll({
-        top:position,
+        top: position,
         behavior: 'smooth'
       });
     }
+  </script>
+
+  <script type="module">
+    // Firebase SDK 라이브러리 가져오기
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    // Firebase 구성 정보 설정
+    const firebaseConfig = {
+      apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
+      authDomain: "sparta-b8657.firebaseapp.com",
+      projectId: "sparta-b8657",
+      storageBucket: "sparta-b8657.appspot.com",
+      messagingSenderId: "1016311234399",
+      appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
+      measurementId: "G-1GHRMFVCCF"
+    };
+
+    // Firebase 인스턴스 초기화
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    //방명록 남기기
+    $('#savebtn').click(async function () {
+      let nickname = $('#nickname').val();
+      let pw = $('#pw').val();
+      let content = $('#content').val();
+
+      let now_date = new Date();
+      let year = new Date().getFullYear();
+      let month = new Date().getMonth() + 1;
+      let date = new Date().getDate();
+      let hour = new Date().getHours();
+      let minute = new Date().getMinutes();
+      minute = minute < 10 ? '0' + minute : minute;
+      //minute이 10보다 작으면 0붙이기
+
+      let datelist = [year, month, date, hour, minute] //입력 당시 date 리스트 생성
+
+      let doc = {
+          'nickname': nickname,
+          'pw': pw,
+          'content': content,
+          'datelist': datelist,
+          'now_date': now_date
+      }
+
+      await addDoc(collection(db, "guestbook_contents"), doc)
+      //console.log(doc);
+      alert("방명록을 남겼어요.")
+      window.location.reload();
+      //plan b 새로고침 안해도 리로드
+
+      //남기기 누르면 썼던 내용만 지워지게
+      $('#content').val('');
+    })
+
+    //파이어베이스 받아와서 append
+    // $(document).ready(function () {
+    //     async function loadGuestbookContents() {
+    let docs = await getDocs(collection(db, "guestbook_contents"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+        let nickname = row['nickname'];
+        let datelist = row['datelist'];
+        let content = row['content'];
+        let pw = row['pw'];
+        let y_m_d = datelist.slice(0, 3).join('-');
+        let h_m = datelist.slice(3, 5).join(':');
+
+        //console.log(y_m_d + ' ' + h_m);
+        let temp_html = `
+                <div class="recorded-comments-box">
+                <span class="name">${nickname}</span>
+                <span class="date">${y_m_d + ' ' + h_m}</span>
+                <div class="comments-content">
+                    ${content}
+                </div>
+                <div class="delete">
+                    <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                    <button type="button" class="deletebtn">삭제</button>
+                </div>
+                </div>
+            `;
+        $('#recorded-comments').append(temp_html);
+        
+        
+        console.log(row);
+        
+    });
+
+    
+    //     }
+    //     loadGuestbookContents();
+    // })
+
   </script>
 </body>
 </html>
