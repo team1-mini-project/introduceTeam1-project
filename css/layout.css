@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* 공통 레이아웃 */
-.layout-1280{margin:0 auto; width: 1280px; max-width: 100%; background: #eee}
+.layout-1280{margin:0 auto; width: 1280px; max-width: 100%;}
 
 /* 테스트 */
 .test-area{height: 500px; border: 1px solid #ddd; text-align: center; line-height: 500px;}
+
+/* header */
+.header{padding:15px 0; box-shadow: 0px 1px 7px 2px #f7f7f7; color:#000}
+.header .layout-1280{display: flex; align-items: center; justify-content: space-between; }
+.logo{font-size: 50px; font-weight: bold;}
+.nav .nav-item{display: inline-block;transition: all .3s; color:#000; cursor: pointer;}
+.nav .nav-item + .nav-item{margin-left: 20px;}
+.nav-item:hover{color:#ff6c00}
