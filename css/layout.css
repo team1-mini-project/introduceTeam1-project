@@ -43,6 +43,7 @@
 /* 프로필 카드 내 이미지 */
 .h-100 > img {
     border-radius: 20px;
+    border: 1px solid rgb(215, 214, 214);
     margin: 7px auto 13px auto; 
     width: 270px; 
     height: 240px;
