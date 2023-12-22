@@ -13,55 +13,200 @@
       crossorigin="anonymous"
     />
     <style>
-      .modal {
-        width: 300px;
-        height: 300px;
-        background-color: green;
-      }
-
-      .profile {
-        width: 400px;
-
-        background-color: red;
-        padding: 20px;
-        margin: 20px;
-
-        border-radius: 20px;
+      .wrap {
+        /* position: relative; */
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
       }
-      .profile_pic {
-        background-color: white;
-        width: 300px;
-        height: 100px;
 
-        border-radius: 20px;
+      .modal_wrap {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
       }
-      .content {
-        background-color: white;
-        width: 300px;
-        height: 300px;
 
+      .modal {
+        position: absolute;
+        z-index: 2000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 600px;
+        height: 800px;
+        background-color: white;
+
+        border: 1px solid gray;
         border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
+
+      .modal > h3 {
+        margin-top: 20px;
+        font-size: 2rem;
+      }
+
+      /* 닫기 버튼 */
+      /* 닫기 버튼 표시줄 */
       .mybtn {
-        width: 300px;
-        background-color: pink;
+        width: 100%;
+
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+      }
+      /* 닫기 버튼 */
+      .mybtn > button {
+        background-color: #fff;
+        position: fixed;
+        z-index: 3000;
+        top: 10px;
+        right: 10px;
+
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+
+      .modal_profile {
+        width: 90%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: center; */
+      }
+
+      .modal_pic > img {
+        width: 250px;
+        height: 250px;
+
+        border-radius: 20px;
+      }
+
+      .twopoint {
+        margin-left: 40px;
+      }
+
+      .modal_tmiphoto > img {
+        width: 250px;
+      }
+      .tmi_info {
+        /* background-color: red; */
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tmi_info > h4 {
+        margin-top: 20px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .tmi_content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      /* 프로필 카드 ====================================== */
+      /* 프로필 카드 */
+      .propfile_wrap {
+        width: 1280px;
+        margin-top: 20px;
+        padding: 20px;
+
+        border: 1px solid black;
 
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+      }
+
+      .profile_middle {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      .profile {
+        width: 300px;
+
+        background-color: white;
+        padding: 50px;
+
+        border: 1px solid gray;
+        border-radius: 50px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile:hover,
+      .profile:focus {
+        box-shadow: 2px 3px 0px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 프로필 사진 */
+      .profile_pic {
+        background-color: white;
+        width: 240px;
+        height: 240px;
+
+        /*사진 */
+        background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-position: center;
+        background-size: cover;
+
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: 1px solid gray;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      /* 프로필 내용 */
+      .content {
+        background-color: white;
+        width: 240px;
+        height: 240px;
 
         border-radius: 20px;
-      }
-      .mybtn > button {
-        width: 30px;
-        height: 30px;
-        margin-right: 5px;
+        border: 1px solid gray;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
     </style>
     <script type="module">
@@ -90,34 +235,96 @@
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
 
-      //모달
+      //모달 열기
       $("#profile_card").click(async function () {
+        $("#modal_cardwrap").show();
         $("#modal_card").show();
       });
 
       //postingbox-닫기버튼
-      $("#closebtn").click(async function () {
-        $("#modal_card").hide();
+      $("#close_btn").click(async function () {
+        $("#modal_cardwrap").hide();
       });
 
       /* -------------------------------------- */
     </script>
   </head>
   <body>
-    <div class="modal" id="modal_card">
-      <div class="mybtn">
-        <button type="button" class="btn btn-outline-danger" id="closebtn">
-          X
-        </button>
-      </div>
-      <div>내용이 들어갑니다</div>
-    </div>
+    <div class="wrap">
+      <!-- 모달 -->
+      <div class="modal_wrap" id="modal_cardwrap">
+        <div class="modal" id="modal_card">
+          <div class="mybtn">
+            <button type="button" class="closebtn" id="close_btn">X</button>
+          </div>
+          <h3>팀원명</h3>
+          <!-- 모달 - 프로필사진 -->
+          <div class="modal_profile">
+            <div class="modal_pic">
+              <img
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="팀원이름"
+              />
+            </div>
+            <!-- 장점과 협업스타일 -->
+            <div class="twopoint">
+              <div class="good_point">
+                <h4>장점</h4>
+                <ul>
+                  <li>내용입니다1</li>
+                  <li>내용입니다2</li>
+                  <li>내용입니다3</li>
+                </ul>
+              </div>
 
-    <div class="profile" id="profile_card">
-      <div>
-        <h5 class="profile_pic">프로필사진</h5>
+              <div class="style_point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>내용1</li>
+                  <li>내용2</li>
+                  <li>내용3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tmi_info">
+            <h4>나의 TMI</h4>
+            <div class="tmi_content">
+              <div class="modal_tmiphoto">
+                <img
+                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="tmi사진"
+                />
+              </div>
+              <div>
+                <ul>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="content">내용입니다</div>
+
+      <!-- 프로필 카드 -->
+      <div class="propfile_wrap">
+        <div class="profile" id="profile_card">
+          <div class="profile_pic">v프로필 사진</div>
+          <div class="content">내용입니다</div>
+        </div>
+        <div class="profile profile_middle" id="profile_card">
+          <div class="profile_pic">v프로필 사진</div>
+          <div class="content">내용입니다</div>
+        </div>
+        <div class="profile" id="profile_card">
+          <div class="profile_pic">v프로필 사진</div>
+          <div class="content">내용입니다</div>
+        </div>
+      </div>
+
+      <!-- 프로필 카드 -->
     </div>
   </body>
 </html>
