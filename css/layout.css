@@ -91,15 +91,12 @@
     line-height: 45px;
 }
 
-
-
-
 .box-text {
     outline: 1px solid lightgray;
     width: 167px;
     height: 42px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: left;
     margin-right: 10px;
     border: 0;
@@ -129,19 +126,21 @@
 .recorded-comments-box {
     width: 1210px;
     height: 195px;
-    margin: 20px auto 0 auto;
-    border: 1px solid green;
+    
+    /* //border: 1px solid green; */
 
 }
 
 .name {
-    padding: 5px 0 5px 5px;
+    padding: 10px 5px 5px 10px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .date {
     color: grey;
+    font-size: 15px;
+    margin-top: 9px;
 }
 
 
@@ -153,6 +152,12 @@
     padding: 15px 0 0 23px;
     margin-top: 8px;
     box-sizing: border-box;
+    outline: none;
+    resize: none;
+}
+
+.comments-content:hover {
+    cursor: default;
 }
 
 .deletebtn {
@@ -225,3 +230,14 @@
     flex-direction: row;
     float: right;
 }
+
+.recorded-comments {
+    width: 1280px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    flex-direction: column;
+}
+
