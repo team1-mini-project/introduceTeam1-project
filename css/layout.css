@@ -61,6 +61,8 @@
     width: 90px;
     height: 90px;
     border-radius: 30%;
+
+	object-fit: cover;
 }
 
 .introduce-image, .goal-image, .promise-image {
