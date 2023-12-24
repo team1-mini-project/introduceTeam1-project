@@ -106,7 +106,8 @@
 }
 /* 카드 hover 적용 */
 .h-100:hover {
-    background-color: rgb(247, 215, 247);
+    background-color: rgb(245, 235, 245);
+	box-shadow: 1px 2px 7px 0px purple;
 }
 /* 이미지 변경, 더보기 버튼 전체 영역 */
 .cardBtn1 {
