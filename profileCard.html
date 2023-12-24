@@ -39,7 +39,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="" id="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@innes_kwak" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/innes-k" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -64,7 +64,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@jiwon4692" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/seopport" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -91,7 +91,7 @@
             <div class="profileBtn">
               <a href="https://record4me.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/r03181231" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -115,7 +115,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@dev_109" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/gggimmmin" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -142,7 +142,7 @@
             <div class="profileBtn">
               <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -167,7 +167,7 @@
             <div class="profileBtn">
               <a href="https://jigico.tistory.com/" target="_blank"><img class="btnImg" src="./images/icon-tistory.png"
                   alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/jigico" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -200,13 +200,11 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    $('#velog').click(async function () {
-      console.log('hi');
+    $('.velog').click(async function () {
       alert('📘 저는 velog를 사용합니다. 📘');
     })
 
-    $('#tistory').click(async function () {
-      console.log('hi');
+    $('.tistory').click(async function () {
       alert('📙 저는 tistory를 사용합니다. 📙');
     })
 
