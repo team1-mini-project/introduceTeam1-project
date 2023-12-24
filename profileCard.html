@@ -26,6 +26,7 @@
         <div class="col cardEach profile-card">
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
+            <div>id:1</div>
             <div class="cardBtn1">
               <button type="button" class="btn btn-info" style="width: 110px;">이미지 변경</button>
               <button type="button" class="btn btn-info">더보기</button>
@@ -215,13 +216,18 @@
     docs.forEach((doc) => {
       let row = doc.data();
 
+      let userId = row['id']
       let img = row['img'];
+      let name = row['name'];
     });
 
+    if (!userId===id) {
+      return false } else {
     let card_html = `
     <div class="col cardEach profile-card">
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
+            <div>id:${userId}</div>
             <div class="cardBtn1">
               <button type="button" class="btn btn-info" style="width: 110px;">이미지 변경</button>
               <button type="button" class="btn btn-info">더보기</button>
@@ -244,7 +250,8 @@
           </div>
         </div>`;
 
-        $('#').append(card_html);
+        $('# ').append(card_html);
+      }
   </script>
 </body>
 
