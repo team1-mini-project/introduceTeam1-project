@@ -106,7 +106,7 @@
 .h-100:hover {
     background-color: rgb(247, 215, 247);
 }
-/* 사진 업로드, 더보기 버튼 전체 영역 */
+/* 이미지 변경, 더보기 버튼 전체 영역 */
 .cardBtn1 {
     display: flex;
     flex-direction: row;
@@ -114,7 +114,7 @@
 
     margin: 10px 10px auto auto;
 }
-/* 사진 업로드, 더보기 버튼 크기 및 글꼴 */
+/* 이미지 변경, 더보기 버튼 크기 및 글꼴 */
 .cardBtn1 > button {
     width: 70px;
     height: 30px;
