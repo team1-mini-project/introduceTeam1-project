@@ -390,66 +390,64 @@
             </div>
           </div>
         </div>
-        <!-- 모달창 -->
+        <!-- 모달 -->
         <!-- 모달 배경 -->
-        <div class="modal-wrap" id="modal-cardwrap">
-          <!-- 모달 -->
-          <div class="modal-box" id="modal-card">
-            <!-- 모달 - 내용물 -->
-            <h3>팀원명</h3>
-            <button type="button" class="closebtn" id="close-btn">
-              &times;
-            </button>
+        <div class="modal-wrap" id="modal-cardwrap"></div>
+        <!-- 모달 -->
+        <div class="modal-box" id="modal-card">
+          <!-- 모달창 - 내용물 -->
+          <h3>팀원명</h3>
+          <button type="button" class="closebtn" id="close-btn">&times;</button>
 
-            <div class="modal-profile">
-              <!-- 모달 - 프로필사진 -->
-              <div class="modal-pic">
-                <img
-                  src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="팀원이름"
-                />
+          <div class="modal-profile">
+            <!-- 모달창 - 프로필사진 -->
+            <div class="modal-pic">
+              <img
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="팀원이름"
+              />
+            </div>
+            <!-- 모달창 - 장점과 협업스타일 -->
+            <div class="twopoint">
+              <!-- 모달창 - 장점 -->
+              <div class="good-point">
+                <h4>장점</h4>
+                <ul>
+                  <li>"적극적으로 협력합니다."</li>
+                  <li>"기운이 넘칩니다."</li>
+                </ul>
               </div>
-              <!-- 장점과 협업스타일 -->
-              <div class="twopoint">
-                <!-- 장점 -->
-                <div class="good-point">
-                  <h4>장점</h4>
-                  <ul>
-                    <li>"적극적으로 협력합니다."</li>
-                    <li>"기운이 넘칩니다."</li>
-                  </ul>
-                </div>
-                <!-- 협업스타일 -->
-                <div class="style-point">
-                  <h4>협업스타일</h4>
-                  <ul>
-                    <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
-                    <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
-                  </ul>
-                </div>
+              <!-- 모달창 - 협업스타일 -->
+              <div class="style-point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
+                  <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
+                </ul>
               </div>
             </div>
-            <!-- tmi -->
-            <div class="tmi-info">
-              <h4>TMI</h4>
-              <div class="tmi-content">
-                <div class="modal-tmiphoto">
-                  <img
-                    src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="tmi사진"
-                  />
-                </div>
-                <div class="tmi-comment">
-                  <ul>
-                    <li>내용입니다1</li>
-                    <li>내용입니다1</li>
-                  </ul>
-                </div>
+          </div>
+          <!-- 모달창 - TMI -->
+          <div class="tmi-info">
+            <h4>TMI</h4>
+            <div class="tmi-content">
+              <div class="modal-tmiphoto">
+                <img
+                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="tmi사진"
+                />
+              </div>
+              <div class="tmi-comment">
+                <ul>
+                  <li>&#10024;인터넷 스트리머 방송 즐겨봅니다 나나양 강추!!</li>
+                  <li>&#10024;저도 고양이 사랑합니다.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-        <!-- 모달창 -->
+
+        <!-- 모달 -->
 
         <div id="box3" class="guestbook">
           <div class="guestbook-start">방명록을 남겨보세요.</div>
@@ -515,7 +513,7 @@
         });
       }
 
-      //프로필 카드 -더보기 버튼 클릭 시, 모달창 열기
+      //프로필 카드 -더보기 버튼 클릭 시, 모달배경과 모달 열기
       $(".cardBtn1").click(async function () {
         $("#modal-cardwrap").show();
         $("#modal-card").show();
@@ -523,11 +521,13 @@
 
       //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
       $("#close-btn").click(async function () {
+        $("#modal-card").hide();
         $("#modal-cardwrap").hide();
       });
-      //모달 - 모달 배경 클릭 시, 보달 닫기
+      //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
       $("#modal-cardwrap").click(async function () {
         $("#modal-cardwrap").hide();
+        $("#modal-card").hide();
       });
     </script>
 

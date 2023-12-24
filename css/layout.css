@@ -383,6 +383,7 @@
 /* ==================== */
 /* 모달배경 */
 .modal-wrap {
+  display: none;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
@@ -390,12 +391,11 @@
   z-index: 1000;
   top: 0;
   left: 0;
-
-  padding: 20px;
 }
 
 /* 모달창 */
 .modal-box {
+  display: none;
   background-color: white;
   position: fixed;
   z-index: 2000;
@@ -406,10 +406,11 @@
   width: 600px;
   padding: 40px;
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around; */
+  margin: 0 auto 0 auto;
 
   border: 1px solid gray;
   border-radius: 20px;
@@ -512,7 +513,7 @@
   width: 100%;
 
   /* padding-left: 20px; */
-  text-align: center;
+  text-align: left;
 }
 
 /* 모달창 - TMI 사진, 설명을 담은 상자*/
@@ -546,7 +547,7 @@
 
 /* tmi - 설명들 */
 .tmi-comment > ul {
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
 }
 
