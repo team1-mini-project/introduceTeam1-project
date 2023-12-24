@@ -355,7 +355,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
         import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
         import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
         // Firebase 구성 정보 설정
         const firebaseConfig = {
@@ -405,7 +405,6 @@
                 minute = minute < 10 ? '0' + minute : minute; //minute이 10보다 작으면 0붙이기
                 hour = hour < 10 ? '0' + hour : hour; //hour이 10보다 작으면 0붙이기
 
-
                 let datelist = [year, month, date, hour, minute] //date 리스트 생성
 
                 let doc = {
@@ -417,7 +416,7 @@
                 }
 
                 await addDoc(collection(db, "guestbook_contents"), doc)
-                //console.log(doc);
+
                 alert("방명록을 남겼어요.")
                 window.location.reload();
                 //plan b 새로고침 안해도 리로드
@@ -429,37 +428,40 @@
 
         })
 
-        //파이어베이스 받아와서 append
-        let docs = await getDocs(collection(db, "guestbook_contents"));
+
+        /* 방명록 날짜순으로 정렬 */
+        const doc = collection(db, "guestbook_contents"); //doc에 방명록 컬렉션 데이터 저장
+        const sortedComments = query(doc, orderBy("now_date", "desc")); //날짜 내림차순 정렬
+
+        /* 날짜순 정렬된 방명록 데이터 가져와서 append */
+        let docs = await getDocs(sortedComments);
+
         docs.forEach((doc) => {
             let row = doc.data();
             let nickname = row['nickname'];
             let datelist = row['datelist'];
             let content = row['content'];
             let pw = row['pw'];
-            let y_m_d = datelist.slice(0, 3).join('-');
-            let h_m = datelist.slice(3, 5).join(':');
 
-            //console.log(y_m_d + ' ' + h_m);
+            /* 연월일, 시간 구분표시 */
+            let y_m_d = datelist.slice(0, 3).join('-'); // ex) 2023-12-12
+            let h_m = datelist.slice(3, 5).join(':'); // ex) 13:22
+
             let temp_html = `
-          <div class="recorded-comments-box">
-            <div class="userinfo">
-          <div class="name">${nickname}</div>
-          <div class="date">${y_m_d + ' ' + h_m}</div>
-            </div>
-          <div class="comments-content">
-              ${content}
-          </div>
-          <div class="delete">
-              <input class="pw-check" type="password" placeholder="비밀번호"></input>
-              <button type="button" class="deletebtn">삭제</button>
-          </div>
-          </div>
-        `;
+                <div class="recorded-comments-box">
+                    <div class="userinfo">
+                        <div class="name">${nickname}</div>
+                        <div class="date">${y_m_d + ' ' + h_m}</div>
+                    </div>
+                    <div class="comments-content">${content}</div>
+                    <div class="delete">
+                        <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                        <button type="button" class="deletebtn">삭제</button>
+                    </div>
+                </div>
+                `;
             $('#recorded-comments').append(temp_html);
-            //console.log(row);
         });
-
 
     </script>
 </body>

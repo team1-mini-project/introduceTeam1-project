@@ -169,15 +169,14 @@
 }
 
 .line {
-	margin: 0 auto 50px auto;
+	margin: 0 auto 30px auto;
 	width: 1200px;
-	
 }
 
 .guestbook-start {
 	font-size: 30px;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 
 .guestbook-box {
@@ -249,9 +248,6 @@
 .recorded-comments-box {
 	width: 1210px;
 	height: 195px;
-	
-	/* //border: 1px solid green; */
-
 }
 
 .name {
@@ -323,19 +319,11 @@
 
 }
 
-.deletebtn:hover {
+.deletebtn:hover, .savebtn:hover {
 	background-color: #ec3810;
 }
 
-.deletebtn:active {
-	background-color: #e63916;
-}
-
-.savebtn:hover {
-	background-color: #ec3810;
-}
-
-.savebtn:active {
+.deletebtn:active, .savebtn:active {
 	background-color: #e63916;
 }
 
