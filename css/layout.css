@@ -405,12 +405,10 @@
 
   width: 600px;
   padding: 40px;
+  overflow: auto;
+  overflow-x: scroll;
 
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around; */
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
 
   border: 1px solid gray;
   border-radius: 20px;
@@ -418,9 +416,11 @@
 }
 
 /* 스크롤 기능만 남기고 스크롤바 지우기 */
-/* .modal-box::-webkit-scrollbar {
+.modal-wrap,
+.modal-box::-webkit-scrollbar {
   display: none;
-} */
+}
+
 /* 모달창 - 팀원명 */
 .modal-box > h3 {
   width: 100%;
