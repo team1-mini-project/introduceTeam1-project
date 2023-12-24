@@ -211,10 +211,11 @@
     })
 
     // 카드 데이터 가져와서 아래에 붙이기 test
-    let docs = await getDocs(collection(db, "콜렉션이름"));
+    let docs = await getDocs(collection(db, "gih"));
     docs.forEach((doc) => {
       let row = doc.data();
-      console.log(row);
+
+      let img = row['img'];
     });
 
     let card_html = `
@@ -243,7 +244,7 @@
           </div>
         </div>`;
 
-        
+        $('#').append(card_html);
   </script>
 </body>
 
