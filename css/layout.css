@@ -380,11 +380,11 @@
   flex-direction: column;
 }
 
-/* ===================== */
-.modal_wrap {
+/* ==================== */
+/* 모달배경 */
+.modal-wrap {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  display: none;
   width: 100%;
   height: 100%;
   z-index: 1000;
@@ -394,30 +394,9 @@
   padding: 20px;
 }
 
-/* 닫기 버튼 */
-.mybtn > button {
-  background-color: #fff;
-  position: fixed;
-  z-index: 3000;
-  top: 10px;
-  right: 10px;
-
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-
-  border: 1px solid gray;
-  border-radius: 10px;
-}
-
-.modal_profile {
-  width: 90%;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
+/* 모달창 */
 .modal-box {
+  background-color: white;
   position: fixed;
   z-index: 2000;
   top: 50%;
@@ -425,102 +404,154 @@
   transform: translate(-50%, -50%);
 
   width: 600px;
-  height: 80%;
-  background-color: white;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
   border: 1px solid gray;
   border-radius: 20px;
-
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* 스크롤 기능만 남기고 스크롤바 지우기 */
+/* .modal-box::-webkit-scrollbar {
+  display: none;
+} */
+/* 모달창 - 팀원명 */
 .modal-box > h3 {
-  margin-top: 20px;
-  font-size: 2rem;
+  width: 100%;
+  background-color: white;
+
+  padding: 10px;
+
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 4px 1px rgba(255, 239, 238, 0.8);
 }
 
 /* 닫기 버튼 */
-/* 닫기 버튼 표시줄 */
-.mybtn {
-  background-color: green;
-  width: 100%;
+.modal-box > button {
+  position: fixed;
+  z-index: 3000;
+  top: 10px;
+  right: 10px;
 
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  border-radius: 20px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+
+  border: none;
+  border-radius: 10px;
+}
+
+/* 모달창 - 프로필 사진, 장점, 협업스타일 포함하는 상자 */
+.modal-profile {
+  width: 100%;
 
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: right;
+  justify-content: space-evenly;
+
+  margin-top: 10px;
+  gap: 1.4rem;
 }
 
-.modal_pic {
+/* 모달창 - 프로필 사진 */
+.modal-pic > img {
   width: 250px;
   height: 250px;
-}
 
-.modal_pic > img {
-  width: 250px;
-  height: 250px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+
+  /* border: 0.1rem solid gray; */
   object-fit: cover;
   border-radius: 20px;
 }
 
+.twopoint > div > h4,
+.tmi-info > h4 {
+  background-color: #ffefee;
+  padding: 4px;
+}
+/* 모달창 -장점과 협업 스타일 */
 .twopoint {
-  margin-left: 40px;
+  /* background-color: #fff; */
+  width: 100%;
+
+  padding: 10px 10px 0px 10px;
+  /* box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3); */
+
+  border-radius: 20px;
+}
+/* 모달창 - 장점과 협업스타일 ul설정 */
+.twopoint > div > ul {
+  /* background-color: antiquewhite; */
+  border-radius: 10px;
+  padding-left: 0;
 }
 
 /* 모달창 - tmi 정보 */
-.tmi_info {
-  /* background-color: red; */
-  width: 90%;
+.tmi-info {
+  width: 100%;
 
   margin-top: 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* 나의 TMI 헤더 */
-.tmi_info > h4 {
+/* 모달창 - TMI 헤더 */
+.tmi-info > h4 {
   width: 100%;
-  text-align: left;
+
+  /* padding-left: 20px; */
+  text-align: center;
 }
 
-/* 나의 TMI content*/
-.tmi_content {
+/* 모달창 - TMI 사진, 설명을 담은 상자*/
+.tmi-content {
   width: 100%;
-  background-color: aquamarine;
+  margin-top: 0.3rem;
 
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+
+  gap: 1rem;
 }
 
-.tmi_content > ul {
-  border-radius: 20px;
-}
-
-/* 나의 TMI 사진 */
-.modal_tmiphoto > img {
+/* TMI 사진 */
+.modal-tmiphoto > img {
   width: 250px;
   height: 250px;
+
   object-fit: cover;
   border-radius: 20px;
 }
-
-.tmi_comment {
-  background-color: pink;
-  width: 50%;
-
-  margin: 0 0px 0 20px;
-  padding: 20px;
+/* TMI - 설명 상자 */
+.tmi-comment {
+  /* background-color: white; */
+  width: 100%;
 
   border-radius: 20px;
+  /* box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3); */
 }
-/* 프로필 카드 ====================================== */
+
+/* tmi - 설명들 */
+.tmi-comment > ul {
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* 여기서 부터  599번째까지 지워도 됩니다. */
+/*프로필 카드 ====================================== */
 /* 프로필 카드 */
 .propfile_wrap {
   width: 1280px;
@@ -594,3 +625,4 @@
   align-items: center;
   justify-content: center;
 }
+/* 여기까지 지워도 됩니다. */

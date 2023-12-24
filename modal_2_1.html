@@ -44,6 +44,19 @@
         padding: 20px;
       }
 
+      /* 닫기 버튼 부모 태그*/
+      .mybtn {
+        width: 100%;
+
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        border: 1px solid gray;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+      }
       /* 닫기 버튼 */
       .mybtn > button {
         background-color: #fff;
@@ -85,20 +98,6 @@
         font-size: 2rem;
       }
 
-      /* 닫기 버튼 */
-      /* 닫기 버튼 표시줄 */
-      .mybtn {
-        width: 100%;
-
-        /* background-color: rgba(0, 0, 0, 0.5); */
-        border: 1px solid gray;
-        border-radius: 20px;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: right;
-      }
       /* 사진, 장점, 협업스타일, 나의 TMI */
       .modal_content {
         background-color: red;
@@ -243,7 +242,7 @@
         align-items: center;
         justify-content: center;
       }
-
+      /* 프로필 카드 - 카드에 마우스오버시 사진크기 변경 효과 */
       .profile_pic:hover,
       .profile_pic:focus {
         background-repeat: no-repeat;
