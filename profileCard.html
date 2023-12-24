@@ -200,6 +200,8 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+
+    // 블로그 타입 alert
     $('.velog').click(async function () {
       alert('📘 저는 velog를 사용합니다. 📘');
     })
@@ -208,16 +210,35 @@
       alert('📙 저는 tistory를 사용합니다. 📙');
     })
 
+    // 카드 데이터 가져와서 아래에 붙이기 test
+    
 
+    let card_html = `
+    <div class="col cardEach profile-card">
+          <div class="card h-100">
+            <!-- 이미지 변경, 더보기 버튼 -->
+            <div class="cardBtn1">
+              <button type="button" class="btn btn-info" style="width: 110px;">이미지 변경</button>
+              <button type="button" class="btn btn-info">더보기</button>
+            </div>
+            <!-- 프로필 이미지 -->
+            <img src="${img}" class="card-img-top" alt="..." style="display: block; ">
+            <!-- 프로필 소개 -->
+            <div class="card-body" style="padding: 0px;">
+              <h5 class="card-title">이름 : ${name}</h5>
+              <p class="card-text">${introduce}</p>
+            </div>
+            <!-- url 버튼 -->
+            <div class="profileBtn">
+              <a href="${tistory}" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="${velog}" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
+                  alt=""></a>
+              <a href="${github}" target="_blank"><img class="btnImg" src="./images/icon-github.png"
+                  alt=""></a>
+            </div>
+          </div>
+        </div>`;
 
-    // 프로필카드 블로그 버튼 onclick 적용
-
-    function tistory() {
-      alert('📙 저는 tistory를 사용합니다. 📙')
-    }
-    function velog() {
-      alert('📘 저는 velog를 사용합니다. 📘')
-    }
   </script>
 </body>
 
