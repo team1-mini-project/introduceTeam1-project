@@ -216,17 +216,17 @@
         </div>
       </div>
 
-      <div class="modal_wrap" id="modal_cardwrap">
-        <div class="modal-box" id="modal_card">
+      <div class="modal-wrap" id="modal-cardwrap">
+        <div class="modal-box" id="modal-card">
           <div class="mybtn">
-            <button type="button" class="closebtn" id="close_btn">
+            <button type="button" class="closebtn" id="close-btn">
               X
             </button>
           </div>
           <h3>팀원명</h3>
           <!-- 모달 - 프로필사진 -->
-          <div class="modal_profile">
-            <div class="modal_pic">
+          <div class="modal-profile">
+            <div class="modal-pic">
               <img
                 src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="팀원이름"
@@ -234,7 +234,7 @@
             </div>
             <!-- 장점과 협업스타일 -->
             <div class="twopoint">
-              <div class="good_point">
+              <div class="good-point">
                 <h4>장점</h4>
                 <ul>
                   <li>내용입니다1</li>
@@ -243,7 +243,7 @@
                 </ul>
               </div>
 
-              <div class="style_point">
+              <div class="style-point">
                 <h4>협업스타일</h4>
                 <ul>
                   <li>내용1</li>
@@ -254,16 +254,16 @@
             </div>
           </div>
           <!-- tmi -->
-          <div class="tmi_info">
+          <div class="tmi-info">
             <h4>나의 TMI</h4>
-            <div class="tmi_content">
-              <div class="modal_tmiphoto">
+            <div class="tmi-content">
+              <div class="modal-tmiphoto">
                 <img
                   src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="tmi사진"
                 />
               </div>
-              <div class="tmi_comment">
+              <div class="tmi-comment">
                 <ul>
                   <li>내용입니다1</li>
                   <li>내용입니다1</li>
@@ -328,14 +328,14 @@
     }
 
     //모달 열기
-    $(".profile-card").click(async function () {
-      $("#modal_cardwrap").show();
-      $("#modal_card").show();
+    $(".cardBtn1").click(async function () {
+      $("#modal-cardwrap").show();
+      $("#modal-card").show();
     });
 
     //postingbox-닫기버튼
-    $("#close_btn").click(async function () {
-      $("#modal_cardwrap").hide();
+    $("#close-btn").click(async function () {
+      $("#modal-cardwrap").hide();
     });
   </script>
 
@@ -424,7 +424,7 @@
           </div>
         `;
       $('#recorded-comments').append(temp_html);
-      console.log(row);
+      // console.log(row);
     });
     
     //     }
