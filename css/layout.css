@@ -412,7 +412,7 @@
 
   border: 1px solid gray;
   border-radius: 20px;
-  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* 스크롤 기능만 남기고 스크롤바 지우기 */
@@ -445,10 +445,18 @@
   height: 40px;
   margin: 5px;
 
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
 
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+.modal-box > button:hover,
+.modal-box > button:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 /* 모달창 - 프로필 사진, 장점, 협업스타일 포함하는 상자 */
@@ -459,7 +467,8 @@
   flex-direction: row;
   justify-content: space-evenly;
 
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
   gap: 1.4rem;
 }
 
@@ -470,11 +479,11 @@
 
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
 
-  /* border: 0.1rem solid gray; */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
+/* 모달창 - 장점과 협업스타일 */
 .twopoint > div > h4,
 .tmi-info > h4 {
   background-color: #ffefee;
@@ -482,17 +491,13 @@
 }
 /* 모달창 -장점과 협업 스타일 */
 .twopoint {
-  /* background-color: #fff; */
   width: 100%;
-
   padding: 10px 10px 0px 10px;
-  /* box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3); */
 
   border-radius: 20px;
 }
 /* 모달창 - 장점과 협업스타일 ul설정 */
 .twopoint > div > ul {
-  /* background-color: antiquewhite; */
   border-radius: 10px;
   padding-left: 0;
 }
@@ -511,15 +516,14 @@
 /* 모달창 - TMI 헤더 */
 .tmi-info > h4 {
   width: 100%;
-
-  /* padding-left: 20px; */
+  margin-bottom: 0;
   text-align: left;
 }
 
 /* 모달창 - TMI 사진, 설명을 담은 상자*/
 .tmi-content {
   width: 100%;
-  margin-top: 0.3rem;
+  margin-top: 20px;
 
   display: flex;
   flex-direction: row;
@@ -534,15 +538,13 @@
   height: 250px;
 
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 /* TMI - 설명 상자 */
 .tmi-comment {
-  /* background-color: white; */
   width: 100%;
 
   border-radius: 20px;
-  /* box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3); */
 }
 
 /* tmi - 설명들 */

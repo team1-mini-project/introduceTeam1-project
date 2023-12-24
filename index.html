@@ -533,18 +533,22 @@
 
     <script type="module">
       // Firebase SDK 라이브러리 가져오기
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
       import {
         collection,
         addDoc,
-      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        query,
+        doc,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
       import {
         getDocs,
         orderBy,
-      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
       // Firebase 구성 정보 설정
+      //해리님 DB - /member 컬렉션 존재
       const firebaseConfig = {
         apiKey: "AIzaSyD8V74IYihnz-wcvbmW4G3hFjITFTcqAOo",
         authDomain: "team1-mini-project.firebaseapp.com",
@@ -569,6 +573,11 @@
       // Firebase 인스턴스 초기화
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
+
+      //더보기 클릭 시, 파이어 베이스 데이터 가져오기
+      // const data = []; //data 담아보기
+
+      $(".cardBtn1").click(async function () {});
 
       //방명록 남기기
       $("#savebtn").click(async function () {
