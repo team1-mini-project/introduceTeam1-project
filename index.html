@@ -98,6 +98,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="1">id : 1</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -584,9 +585,7 @@
       // );
       // console.log(modaldata);
 
-      //if(){}
-      //가져온 모달 컨텐츠들 담기
-      //
+      //모달창-가져온 모달 컨텐츠들 담기
       //member 컬렉션 가져오기
       const memberColl = await getDocs(collection(db, "member"));
       console.log(memberColl);
@@ -627,35 +626,48 @@
       const docsId = memberColl.docs[0].id;
       console.log("문서 고유 ID :", docsId);
 
+      //dataset값 가져오기
+      //1. DOM접근 메서드인 getElementById()메소드로
+      //해당 id명을 가진 태그 요소인 div가져오기
+      let divId = document.getElementById("cardId");
+      //2.데이터셋의 id의 값(value)가져오기
+      let cardId = divId.dataset["id"];
+      console.log(cardId); //1 (string)
+
       /* 문서 id값 가져오기 */
       /*
-      //2번째 방법 - map함수, doc.data() 이용
-      //1.member컬렉션 가져오기
-      const memberColl = await getDocs(collection(db, "member"));
-      //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
-      const memberDocs = memberColl.docs;
-      //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
-      const modalArrData = memberDocs.map((doc) => ({
-        //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
-        //새로운 데이터인 doc.id를 이어넣어줌.
-        ...doc.data(),
-        docsId: doc.id,
-      }));
+       //2번째 방법 - map함수, doc.data() 이용
+       //1.member컬렉션 가져오기
+       const memberColl = await getDocs(collection(db, "member"));
+       //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
+       const memberDocs = memberColl.docs;
+       //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
+       const modalArrData = memberDocs.map((doc) => ({
+         //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
+         //새로운 데이터인 doc.id를 이어넣어줌.
+         ...doc.data(),
+         docsId: doc.id,
+       }));
 
-      console.log(modalArrData);
+       console.log(modalArrData);
 
-      //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
-      const [modalContents] = modalArrData;
+       //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
+       const [modalContents] = modalArrData;
 
-      console.log(
-        "id : ",
-        modalContents["id"],
-        ", docsId :",
-        modalContents["docsId"]
-      );
-      */
-
-      $(".cardBtn1").click(async function () {});
+       console.log(
+         "id : ",
+         modalContents["id"],
+         ", docsId :",
+         modalContents["docsId"]
+       );
+       */
+      //조건 로직
+      //1.더보기 클릭 시
+      //2.모달창을 보여주고(document.style.display === "block")
+      //3.데이터를 가져오고
+      //4.클릭한 더보기의 카드 id와 데이터 id가 같으면
+      //5.모달창의 데이터를 붙여넣는다
+      //6.
 
       //방명록 남기기
       $("#savebtn").click(async function () {
@@ -707,18 +719,18 @@
 
         //console.log(y_m_d + ' ' + h_m);
         let temp_html = `
-                <div class="recorded-comments-box">
-                <span class="name">${nickname}</span>
-                <span class="date">${y_m_d + " " + h_m}</span>
-                <div class="comments-content">
-                    ${content}
-                </div>
-                <div class="delete">
-                    <input class="pw-check" type="password" placeholder="비밀번호"></input>
-                    <button type="button" class="deletebtn">삭제</button>
-                </div>
-                </div>
-              `;
+                 <div class="recorded-comments-box">
+                 <span class="name">${nickname}</span>
+                 <span class="date">${y_m_d + " " + h_m}</span>
+                 <div class="comments-content">
+                     ${content}
+                 </div>
+                 <div class="delete">
+                     <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                     <button type="button" class="deletebtn">삭제</button>
+                 </div>
+                 </div>
+               `;
         $("#recorded-comments").append(temp_html);
         // console.log(row);
       });
