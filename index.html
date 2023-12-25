@@ -533,30 +533,31 @@
 
     <script type="module">
       // Firebase SDK 라이브러리 가져오기
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
       import {
+        FieldPath,
+        documentId,
+        getDocs,
+        orderBy,
+        where,
         collection,
         addDoc,
         query,
         doc,
         onSnapshot,
-      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-      import {
-        getDocs,
-        orderBy,
-      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
       // Firebase 구성 정보 설정
       //해리님 DB - /member 컬렉션 존재
       const firebaseConfig = {
-        apiKey: "AIzaSyD8V74IYihnz-wcvbmW4G3hFjITFTcqAOo",
-        authDomain: "team1-mini-project.firebaseapp.com",
-        projectId: "team1-mini-project",
-        storageBucket: "team1-mini-project.appspot.com",
-        messagingSenderId: "312616622860",
-        appId: "1:312616622860:web:638bd5795853aa00780729",
-        measurementId: "G-E5QQZN44L0",
+        apiKey: "AIzaSyBFdIOtbPNQSA3Kc1QuQrY4yYeTUO5E9cw",
+        authDomain: "team1-mini-project-6e821.firebaseapp.com",
+        projectId: "team1-mini-project-6e821",
+        storageBucket: "team1-mini-project-6e821.appspot.com",
+        messagingSenderId: "890610614383",
+        appId: "1:890610614383:web:f8c969ada04ee4d31a4d9a",
+        measurementId: "G-J1SET2NDRK",
       };
 
       //상준님 DB
@@ -575,7 +576,84 @@
       const db = getFirestore(app);
 
       //더보기 클릭 시, 파이어 베이스 데이터 가져오기
-      // const data = []; //data 담아보기
+
+      //<시도>
+      // await getDocs(collection(db, "albums"));
+      // let modaldata = await getDocs(
+      //   collection(db, "member").doc("dcWn8qP4bLIEuURNLV8f")
+      // );
+      // console.log(modaldata);
+
+      //if(){}
+      //가져온 모달 컨텐츠들 담기
+      //
+      //member 컬렉션 가져오기
+      const memberColl = await getDocs(collection(db, "member"));
+      console.log(memberColl);
+
+      //가져온 member컬렉션- 문서 꺼내기
+      const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
+      //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
+
+      //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
+      console.log("modaldata :", modaldata);
+      console.log("modaldata :", modaldata["id"]);
+      console.log("modaldata :", modaldata["goodPoint1"]);
+      console.log("modaldata :", modaldata["goodPoint2"]);
+      console.log("modaldata :", modaldata["name"]);
+      console.log("modaldata :", modaldata["photo"]);
+      console.log("modaldata :", modaldata["tmi"]);
+      console.log("modaldata :", modaldata["workStyle"]);
+      //modaldata 자료의 형태
+      //let modaldata = {
+      //id : 3,
+      //igoodPoint1 : "적극적으로 협력합니다.",
+      //igoodPoint2 : "줏대있고 인정이 빠릅니다.",
+      // name : "남해리",
+      // photo : "https://www.notion.so/1-E1I5-35e48ba2ed7045d987f34e611ccb246b?pvs=4#0a748a5c41a842aeb5c684935621c034",
+      // tmi : "재즈를 제일 좋아하고 인디밴드, 팝송, k팝 등 멜로디 좋으면 다 듣습니다.",
+      // workStyle : "경청한 후 소신껏 필요한 의견을 비춥니다.",
+      // }
+
+      const id = modaldata["id"];
+      const goodPoint1 = modaldata["goodPoint1"];
+      const goodPoint2 = modaldata["goodPoint2"];
+      const name = modaldata["name"];
+      const photo = modaldata["photo"];
+      const tmi = modaldata["tmi"];
+      const workStyle = modaldata["workStyle"];
+      console.log("------------------------------------------------");
+      //가져온 member컬렉션- 문서 ID
+      const docsId = memberColl.docs[0].id;
+      console.log("문서 고유 ID :", docsId);
+
+      /* 문서 id값 가져오기 */
+      /*
+      //2번째 방법 - map함수, doc.data() 이용
+      //1.member컬렉션 가져오기
+      const memberColl = await getDocs(collection(db, "member"));
+      //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
+      const memberDocs = memberColl.docs;
+      //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
+      const modalArrData = memberDocs.map((doc) => ({
+        //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
+        //새로운 데이터인 doc.id를 이어넣어줌.
+        ...doc.data(),
+        docsId: doc.id,
+      }));
+
+      console.log(modalArrData);
+
+      //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
+      const [modalContents] = modalArrData;
+
+      console.log(
+        "id : ",
+        modalContents["id"],
+        ", docsId :",
+        modalContents["docsId"]
+      );
+      */
 
       $(".cardBtn1").click(async function () {});
 
@@ -629,18 +707,18 @@
 
         //console.log(y_m_d + ' ' + h_m);
         let temp_html = `
-          <div class="recorded-comments-box">
-          <span class="name">${nickname}</span>
-          <span class="date">${y_m_d + " " + h_m}</span>
-          <div class="comments-content">
-              ${content}
-          </div>
-          <div class="delete">
-              <input class="pw-check" type="password" placeholder="비밀번호"></input>
-              <button type="button" class="deletebtn">삭제</button>
-          </div>
-          </div>
-        `;
+                <div class="recorded-comments-box">
+                <span class="name">${nickname}</span>
+                <span class="date">${y_m_d + " " + h_m}</span>
+                <div class="comments-content">
+                    ${content}
+                </div>
+                <div class="delete">
+                    <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                    <button type="button" class="deletebtn">삭제</button>
+                </div>
+                </div>
+              `;
         $("#recorded-comments").append(temp_html);
         // console.log(row);
       });
