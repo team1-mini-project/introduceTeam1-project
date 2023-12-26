@@ -87,7 +87,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div data-id="1" class="hide cardId">id : 1</div>
+                  <div class="cardId hide" data-id="1">id : 1</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -131,7 +131,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div id="cardId" data-id="2" class="hide">id : 2</div>
+                  <div class="cardId hide" data-id="2">id : 2</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -175,7 +175,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div id="cardId" data-id="3" class="hide">id : 3</div>
+                  <div class="cardId hide" data-id="3">id : 3</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -219,7 +219,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div id="cardId" data-id="4" class="hide">id : 4</div>
+                  <div class="cardId hide" data-id="4">id : 4</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -263,7 +263,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div id="cardId" data-id="5" class="hide">id : 5</div>
+                  <div class="cardId hide" data-id="5">id : 5</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -307,7 +307,7 @@
               <div class="card h-100">
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
-                  <div id="cardId" data-id="6" class="hide">id : 6</div>
+                  <div class="cardId hide" data-id="6">id : 6</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
@@ -490,17 +490,6 @@
     // };
 
     //지수
-    // const firebaseConfig = {
-    //   apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
-    //   authDomain: "sparta-c39c2.firebaseapp.com",
-    //   projectId: "sparta-c39c2",
-    //   storageBucket: "sparta-c39c2.appspot.com",
-    //   messagingSenderId: "1028108196971",
-    //   appId: "1:1028108196971:web:01dcec06932dbae246252e",
-    //   measurementId: "G-VQFLN6KE5W"
-    // };
-
-    //해리님 DB - /member 컬렉션 존재
     const firebaseConfig = {
       apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
       authDomain: "sparta-c39c2.firebaseapp.com",
@@ -510,6 +499,17 @@
       appId: "1:1028108196971:web:01dcec06932dbae246252e",
       measurementId: "G-VQFLN6KE5W"
     };
+
+    //해리님 DB - /member 컬렉션 존재
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
+    //   authDomain: "sparta-c39c2.firebaseapp.com",
+    //   projectId: "sparta-c39c2",
+    //   storageBucket: "sparta-c39c2.appspot.com",
+    //   messagingSenderId: "1028108196971",
+    //   appId: "1:1028108196971:web:01dcec06932dbae246252e",
+    //   measurementId: "G-VQFLN6KE5W"
+    // };
 
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
