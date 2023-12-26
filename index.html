@@ -486,7 +486,6 @@
       const target = e.target;
       const parent = target.closest('.recorded-comments-box');
       prevData = $(parent).find('.comments-area').val();
-      console.log(prevData);
       $(target).hide();
       $(parent).find('.comments-area').attr('readonly', false);
       $(parent).find('.comments-area').focus();
@@ -503,22 +502,23 @@
       const docRef = doc(db, "guestbook_contents", id);
       const docSnap = await getDoc(docRef);
       const data = docSnap.data();
-      console.log(docRef);
-      console.log(data.pw);
       
       //내용 변경사항 유무 체크
       if(prevData === contents){
         alert('변경 사항이 없습니다. 수정 후 완료를 눌러주세요.');
+        $(parent).find('.comments-area').focus();
         return;
       }
       //비밀번호 입력 유무 체크
       if(!password){
         alert('비밀번호를 입력해주세요.');
+        $(parent).find('.pw-check').focus();
         return;
       }
       //비밀번호 검증
       if(password != data.pw){
         alert('비밀번호가 다릅니다. 비밀번호 확인 후 다시 입력해주세요.');
+        $(parent).find('.pw-check').focus();
         return;
       }
       
