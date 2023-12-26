@@ -489,9 +489,11 @@
     });
 
     let prevData = ''; //수정 전 데이터
+    const modifyBtn = document.querySelector('.modifyBtn');
 
     // 방명록 수정
-    $('.modifyBtn').on('click', async function(e){
+    modifyBtn.addEventListener("click", async (e) => {
+    // $('.modifyBtn').on('click', async function(e){
       const target = e.target;
       const parent = target.parentElement.parentElement;
       prevData = parent.querySelector('.comments-area').value;
