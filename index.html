@@ -791,16 +791,16 @@
         $(document).on('click', '.velog', function () {
           console.log("반응 테스트");
           alert('📘 저는 velog를 사용합니다. 📘')
-          return false;
         });
 
         // $('.velog').click(async function () {
         //   alert('📘 저는 velog를 사용합니다. 📘');
         // })
       } else if (velog === 'javascript:;') {
-        $('.tistory').click(async function () {
+        $(document).on('click', '.tistory', function () {
+          console.log("반응 테스트");
           alert('📙 저는 tistory를 사용합니다. 📙');
-        })
+        });
       }
 
 
