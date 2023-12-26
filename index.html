@@ -148,6 +148,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="2">id : 2</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -197,6 +198,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="3">id : 3</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -246,6 +248,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="4">id : 4</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -295,6 +298,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="5">id : 5</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -344,6 +348,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
+                    <div id="cardId" data-id="6">id : 6</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -561,17 +566,6 @@
         measurementId: "G-J1SET2NDRK",
       };
 
-      //상준님 DB
-      // const firebaseConfig = {
-      //   apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
-      //   authDomain: "sparta-b8657.firebaseapp.com",
-      //   projectId: "sparta-b8657",
-      //   storageBucket: "sparta-b8657.appspot.com",
-      //   messagingSenderId: "1016311234399",
-      //   appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
-      //   measurementId: "G-1GHRMFVCCF"
-      // };
-
       // Firebase 인스턴스 초기화
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
@@ -593,7 +587,7 @@
       //가져온 member컬렉션- 문서 꺼내기
       const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
       //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
-
+      console.log(modaldata);
       //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
       console.log("modaldata :", modaldata);
       console.log("modaldata :", modaldata["id"]);
@@ -635,32 +629,33 @@
       console.log(cardId); //1 (string)
 
       /* 문서 id값 가져오는 방법 2번째 */
-      /*
-       //2번째 방법 - map함수, doc.data() 이용
-       //1.member컬렉션 가져오기
-       const memberColl = await getDocs(collection(db, "member"));
-       //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
-       const memberDocs = memberColl.docs;
-       //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
-       const modalArrData = memberDocs.map((doc) => ({
-         //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
-         //새로운 데이터인 doc.id를 이어넣어줌.
-         ...doc.data(),
-         docsId: doc.id,
-       }));
+      // /*
+      //2번째 방법 - map함수, doc.data() 이용
+      //1.member컬렉션 가져오기
+      // const memberColl = await getDocs(collection(db, "member"));
+      //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
+      const memberDocs = memberColl.docs;
+      console.log(memberDocs);
+      //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
+      const modalArrData = memberDocs.map((doc) => ({
+        //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
+        //새로운 데이터인 doc.id를 이어넣어줌.
+        ...doc.data(),
+        docsId: doc.id,
+      }));
 
-       console.log(modalArrData);
+      console.log(modalArrData);
 
-       //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
-       const [modalContents] = modalArrData;
+      //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
+      const [modalContents] = modalArrData;
 
-       console.log(
-         "id : ",
-         modalContents["id"],
-         ", docsId :",
-         modalContents["docsId"]
-       );
-       */
+      console.log(
+        "id : ",
+        modalContents["id"],
+        ", docsId :",
+        modalContents["docsId"]
+      );
+      //  */
       //조건 로직
       //1.더보기 클릭 시
       //2.모달창을 보여주고(document.style.display === "block")
