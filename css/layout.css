@@ -280,10 +280,11 @@
 .date {
 	color: grey;
 	font-size: 15px;
-	margin-top: 15.6px;
+	margin-top: 12px;
 }
 
 .userinfo {
+	padding-bottom: 3px;
 	display: flex;
 	flex-direction: row;
 }
