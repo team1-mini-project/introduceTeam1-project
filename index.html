@@ -72,7 +72,7 @@
       <div id="box2" class="profileCards">
         <!-- 프로필 카드 6장 시작-->
         <div class="profileCards">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div id="profileCards" class="row row-cols-1 row-cols-md-3 g-4">
             <!-- 프로필 카드 1번 -->
             <div class="col cardEach profile-card">
               <div class="card h-100">
@@ -91,8 +91,7 @@
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
                   <a href="https://velog.io/@innes_kwak" target="_blank"><img class="btnImg"
                       src="./images/icon-velog.png" alt=""></a>
                   <a href="https://github.com/innes-k" target="_blank"><img class="btnImg"
@@ -118,8 +117,7 @@
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
                   <a href="https://velog.io/@jiwon4692" target="_blank"><img class="btnImg"
                       src="./images/icon-velog.png" alt=""></a>
                   <a href="https://github.com/seopport" target="_blank"><img class="btnImg"
@@ -147,8 +145,7 @@
                 <div class="profileBtn">
                   <a href="https://record4me.tistory.com/" target="_blank"><img class="btnImg"
                       src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
                   <a href="https://github.com/r03181231" target="_blank"><img class="btnImg"
                       src="./images/icon-github.png" alt=""></a>
                 </div>
@@ -173,8 +170,7 @@
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
                   <a href="https://velog.io/@dev_109" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                       alt=""></a>
                   <a href="https://github.com/gggimmmin" target="_blank"><img class="btnImg"
@@ -202,8 +198,7 @@
                 <div class="profileBtn">
                   <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
                       src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
                   <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg"
                       src="./images/icon-github.png" alt=""></a>
                 </div>
@@ -229,8 +224,7 @@
                 <div class="profileBtn">
                   <a href="https://jigico.tistory.com/" target="_blank"><img class="btnImg"
                       src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png"
-                      alt=""></a>
+                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
                   <a href="https://github.com/jigico" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                       alt=""></a>
                 </div>
@@ -239,63 +233,63 @@
           </div>
         </div>
       </div>
-      
+
       <div class="modal_wrap" id="modal_cardwrap">
-      <div class="modal-box" id="modal_card">
-        <div class="mybtn">
+        <div class="modal-box" id="modal_card">
+          <div class="mybtn">
             <button type="button" class="closebtn" id="close_btn">
               X
             </button>
           </div>
-        <h3>팀원명</h3>
-        <!-- 모달 - 프로필사진 -->
+          <h3>팀원명</h3>
+          <!-- 모달 - 프로필사진 -->
           <div class="modal_profile">
             <div class="modal_pic">
-            <img
-              src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="팀원이름" />
-          </div>
-          <!-- 장점과 협업스타일 -->
-          <div class="twopoint">
-            <div class="good_point">
-              <h4>장점</h4>
-              <ul>
-                <li>내용입니다1</li>
-                <li>내용입니다2</li>
-                  <li>내용입니다3</li>
-              </ul>
-            </div>
-            
-            <div class="style_point">
-              <h4>협업스타일</h4>
-              <ul>
-                <li>내용1</li>
-                <li>내용2</li>
-                  <li>내용3</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- tmi -->
-        <div class="tmi_info">
-          <h4>나의 TMI</h4>
-          <div class="tmi_content">
-            <div class="modal_tmiphoto">
               <img
-                src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="tmi사진" />
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="팀원이름" />
             </div>
-            <div class="tmi_comment">
-              <ul>
-                <li>내용입니다1</li>
-                <li>내용입니다1</li>
+            <!-- 장점과 협업스타일 -->
+            <div class="twopoint">
+              <div class="good_point">
+                <h4>장점</h4>
+                <ul>
                   <li>내용입니다1</li>
-              </ul>
+                  <li>내용입니다2</li>
+                  <li>내용입니다3</li>
+                </ul>
+              </div>
+
+              <div class="style_point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>내용1</li>
+                  <li>내용2</li>
+                  <li>내용3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- tmi -->
+          <div class="tmi_info">
+            <h4>나의 TMI</h4>
+            <div class="tmi_content">
+              <div class="modal_tmiphoto">
+                <img
+                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="tmi사진" />
+              </div>
+              <div class="tmi_comment">
+                <ul>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                  <li>내용입니다1</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
 
       <div id="box3" class="guestbook">
         <div class="guestbook-start">방명록을 남겨보세요.</div>
@@ -358,7 +352,7 @@
     //postingbox-닫기버튼
     $("#close_btn").click(async function () {
       $("#modal_cardwrap").hide();
-          });
+    });
   </script>
 
   <script type="module">
@@ -372,12 +366,12 @@
     //해리님 DB - /member 컬렉션 존재
     const firebaseConfig = {
       apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
-    authDomain: "sparta-b8657.firebaseapp.com",
-    projectId: "sparta-b8657",
-    storageBucket: "sparta-b8657.appspot.com",
-    messagingSenderId: "1016311234399",
-    appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
-    measurementId: "G-1GHRMFVCCF"
+      authDomain: "sparta-b8657.firebaseapp.com",
+      projectId: "sparta-b8657",
+      storageBucket: "sparta-b8657.appspot.com",
+      messagingSenderId: "1016311234399",
+      appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
+      measurementId: "G-1GHRMFVCCF"
     };
 
     // Firebase 인스턴스 초기화
@@ -457,13 +451,15 @@
   </script>
 
   <script>
-    // 프로필카드 블로그 버튼 onclick 적용
-    function tistory() {
-      alert('📙 저는 tistory를 사용합니다. 📙')
-    }
-    function velog() {
-      alert('📘 저는 velog를 사용합니다. 📘')
-    }
+    // 프로필카드 블로그 타입 alert 띄우기
+    $('.velog').click(async function () {
+      alert('📘 저는 velog를 사용합니다. 📘');
+    })
+
+    $('.tistory').click(async function () {
+      alert('📙 저는 tistory를 사용합니다. 📙');
+    })
+
   </script>
 
 </body>
