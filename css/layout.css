@@ -439,6 +439,13 @@
   box-shadow: 0px 0px 4px 1px rgba(255, 239, 238, 0.8);
 }
 
+/* 모달창 - id값 */
+.modal-idValue {
+  display: none;
+  width: 50px;
+  background-color: green;
+}
+
 /* 닫기 버튼 */
 .modal-box > button {
   position: fixed;
