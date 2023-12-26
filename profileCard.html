@@ -147,7 +147,7 @@
             <div class="profileBtn">
               <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" id="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -271,19 +271,36 @@
           </div>
         </div>`;
 
+        
 
       $('#profileCards').append(card_html);
     });
 
 
-    // 블로그 타입 alert
-    $('.velog').click(async function () {
-      alert('📘 저는 velog를 사용합니다. 📘');
-    })
+    //시도 1
+    // $(document).on('click', '.velog', function () {
+    //   console.log("반응 테스트");
+    // });
 
-    $('.tistory').click(async function () {
-      alert('📙 저는 tistory를 사용합니다. 📙');
-    })
+    // 시도 2
+    // $('body').on('click', '#velog a', function (e) {
+    //   e.preventDefault();
+    //   $('#velog').tab('show');
+    // });
+
+    // 시도 3
+    // $(profileCards).on('click', '.velog', function () {
+    //   console.log("반응 테스트");
+    // });
+
+    // 블로그 타입 alert
+    // $('.velog').click(async function () {
+    //   alert('📘 저는 velog를 사용합니다. 📘');
+    // })
+
+    // $('.tistory').click(async function () {
+    //   alert('📙 저는 tistory를 사용합니다. 📙');
+    // })
 
   </script>
 </body>
