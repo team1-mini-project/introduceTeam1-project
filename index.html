@@ -586,17 +586,20 @@
 
       //가져온 member컬렉션- 문서 꺼내기
       const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
+      const docId = modaldata.id;
+      //가져온 member컬렉션- 문서 ID
+      console.log("문서 고유 ID :", docId);
       //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
       console.log(modaldata);
       //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
       console.log("modaldata :", modaldata);
-      console.log("modaldata :", modaldata["id"]);
-      console.log("modaldata :", modaldata["goodPoint1"]);
-      console.log("modaldata :", modaldata["goodPoint2"]);
-      console.log("modaldata :", modaldata["name"]);
-      console.log("modaldata :", modaldata["photo"]);
-      console.log("modaldata :", modaldata["tmi"]);
-      console.log("modaldata :", modaldata["workStyle"]);
+      console.log("id :", modaldata["id"]);
+      console.log("goodPoint1 :", modaldata["goodPoint1"]);
+      console.log("goodPoint2 :", modaldata["goodPoint2"]);
+      console.log("name :", modaldata["name"]);
+      console.log("photo :", modaldata["photo"]);
+      console.log("tmi :", modaldata["tmi"]);
+      console.log("workStyle :", modaldata["workStyle"]);
       //modaldata 자료의 형태
       //let modaldata = {
       //id : 3,
@@ -616,9 +619,6 @@
       const tmi = modaldata["tmi"];
       const workStyle = modaldata["workStyle"];
       console.log("------------------------------------------------");
-      //가져온 member컬렉션- 문서 ID
-      const docsId = memberColl.docs[0].id;
-      console.log("문서 고유 ID :", docsId);
 
       //dataset값 가져오기
       //1. DOM접근 메서드인 getElementById()메소드로
