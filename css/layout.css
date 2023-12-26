@@ -171,12 +171,18 @@
 /* ================================== */
 .guestbook {
 	width: 1280px;
+	margin: 50px 50px;
+}
+
+.line {
+	margin: 0 auto 30px auto;
+	width: 1200px;
 }
 
 .guestbook-start {
 	font-size: 30px;
 	text-align: center;
-	padding-bottom: 25px;
+	margin-bottom: 60px;
 }
 
 .guestbook-box {
@@ -184,6 +190,7 @@
 	height: 260px;
 	background-color: #FFE8A3;
 	border-radius: 5px;
+	border: 1px solid #ecc759c4;
 }
 
 .nickname-pw-box {
@@ -201,7 +208,7 @@
 	height: 41px;
 	background-color: #F24822;
 	border-radius: 10px;
-	border-color: transparent;
+	border: 1px solid #e23f1b;
 	float: right;
 	margin: 15px 30px 0 0;
 	color: white;
@@ -247,13 +254,10 @@
 .recorded-comments-box {
 	width: 1210px;
 	height: 195px;
-	
-	/* //border: 1px solid green; */
-
 }
 
 .name {
-	padding: 10px 5px 5px 10px;
+	padding: 10px 9px 5px 10px;
 	font-weight: bold;
 	font-size: 18px;
 }
@@ -261,17 +265,21 @@
 .date {
 	color: grey;
 	font-size: 15px;
-	margin-top: 9px;
+	margin-top: 15.6px;
 }
 
+.userinfo {
+	display: flex;
+	flex-direction: row;
+}
 /* textarea로 변경하여 삭제하였습니다. */
 /* .comments-content {
 	width: 1210px;
 	height: 100px;
 	border: 1px solid lightgray;
 	border-radius: 6px;
-	padding: 15px 0 0 23px;
-	margin-top: 8px;
+	padding: 15px 0 0 20px;
+	margin-top: 2px;
 	box-sizing: border-box;
 	outline: none;
 	resize: none;
@@ -296,6 +304,7 @@
 	align-items: center;
 	justify-content: center;
 	line-height: 45px;
+	border: 1px solid #e23f1b;
 }
 
 .btn-success {
@@ -316,19 +325,11 @@
 
 }
 
-.deletebtn:hover {
+.deletebtn:hover, .savebtn:hover {
 	background-color: #ec3810;
 }
 
-.deletebtn:active {
-	background-color: #e63916;
-}
-
-.savebtn:hover {
-	background-color: #ec3810;
-}
-
-.savebtn:active {
+.deletebtn:active, .savebtn:active {
 	background-color: #e63916;
 }
 
