@@ -345,6 +345,7 @@
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     // Firebase 구성 정보 설정
     const firebaseConfig = {
@@ -356,6 +357,17 @@
       appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
       measurementId: "G-1GHRMFVCCF"
     };
+
+    //지수
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
+    //   authDomain: "sparta-c39c2.firebaseapp.com",
+    //   projectId: "sparta-c39c2",
+    //   storageBucket: "sparta-c39c2.appspot.com",
+    //   messagingSenderId: "1028108196971",
+    //   appId: "1:1028108196971:web:01dcec06932dbae246252e",
+    //   measurementId: "G-VQFLN6KE5W"
+    // };
 
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
@@ -414,12 +426,14 @@
           <div class="recorded-comments-box">
           <span class="name">${nickname}</span>
           <span class="date">${y_m_d + ' ' + h_m}</span>
-          <div class="comments-content">
-              ${content}
-          </div>
+          <textarea class="comments-area" readonly>${content}</textarea>
+          <input class="docId" type="hidden" value="${doc.id}">
           <div class="delete">
               <input class="pw-check" type="password" placeholder="비밀번호"></input>
               <button type="button" class="deletebtn">삭제</button>
+              <button type="button" class="modifyBtn">수정</button>
+              <button type="button" class="confirmBtn">수정완료</button>
+              <button type="button" class="cancelBtn">수정취소</button>
           </div>
           </div>
         `;
@@ -431,6 +445,69 @@
     //     loadGuestbookContents();
     // })
 
+    let prevData = ''; //수정 전 데이터
+
+    // 방명록 수정
+    $('.modifyBtn').on('click', async function(e){
+      const target = e.target;
+      const parent = target.closest('.recorded-comments-box');
+      prevData = $(parent).find('.comments-area').val();
+      console.log(prevData);
+      $(target).hide();
+      $(parent).find('.comments-area').attr('readonly', false);
+      $(parent).find('.comments-area').focus();
+      $(parent).find('.cancelBtn, .confirmBtn').show();
+    });
+
+    //방명록 수정완료
+    $('.confirmBtn').on('click', async function(e){
+      const target = e.target;
+      const parent = target.closest('.recorded-comments-box');
+      const password = $(parent).find('.pw-check').val();
+      const id = $(parent).find('.docId').val();
+      const contents = $(parent).find('.comments-area').val();
+      const docRef = doc(db, "guestbook_contents", id);
+      const docSnap = await getDoc(docRef);
+      const data = docSnap.data();
+      console.log(docRef);
+      console.log(data.pw);
+      
+      //내용 변경사항 유무 체크
+      if(prevData === contents){
+        alert('변경 사항이 없습니다. 수정 후 완료를 눌러주세요.');
+        return;
+      }
+      //비밀번호 입력 유무 체크
+      if(!password){
+        alert('비밀번호를 입력해주세요.');
+        return;
+      }
+      //비밀번호 검증
+      if(password != data.pw){
+        alert('비밀번호가 다릅니다. 비밀번호 확인 후 다시 입력해주세요.');
+        return;
+      }
+      
+      await updateDoc(doc(db, "guestbook_contents", id), {
+        content: contents
+      });
+
+      alert('수정이 완료되었습니다.');
+      window.location.reload();
+    });
+
+    //방명록 수정 취소
+    $('.cancelBtn').on('click', function(e){
+      const target = e.target;
+      const parent = target.closest('.recorded-comments-box');
+      $(parent).find('.comments-area').val(prevData);
+      prevData = '';
+      $(target).hide();
+      $(parent).find('.confirmBtn').hide();
+      $(parent).find('.comments-area').attr('readonly', true);
+      $(parent).find('.pw-check').val('');
+      $(parent).find('.modifyBtn').show();
+    });
   </script>
 </body>
 </html>
