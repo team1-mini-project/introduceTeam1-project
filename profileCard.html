@@ -21,7 +21,7 @@
   <div id="box2" class="profileCards">
     <!-- 프로필 카드 6장 시작-->
     <div class="profileCards">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div id="profileCards" class="row row-cols-1 row-cols-md-3 g-4">
         <!-- 프로필 카드 1번 -->
         <div class="col cardEach profile-card">
           <div class="card h-100">
@@ -218,18 +218,63 @@
     const db = getFirestore(app);
 
     //컬렉션 가져오기
+    // let docs = await getDocs(collection(db, "profile"));
+    // docs.forEach((doc) => {
+    //   let row = doc.data();
+    //   console.log(row);
+    // });
+
+    // //문서 가져오기
+    // const docRef = doc(db, "profile", "2");
+    // const docSnap = await getDoc(docRef);
+    // const profileColl = docSnap.data();
+    // console.log(profileColl);
+
+    //forEach로 카드 붙여보기
     let docs = await getDocs(collection(db, "profile"));
     docs.forEach((doc) => {
       let row = doc.data();
       console.log(row);
+
+      let id = row['id'];
+      let img = row['img'];
+      let name = row['name'];
+      let introduce = row['introduce'];
+      let tistory = row['tistory'];
+      let velog = row['velog'];
+      let github = row['github'];
+
+    let card_html = `
+    <div class="col cardEach">
+          <div class="card h-100">
+            <!-- 이미지 변경, 더보기 버튼 -->
+            <div class="cardBtn1">
+              <div class="cardId hide" data-id="${id}">id : ${id}</div>
+              <button type="button" class="imgbtn">이미지 변경</button>
+              <button type="button" class="morebtn">더보기</button>
+            </div>
+            <!-- 프로필 이미지 -->
+            <img src="./images/profile-gih.jpg" class="card-img-top" alt="..." style="display: block; ">
+            <!-- 프로필 소개 -->
+            <div class="card-body" style="padding: 0px;">
+              <h5 class="card-title">이름 : ${name}</h5>
+              <p class="card-text">${introduce}</p>
+            </div>
+            <!-- url 버튼 -->
+            <div class="profileBtn">
+              <a href="${tistory}" target="_blank"><img class="btnImg" src="./images/icon-tistory.png"
+                  alt=""></a>
+              <a href="${velog}" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="${github}" target="_blank"><img class="btnImg" src="./images/icon-github.png"
+                  alt=""></a>
+            </div>
+          </div>
+        </div>`;
+
+    $('#profileCards').append(card_html);
     });
 
-    //문서 가져오기
-    const docRef = doc(db, "profile", "2");
-    const docSnap = await getDoc(docRef);
-    const profileColl = docSnap.data();
-    console.log(profileColl);
-
+    
 
 
     // 블로그 타입 alert
