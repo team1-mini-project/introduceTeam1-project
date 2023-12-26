@@ -40,7 +40,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@innes_kwak" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/innes-k" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -66,7 +66,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@jiwon4692" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/seopport" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -94,7 +94,7 @@
             <div class="profileBtn">
               <a href="https://record4me.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/r03181231" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -119,7 +119,7 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="javascript:;" onclick="velog()"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
+              <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
               <a href="https://velog.io/@dev_109" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
                   alt=""></a>
               <a href="https://github.com/gggimmmin" target="_blank"><img class="btnImg" src="./images/icon-github.png"
@@ -147,7 +147,7 @@
             <div class="profileBtn">
               <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -173,7 +173,7 @@
             <div class="profileBtn">
               <a href="https://jigico.tistory.com/" target="_blank"><img class="btnImg" src="./images/icon-tistory.png"
                   alt=""></a>
-              <a href="javascript:;" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/jigico" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -237,14 +237,14 @@
       console.log(row);
 
       let id = row['id'];
-      let img = row['img'];
+      let image = row['img'];
       let name = row['name'];
       let introduce = row['introduce'];
       let tistory = row['tistory'];
       let velog = row['velog'];
       let github = row['github'];
 
-    let card_html = `
+      let card_html = `
     <div class="col cardEach">
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
@@ -254,7 +254,7 @@
               <button type="button" class="morebtn">더보기</button>
             </div>
             <!-- 프로필 이미지 -->
-            <img src="./images/profile-gih.jpg" class="card-img-top" alt="..." style="display: block; ">
+            <img src="${image}" class="card-img-top" alt="..." style="display: block; ">
             <!-- 프로필 소개 -->
             <div class="card-body" style="padding: 0px;">
               <h5 class="card-title">이름 : ${name}</h5>
@@ -271,10 +271,9 @@
           </div>
         </div>`;
 
-    $('#profileCards').append(card_html);
-    });
 
-    
+      $('#profileCards').append(card_html);
+    });
 
 
     // 블로그 타입 alert
