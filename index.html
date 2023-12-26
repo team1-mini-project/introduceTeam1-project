@@ -20,49 +20,40 @@
 </head>
 
 <body>
+
   <div class="wrap">
-    <header class="header">
-      <div class="layout-1280">
-        <h1 class="logo">E1I5조</h1>
-        <nav class="nav">
-          <ul>
-            <li class="nav-item" onclick="scrollPage('#box1')">팀 소개</li>
-            <li class="nav-item" onclick="scrollPage('#box2')">팀원 소개</li>
-            <li class="nav-item" onclick="scrollPage('#box3')">방명록</li>
-          </ul>
-        </nav>
-      </div>
-    </header>
     <div class="layout-1280">
-      <div id="box1" class="title-main">
-        <div id="title-main-big">E1I5</div>
-        <div id="title-main-small">우리 팀을 소개합니다</div>
-      </div>
-      <div class="team-container"> 
-        <div class="introduce"> 
-          <div class="introduce-image"><img src="images/kjm dog.jpg"></div>     
-          <div class="introduce-title">팀 소개</div>
-          <div class="introduce-content">
-            <p>MBTI "E 1명" "I 5명"이 함께 으쌰으쌰!!</p>
-          </div>
-        </div>  
-
-        <div class="goal"> 
-          <div class="goal-image"><img src="images/gih dog.jpeg"></div>
-          <div class="goal-title">팀 목표</div>
-          <div class="goal-content">
-            <p>포기하지 말자 !<br> 피할수 없으면 돌아가자 !<br> 끝까지 완성하자 !</p>
-          </div>
+      <div>
+        <div class="title-main">
+          <div id="title-main-big">E1I5</div>
+          <div id="title-main-small">우리 팀을 소개합니다</div>
         </div>
 
-        <div class="promise">
-          <div class="promise-image"><img src="images/sjw cat.jpg"></div>
-          <div class="promise-title">우리 팀 약속</div>
-          <div class="promise-content">
-            <p>- 모르면 물어보기<br> - 가끔 블로그에 댓글 남겨주기<br> - 자리 비울때 팀원들에게 알려주기 (채팅도 되고 보이스도 좋을 것 같아요)<br> - 생리현상은 마이크 잠시 꺼도 됨ㅎㅎ<br> - 캠은 필수!!</p>
+        <div class="team-container"> 
+
+          <div class="introduce"> 
+            <div class="introduce-image"><img src="images/kjm dog.jpg"></div>     
+            <div class="introduce-title">팀 소개</div>
+            <div class="introduce-content">
+              <p>MBTI "E 1명" "I 5명"이 함께 으쌰으쌰!!</p>
+            </div>
+          </div>  
+
+          <div class="goal"> 
+            <div class="goal-image"><img src="images/gih dog.jpeg"></div>
+            <div class="goal-title">팀 목표</div>
+            <div class="goal-content">
+              <p>포기하지 말자 !<br> 피할수 없으면 돌아가자 !<br> 끝까지 완성하자 !</p>
+            </div>
           </div>
-        </div>
-      </div>
+
+          <div class="promise">
+            <div class="promise-image"><img src="images/sjw cat.jpg"></div>
+            <div class="promise-title">우리 팀 약속</div>
+            <div class="promise-content">
+              <p>- 모르면 물어보기<br> - 가끔 블로그에 댓글 남겨주기<br> - 자리 비울때 팀원들에게 알려주기 (채팅도 되고 보이스도 좋을 것 같아요)<br> - 생리현상은 마이크 잠시 꺼도 됨ㅎㅎ<br> - 캠은 필수!!</p>
+            </div>
+          </div>
 
       <div id="box2" class="profileCards">
         <!-- 프로필 카드 6장 시작-->
@@ -547,6 +538,34 @@
       $(parent).find('.comments-area').attr('readonly', true);
       $(parent).find('.pw-check').val('');
       $(parent).find('.modifyBtn').show();
+    });
+
+    // 방명록 삭제
+    $('.deletebtn').on('click', async function (e) {
+      const target = e.target;
+      const parent = target.closest('.recorded-comments-box');
+      const password = $(parent).find('.pw-check').val();
+      const id = $(parent).find('.docId').val();
+      const docRef = doc(db, "guestbook_contents", id);
+      const docSnap = await getDoc(docRef);
+      const data = docSnap.data();
+
+      // 비밀번호 입력 유무 체크
+      if (!password) {
+          alert('비밀번호를 입력해주세요.');
+          return;
+      }
+      // 비밀번호 검증
+      if (password != data.pw) {
+          alert('비밀번호가 다릅니다. 비밀번호 확인 후 다시 입력해주세요.');
+          return;
+      }
+
+      // 비밀번호가 맞으면 삭제
+      await deleteDoc(docRef);
+
+      alert('댓글이 삭제되었습니다.');
+      window.location.reload();
     });
   </script>
 
