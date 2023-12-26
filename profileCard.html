@@ -217,26 +217,18 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    //컬렉션 가져오기
+    let docs = await getDocs(collection(db, "profile"));
+    docs.forEach((doc) => {
+      let row = doc.data();
+      console.log(row);
+    });
 
     //문서 가져오기
-    const docRef = doc(db, "profile", "1");
+    const docRef = doc(db, "profile", "2");
     const docSnap = await getDoc(docRef);
     const profileColl = docSnap.data();
     console.log(profileColl);
-
-    //가져온 member컬렉션- 문서 꺼내기
-    // const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
-      //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
-
-    // //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
-    // console.log("profile :", modaldata);
-    // console.log("modaldata :", modaldata["id"]);
-    // console.log("modaldata :", modaldata["goodPoint1"]);
-    // console.log("modaldata :", modaldata["goodPoint2"]);
-    // console.log("modaldata :", modaldata["name"]);
-    // console.log("modaldata :", modaldata["photo"]);
-    // console.log("modaldata :", modaldata["tmi"]);
-    // console.log("modaldata :", modaldata["workStyle"]);
 
 
 
