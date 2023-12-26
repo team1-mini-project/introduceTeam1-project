@@ -110,6 +110,9 @@
 	box-shadow: 1px 2px 7px 0px purple;
 }
 /* 이미지 변경, 더보기 버튼 전체 영역 */
+.hide {
+	display: none;
+}
 .cardBtn1 {
     display: flex;
     flex-direction: row;
