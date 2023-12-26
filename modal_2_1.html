@@ -8,8 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
+    <!-- <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" /> -->
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -44,6 +44,19 @@
         padding: 20px;
       }
 
+      /* 닫기 버튼 부모 태그*/
+      .mybtn {
+        width: 100%;
+
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        border: 1px solid gray;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+      }
       /* 닫기 버튼 */
       .mybtn > button {
         background-color: #fff;
@@ -60,13 +73,6 @@
         border-radius: 10px;
       }
 
-      .modal_profile {
-        width: 90%;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: row;
-      }
-
       .modal {
         position: fixed;
         z-index: 2000;
@@ -74,7 +80,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 600px;
+        width: 60%;
         height: 80%;
         background-color: white;
 
@@ -82,34 +88,36 @@
         border-radius: 20px;
 
         display: flex;
-
+        flex-basis: auto;
         flex-direction: column;
         align-items: center;
       }
 
       .modal > h3 {
-        margin-top: 20px;
+        margin: 20px 0 20px 0;
         font-size: 2rem;
       }
 
-      /* 닫기 버튼 */
-      /* 닫기 버튼 표시줄 */
-      .mybtn {
-        background-color: green;
-        width: 100%;
-
-        /* background-color: rgba(0, 0, 0, 0.5); */
-        border-radius: 20px;
+      /* 사진, 장점, 협업스타일, 나의 TMI */
+      .modal_content {
+        background-color: red;
+        padding: 40px;
 
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: right;
+      }
+
+      .modal_profile {
+        display: flex;
+        flex-direction: row;
       }
 
       .modal_pic {
-        width: 250px;
         height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .modal_pic > img {
@@ -118,18 +126,22 @@
         object-fit: cover;
         border-radius: 20px;
       }
-
+      /* 장점과 협력스타일 */
       .twopoint {
-        margin-left: 40px;
+        background-color: green;
+        margin-left: 2rem;
+        padding: 40px;
+        border-radius: 20px;
       }
 
       /* 모달창 - tmi 정보 */
       .tmi_info {
         /* background-color: red; */
-        width: 90%;
+        width: 100%;
 
         margin-top: 20px;
         display: flex;
+        flex-basis: content;
         flex-direction: column;
         align-items: center;
       }
@@ -219,7 +231,7 @@
         /*사진 */
         background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
         background-position: center;
-        background-size: cover;
+        background-size: 110%;
 
         margin-bottom: 20px;
         border-radius: 20px;
@@ -229,6 +241,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+      /* 프로필 카드 - 카드에 마우스오버시 사진크기 변경 효과 */
+      .profile_pic:hover,
+      .profile_pic:focus {
+        background-repeat: no-repeat;
+        background-size: cover;
       }
       /* 프로필 내용 */
       .content {
@@ -302,51 +320,59 @@
                   </button>
                 </div>
                 <h3>팀원명</h3>
-                <!-- 모달 - 프로필사진 -->
-                <div class="modal_profile">
-                  <div class="modal_pic">
-                    <img
-                      src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="팀원이름"
-                    />
-                  </div>
-                  <!-- 장점과 협업스타일 -->
-                  <div class="twopoint">
-                    <div class="good_point">
-                      <h4>장점</h4>
-                      <ul>
-                        <li>내용입니다1</li>
-                        <li>내용입니다2</li>
-                        <li>내용입니다3</li>
-                      </ul>
-                    </div>
-
-                    <div class="style_point">
-                      <h4>협업스타일</h4>
-                      <ul>
-                        <li>내용1</li>
-                        <li>내용2</li>
-                        <li>내용3</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- tmi -->
-                <div class="tmi_info">
-                  <h4>나의 TMI</h4>
-                  <div class="tmi_content">
-                    <div class="modal_tmiphoto">
+                <div class="modal_content">
+                  <!-- 모달 - 프로필사진 -->
+                  <div class="modal_profile">
+                    <div class="modal_pic">
                       <img
-                        src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="tmi사진"
+                        src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="팀원이름"
                       />
                     </div>
-                    <div class="tmi_comment">
-                      <ul>
-                        <li>내용입니다1</li>
-                        <li>내용입니다1</li>
-                        <li>내용입니다1</li>
-                      </ul>
+                    <!-- 장점과 협업스타일 -->
+                    <div class="twopoint">
+                      <div class="good_point">
+                        <h4>장점</h4>
+                        <ul>
+                          <li>
+                            내용입니다1내용입니다1내용입니다1내용입니다1내용입니다1
+                          </li>
+                          <li>
+                            내용입니다2내용입니다2내용입니다2내용입니다2내용입니다2내용입니다2내용입니다2내용입니다2
+                          </li>
+                          <li>
+                            내용입니다3내용입니다3내용입니다3내용입니다3내용입니다3내용입니다3내용입니다3내용입니다3
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="style_point">
+                        <h4>협업스타일</h4>
+                        <ul>
+                          <li>내용1</li>
+                          <li>내용2</li>
+                          <li>내용3</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- tmi -->
+                  <div class="tmi_info">
+                    <h4>나의 TMI</h4>
+                    <div class="tmi_content">
+                      <div class="modal_tmiphoto">
+                        <img
+                          src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="tmi사진"
+                        />
+                      </div>
+                      <div class="tmi_comment">
+                        <ul>
+                          <li>내용입니다1</li>
+                          <li>내용입니다1</li>
+                          <li>내용입니다1</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

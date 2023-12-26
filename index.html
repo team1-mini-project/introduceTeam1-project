@@ -5,16 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E1I5조 우리 팀을 소개해요</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/layout.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -24,6 +20,7 @@
 </head>
 
 <body>
+
   <div class="wrap">
     <header class="header">
       <div class="layout-1280">
@@ -38,37 +35,49 @@
       </div>
     </header>
     <div class="layout-1280">
-      <div id="box1" class="title-main">
-        <div id="title-main-big">E1I5</div>
-        <div id="title-main-small">우리 팀을 소개합니다</div>
+      <div id="box1">
+        <div class="title-main">
+          <div id="title-main-big">E1I5</div>
+          <div id="title-main-small">우리 팀을 소개합니다</div>
+        </div>
+        <div class="team-container"> 
+          <div class="introduce"> 
+            <div class="introduce-image"><img src="images/kjm dog.jpg" /></div>     
+            <div class="introduce-title">팀 소개</div>
+            <div class="introduce-content">
+              <p>MBTI "E 1명" "I 5명"이 함께 으쌰으쌰!!</p>
+            </div>
+          </div>  
+
+          <div class="goal">
+            <div class="goal-image"><img src="images/gih dog.jpeg" /></div>
+            <div class="goal-title">팀 목표</div>
+            <div class="goal-content">
+              <p>
+              포기하지 말자 !<br />
+              피할수 없으면 돌아가자 !<br />
+              끝까지 완성하자 !
+            </p>
+            </div>
+          </div>
+
+          <div class="promise">
+            <div class="promise-image"><img src="images/sjw cat.jpg" /></div>
+            <div class="promise-title">우리 팀 약속</div>
+            <div class="promise-content">
+              <p>
+                - 모르면 물어보기<br />
+                - 가끔 블로그에 댓글 남겨주기<br />
+                - 자리 비울때 팀원들에게 알려주기 (채팅도 되고 보이스도 좋을 것
+                같아요)<br />
+                - 생리현상은 마이크 잠시 꺼도 됨ㅎㅎ<br />
+                - 캠은 필수!!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="team-container">
-        <div class="introduce">
-          <div class="introduce-image"><img src="images/kjm dog.jpg"></div>
-          <div class="introduce-title">팀 소개</div>
-          <div class="introduce-content">
-            <p>MBTI "E 1명" "I 5명"이 함께 으쌰으쌰!!</p>
-          </div>
-        </div>
-
-        <div class="goal">
-          <div class="goal-image"><img src="images/gih dog.jpeg"></div>
-          <div class="goal-title">팀 목표</div>
-          <div class="goal-content">
-            <p>포기하지 말자 !<br> 피할수 없으면 돌아가자 !<br> 끝까지 완성하자 !</p>
-          </div>
-        </div>
-
-        <div class="promise">
-          <div class="promise-image"><img src="images/sjw cat.jpg"></div>
-          <div class="promise-title">우리 팀 약속</div>
-          <div class="promise-content">
-            <p>- 모르면 물어보기<br> - 가끔 블로그에 댓글 남겨주기<br> - 자리 비울때 팀원들에게 알려주기 (채팅도 되고 보이스도 좋을 것 같아요)<br> - 생리현상은 마이크 잠시 꺼도
-              됨ㅎㅎ<br> - 캠은 필수!!</p>
-          </div>
-        </div>
-      </div>
-
+      
       <div id="box2" class="profileCards">
         <!-- 프로필 카드 6장 시작-->
         <div class="profileCards">
@@ -79,23 +88,42 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="1">id : 1</div>
+                  <div class="cardId hide" data-id="1">id : 1</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-gih.jpg" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-gih.jpg"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 곽인해</h5>
-                  <p class="card-text">비전공자에서 전문가가 되는 그날까지 달려보자 파이팅입니다!</p>
+                  <p class="card-text">
+                    비전공자에서 전문가가 되는 그날까지<br />
+                    달려보자 파이팅입니다!
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
-                  <a href="https://velog.io/@innes_kwak" target="_blank"><img class="btnImg"
-                      src="./images/icon-velog.png" alt=""></a>
-                  <a href="https://github.com/innes-k" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt=""></a>
+                  <a href="javascript:;" onclick="velog()" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="https://velog.io/@innes_kwak" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/innes-k" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -105,23 +133,42 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="2">id : 2</div>
+                  <div class="cardId hide" data-id="2">id : 2</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-sjw.png" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-sjw.png"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 서지원</h5>
-                  <p class="card-text">안녕하세요. 고양이 두 마리 키우는 프론트엔드 개발자 서지원입니다.</p>
+                  <p class="card-text">
+                    안녕하세요. 고양이 두 마리 키우는 프론트엔드 개발자
+                    서지원입니다.
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
-                  <a href="https://velog.io/@jiwon4692" target="_blank"><img class="btnImg"
-                      src="./images/icon-velog.png" alt=""></a>
-                  <a href="https://github.com/seopport" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt=""></a>
+                  <a href="javascript:;" onclick="velog()" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="https://velog.io/@jiwon4692" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/seopport" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -131,23 +178,42 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="3">id : 3</div>
+                  <div class="cardId hide" data-id="3">id : 3</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-nhr.jpg" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-nhr.jpg"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 남해리</h5>
-                  <p class="card-text">안녕하세요. 재즈를 좋아하는 프론트엔드 개발자 남해리입니다.</p>
+                  <p class="card-text">
+                    안녕하세요. 재즈를 좋아하는 프론트엔드 개발자
+                    남해리입니다.
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="https://record4me.tistory.com/" target="_blank"><img class="btnImg"
-                      src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
-                  <a href="https://github.com/r03181231" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt=""></a>
+                  <a href="https://record4me.tistory.com/" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="javascript:;" onclick="tistory()" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/r03181231" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -157,24 +223,42 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="4">id : 4</div>
+                  <div class="cardId hide" data-id="4">id : 4</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-kjm.jpg" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-kjm.jpg"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 김지민</h5>
-                  <p class="card-text">안녕하세요. 뭐든지 열심히 배우려고 노력하는
-                    프론트엔드 개발자 김지민입니다.</p>
+                  <p class="card-text">
+                    안녕하세요. 뭐든지 열심히 배우려고 노력하는 프론트엔드
+                    개발자 김지민입니다.
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="javascript:;" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt=""></a>
-                  <a href="https://velog.io/@dev_109" target="_blank"><img class="btnImg" src="./images/icon-velog.png"
-                      alt=""></a>
-                  <a href="https://github.com/gggimmmin" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt=""></a>
+                  <a href="javascript:;" onclick="velog()" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="https://velog.io/@dev_109" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/gggimmmin" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -184,23 +268,42 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="5">id : 5</div>
+                  <div class="cardId hide" data-id="5">id : 5</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-psj.jpg" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-psj.jpg"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 박상준</h5>
-                  <p class="card-text">안녕하세요. 판다를 좋아하는 프론트엔드 개발자 박상준입니다.</p>
+                  <p class="card-text">
+                    안녕하세요. 판다를 좋아하는 프론트엔드 개발자
+                    박상준입니다.
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
-                      src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
-                  <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt=""></a>
+                  <a href="https://tearcode.tistory.com/" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="javascript:;" onclick="tistory()" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/byjun8932" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
@@ -210,244 +313,516 @@
                 <!-- 이미지 변경, 더보기 버튼 -->
                 <div class="cardBtn1">
                   <div class="cardId hide" data-id="6">id : 6</div>
+                  <div class="cardId hide" data-id="6">id : 6</div>
                   <button type="button" class="imgbtn">이미지 변경</button>
                   <button type="button" class="morebtn">더보기</button>
                 </div>
                 <!-- 프로필 이미지 -->
-                <img src="./images/profile-kjs.jpg" class="card-img-top" alt="..." style="display: block; ">
+                <img
+                  src="./images/profile-kjs.jpg"
+                  class="card-img-top"
+                  alt="..."
+                  style="display: block"
+                />
                 <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px;">
+                <div class="card-body" style="padding: 0px">
                   <h5 class="card-title">이름 : 강지수</h5>
-                  <p class="card-text">안녕하세요 짱구를 좋아하는 프론트엔드 개발자 강지수입니다.</p>
+                  <p class="card-text">
+                    안녕하세요 짱구를 좋아하는 프론트엔드 개발자 강지수입니다.
+                  </p>
                 </div>
                 <!-- url 버튼 -->
                 <div class="profileBtn">
-                  <a href="https://jigico.tistory.com/" target="_blank"><img class="btnImg"
-                      src="./images/icon-tistory.png" alt=""></a>
-                  <a href="javascript:;" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
-                  <a href="https://github.com/jigico" target="_blank"><img class="btnImg" src="./images/icon-github.png"
-                      alt=""></a>
+                  <a href="https://jigico.tistory.com/" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-tistory.png"
+                      alt=""
+                  /></a>
+                  <a href="javascript:;" onclick="tistory()" target="_blank"
+                    ><img class="btnImg" src="./images/icon-velog.png" alt=""
+                  /></a>
+                  <a href="https://github.com/jigico" target="_blank"
+                    ><img
+                      class="btnImg"
+                      src="./images/icon-github.png"
+                      alt=""
+                  /></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- 모달 -->
+      <!-- 모달 배경 -->
+      <div class="modal-wrap" id="modal-cardwrap"></div>
+      <!-- 모달 -->
+      <div class="modal-box" id="modal-card">
+        <!-- 모달창 - 내용물 -->
+        <!-- <div class="modal-idValue">id : 1</div> -->
+        <!-- <h3>name</h3> -->
+        <!-- <button type="button" class="closebtn" id="close-btn">&times;</button> -->
 
-      <div class="modal_wrap" id="modal_cardwrap">
-        <div class="modal-box" id="modal_card">
-          <div class="mybtn">
-            <button type="button" class="closebtn" id="close_btn">
-              X
-            </button>
-          </div>
-          <h3>팀원명</h3>
-          <!-- 모달 - 프로필사진 -->
-          <div class="modal_profile">
-            <div class="modal_pic">
+        <!-- <div class="modal-profile"> -->
+        <!-- 모달창 - 프로필사진 -->
+        <!-- <div class="modal-pic">
+            <img
+              src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="팀원이름"
+            />
+          </div> -->
+        <!-- 모달창 - 장점과 협업스타일 -->
+        <!-- <div class="twopoint"> -->
+        <!-- 모달창 - 장점 -->
+        <!-- <div class="good-point">
+              <h4>장점</h4>
+              <ul>
+                <li>goodPoint1</li>
+                <li>goodPoint2</li>
+              </ul>
+            </div> -->
+        <!-- 모달창 - 협업스타일 -->
+        <!-- <div class="style-point">
+              <h4>협업스타일</h4>
+              <ul>
+                <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
+              </ul>
+            </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- 모달창 - TMI -->
+        <!-- <div class="tmi-info">
+          <h4>TMI</h4>
+          <div class="tmi-content">
+            <div class="modal-tmiphoto">
               <img
-                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="팀원이름" />
+                src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="tmi사진"
+              />
             </div>
-            <!-- 장점과 협업스타일 -->
-            <div class="twopoint">
-              <div class="good_point">
-                <h4>장점</h4>
-                <ul>
-                  <li>내용입니다1</li>
-                  <li>내용입니다2</li>
-                  <li>내용입니다3</li>
-                </ul>
-              </div>
-
-              <div class="style_point">
-                <h4>협업스타일</h4>
-                <ul>
-                  <li>내용1</li>
-                  <li>내용2</li>
-                  <li>내용3</li>
-                </ul>
-              </div>
+            <div class="tmi-comment">
+              <ul>
+                <li>&#10024;인터넷 스트리머 방송 즐겨봅니다 나나양 강추!!</li>
+                <li>&#10024;저도 고양이 사랑합니다.</li>
+              </ul>
             </div>
           </div>
-          <!-- tmi -->
-          <div class="tmi_info">
-            <h4>나의 TMI</h4>
-            <div class="tmi_content">
-              <div class="modal_tmiphoto">
-                <img
-                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="tmi사진" />
-              </div>
-              <div class="tmi_comment">
-                <ul>
-                  <li>내용입니다1</li>
-                  <li>내용입니다1</li>
-                  <li>내용입니다1</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>  -->
       </div>
 
+      <!-- 모달 -->
+
       <div id="box3" class="guestbook">
-        <div class="guestbook-start">방명록을 남겨보세요.</div>
+        <hr class="line">
+        </hr>
+        <div class="guestbook-start">방명록을 남겨보세요🙌</div>
         <div class="guestbook-box">
           <div class="nickname-pw-box">
             <input type="text" id="nickname" class="box-text" placeholder="닉네임"></input>
             <input type="password" id="pw" class="box-text" placeholder="비밀번호"></input>
           </div>
-          <textarea type="text" id="content" class="leave-comments"></textarea>
+          <textarea type="text" id="content" class="leave-comments" spellcheck="false"></textarea>
 
-          <button type="button" id="savebtn" class="savebtn">남기기</button>
+                    <button type="button" id="savebtn" class="savebtn">남기기</button>
+                </div>
+
+                <div id="recorded-comments" class="recorded-comments">
+                    <!--<div class="recorded-comments-box">
+                        <span class="name">홍길동</span>
+                        <span class="date">nnnn.mm.xx</span>
+                        <div class="comments-content">
+                            안녕
+                        </div>
+                        <div class="delete">
+                            <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                            <button type="button" class="deletebtn">삭제</button>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+            </div>
         </div>
-
-        <div id="recorded-comments" class="recorded-comments">
-          <!-- <div class="recorded-comments-box">
-              <span class="name">홍길동</span>
-              <span class="date">nnnn.mm.xx</span>
-              <div class="comments-content">
-                  안녕
-              </div>
-              <div class="delete">
-                  <input class="pw-check" type="password" placeholder="비밀번호"></input>
-                  <button type="button" class="deletebtn">삭제</button>
-              </div>
-          </div>
-          <div class="recorded-comments-box">
-              <span class="name">홍길동</span>
-              <span class="date">nnnn.mm.xx</span>
-              <textarea readonly class="comments-content">
-
-              </textarea>
-              <div class="delete">
-                  <input class="pw-check" type="password" placeholder="비밀번호"></input>
-                  <button type="button" class="deletebtn">삭제</button>
-              </div>
-          </div> -->
-
-        </div>
-
-      </div>
     </div>
-  </div>
 
-  <script>
-    //스크롤 기능 작업
-    function scrollPage(target) {
-      let position = document.querySelector(target).offsetTop;
-      window.scroll({
-        top: position,
-        behavior: 'smooth'
+    <script>
+      //스크롤 기능 작업
+      function scrollPage(target) {
+          let position = document.querySelector(target).offsetTop;
+          window.scroll({
+              top: position,
+              behavior: 'smooth'
+          });
+      }
+      $("#close-btn").click(async function () {
+        console.log(1);
+        $("#modal-card").empty();
+        $("#modal-cardwrap").hide();
+        $("#modal-card").hide();
       });
-    }
-
-    //모달 열기
-    $(".profile-card").click(async function () {
-      $("#modal_cardwrap").show();
-      $("#modal_card").show();
-    });
-
-    //postingbox-닫기버튼
-    $("#close_btn").click(async function () {
-      $("#modal_cardwrap").hide();
-    });
-  </script>
+    </script>
 
   <script type="module">
     // Firebase SDK 라이브러리 가져오기
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-    import { getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import {
+      FieldPath,
+      documentId,
+      getDocs,
+      orderBy,
+      where,
+      collection,
+      addDoc,
+      query,
+      onSnapshot
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
     // Firebase 구성 정보 설정
+    // const firebaseConfig = {
+    //     apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
+    //     authDomain: "sparta-b8657.firebaseapp.com",
+    //     projectId: "sparta-b8657",
+    //     storageBucket: "sparta-b8657.appspot.com",
+    //     messagingSenderId: "1016311234399",
+    //     appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
+    //     measurementId: "G-1GHRMFVCCF"
+    // };
+
+    //지수
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
+    //   authDomain: "sparta-c39c2.firebaseapp.com",
+    //   projectId: "sparta-c39c2",
+    //   storageBucket: "sparta-c39c2.appspot.com",
+    //   messagingSenderId: "1028108196971",
+    //   appId: "1:1028108196971:web:01dcec06932dbae246252e",
+    //   measurementId: "G-VQFLN6KE5W"
+    // };
+
     //해리님 DB - /member 컬렉션 존재
     const firebaseConfig = {
-      apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
-      authDomain: "sparta-b8657.firebaseapp.com",
-      projectId: "sparta-b8657",
-      storageBucket: "sparta-b8657.appspot.com",
-      messagingSenderId: "1016311234399",
-      appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
-      measurementId: "G-1GHRMFVCCF"
+      apiKey: "AIzaSyBFdIOtbPNQSA3Kc1QuQrY4yYeTUO5E9cw",
+      authDomain: "team1-mini-project-6e821.firebaseapp.com",
+      projectId: "team1-mini-project-6e821",
+      storageBucket: "team1-mini-project-6e821.appspot.com",
+      messagingSenderId: "890610614383",
+      appId: "1:890610614383:web:f8c969ada04ee4d31a4d9a",
+      measurementId: "G-J1SET2NDRK",
     };
 
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    //방명록 남기기
+    //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
+    //멤버별 데이터 가져오기
+    //1.모달창을 보여주며(document.style.display = "block")
+    $(".cardBtn1").click(async function (event) {
+      //event.currentTarget으로 클릭한 타겟을 인지 시켜주고
+      //클릭해서 event.currentTarget에 들어온 dataset의 id값 가져오기
+      $("#modal-card").empty();
+      const cardId =
+        event.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
+      
+      // window.selectedId =
+      document.getElementById("modal-cardwrap").style.display = "block";
+      document.getElementById("modal-card").style.display = "block";
+
+      //더보기 클릭 시, 파이어 베이스 데이터 가져오기
+      //모달창-가져온 모달 컨텐츠들 담기
+      //member 컬렉션 가져오기
+      const memberColl = await getDocs(collection(db, "member"));
+      //2.데이터를 가져오고========================================
+      //가져온 member컬렉션- 문서 꺼내기
+      const memberDocs = memberColl.docs;
+      console.log(memberDocs);
+      //문서를 하나씩 훑어보면서 안에 if문 조건에 해당하는 값 도출하기
+      for (let i = 0; i < memberDocs.length; i++) {
+        //문서들
+        let modaldata =
+          memberColl.docs[i]._document.data.value.mapValue.fields;
+
+        //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
+        const id = modaldata["id"].stringValue;
+        const name = modaldata["name"].stringValue;
+        const photo = modaldata["photo"].stringValue;
+        const goodPoint1 = modaldata["goodPoint1"].stringValue;
+        const goodPoint2 = modaldata["goodPoint2"].stringValue;
+        const workStyle = modaldata["workStyle"].stringValue;
+        const tmiPhoto1 = modaldata["tmiPhoto1"].stringValue;
+        const tmiPhoto2 = modaldata["tmiPhoto2"].stringValue;
+        const tmiText1 = modaldata["tmiText1"].stringValue;
+        const tmiText2 = modaldata["tmiText2"].stringValue;
+
+        let data_html = `
+          <h3>${name}</h3>
+          <!-- <div class="modal-idValue">id : ${id}</div> -->
+          <!-- <div class="closebtn" id="close-btn">&times;</div> -->
+          <button name="close" type="button" class="closebtn" id="close-btn">&times;</button>
+
+          <div class="modal-profile">
+            <!-- 모달창 - 프로필사진 -->
+            <div class="modal-pic">
+              <img
+                src="${photo}"
+              />
+            </div>
+            <!-- 모달창 - 장점과 협업스타일 -->
+            <div class="twopoint">
+              <!-- 모달창 - 장점 -->
+              <div class="good-point">
+                <h4>장점</h4>
+                <ul>
+                  <li>${goodPoint1}</li>
+                  <li>${goodPoint2}</li>
+                </ul>
+              </div>
+              <!-- 모달창 - 협업스타일 -->
+              <div class="style-point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>${workStyle}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 모달창 - TMI -->
+          <div class="tmi-info">
+            <h4>TMI</h4>
+            <div class="tmi-content">
+              <div class="modal-tmiphoto">
+                <img
+                  src="${tmiPhoto1}"
+                  alt="tmi사진"
+                />
+              </div>
+              <div class="tmi-comment">
+                <ul>
+                  <li>${tmiText1}</li>
+                  <li>${tmiText2}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+
+          //3.클릭한 더보기의 카드 id와 데이터 id가 같으면========
+          //4.모달창의 데이터를 붙여넣는다
+          //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
+          // console.log({ i, cardId, id });
+          if (id === cardId) {
+            $("#modal-card").empty();
+            $("#modal-card").append(data_html);
+          } else {
+            // return;
+          }
+        }
+      });
+
+      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
+      $(document).on("click", "button[id='close-btn']", function () {
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
+      });
+      //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
+      $("#modal-cardwrap").click(async function () {
+        $("#modal-card").empty();
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
+      });
+
+    //모달 & 방명록 구분============================================
+
+    /* 방명록 남기기 기능 */
     $('#savebtn').click(async function () {
-      let nickname = $('#nickname').val();
-      let pw = $('#pw').val();
-      let content = $('#content').val();
 
-      let now_date = new Date();
-      let year = new Date().getFullYear();
-      let month = new Date().getMonth() + 1;
-      let date = new Date().getDate();
-      let hour = new Date().getHours();
-      let minute = new Date().getMinutes();
-      minute = minute < 10 ? '0' + minute : minute;
-      //minute이 10보다 작으면 0붙이기
+      const nickname = document.getElementById("nickname");
+      const pw = document.getElementById("pw");
 
-      let datelist = [year, month, date, hour, minute] //입력 당시 date 리스트 생성
+      /* 유효성 체크 */
+      if ($('#nickname').val() === "") { //닉네임 값이 없으면
 
-      let doc = {
-        'nickname': nickname,
-        'pw': pw,
-        'content': content,
-        'datelist': datelist,
-        'now_date': now_date
+        nickname.style.border = "1px solid black"; //테두리색 검은색으로 변경
+        alert('닉네임을 입력해주세요.');
+
+      } else if (($('#nickname').val() !== "") && ($('#pw').val() === "")) {  //닉네임 값이 있고 pw값이 없으면
+        pw.style.border = "1px solid black";
+        nickname.style.border = "1px solid lightgray";
+        alert('비밀번호를 입력해주세요.');
+
+      } else { //닉네임 pw값 모두 있을때
+        let nickname = $('#nickname').val();
+        let pw = $('#pw').val();
+        let content = $('#content').val();
+
+        /* 입력 당시 날짜 데이터 생성 */
+        let now_date = new Date(); //order용
+        let year = new Date().getFullYear();
+        let month = new Date().getMonth() + 1;
+        let date = new Date().getDate();
+        let hour = new Date().getHours();
+        let minute = new Date().getMinutes();
+
+        minute = minute < 10 ? '0' + minute : minute; //minute이 10보다 작으면 0붙이기
+        hour = hour < 10 ? '0' + hour : hour; //hour이 10보다 작으면 0붙이기
+
+        let datelist = [year, month, date, hour, minute] //date 리스트 생성
+
+        let doc = {
+            'nickname': nickname,
+            'pw': pw,
+            'content': content,
+            'datelist': datelist,
+            'now_date': now_date
+        }
+
+        await addDoc(collection(db, "guestbook_contents"), doc)
+
+        alert("방명록을 남겼어요.")
+        window.location.reload();
+        //plan b 새로고침 안해도 리로드
+
+        //남기기 누르면 썼던 내용만 지워지게
+        $('#content').val('');
       }
+    });
 
-      await addDoc(collection(db, "guestbook_contents"), doc)
-      //console.log(doc);
-      alert("방명록을 남겼어요.")
-      window.location.reload();
-      //plan b 새로고침 안해도 리로드
 
-      //남기기 누르면 썼던 내용만 지워지게
-      $('#content').val('');
-    })
+    /* 방명록 날짜순으로 정렬 */
+    const doc_sort = collection(db, "guestbook_contents"); //doc에 방명록 컬렉션 데이터 저장
+    const sortedComments = query(doc_sort, orderBy("now_date", "desc")); //날짜 내림차순 정렬
 
-    //파이어베이스 받아와서 append
-    // $(document).ready(function () {
-    //     async function loadGuestbookContents() {
-    let docs = await getDocs(collection(db, "guestbook_contents"));
+    /* 날짜순 정렬된 방명록 데이터 가져와서 append */
+    let docs = await getDocs(sortedComments);
+
     docs.forEach((doc) => {
       let row = doc.data();
       let nickname = row['nickname'];
       let datelist = row['datelist'];
       let content = row['content'];
       let pw = row['pw'];
-      let y_m_d = datelist.slice(0, 3).join('-');
-      let h_m = datelist.slice(3, 5).join(':');
 
-      //console.log(y_m_d + ' ' + h_m);
+      /* 연월일, 시간 구분표시 */
+      let y_m_d = datelist.slice(0, 3).join('-'); // ex) 2023-12-12
+      let h_m = datelist.slice(3, 5).join(':'); // ex) 13:22
+
       let temp_html = `
-                 <div class="recorded-comments-box">
-                 <span class="name">${nickname}</span>
-                 <span class="date">${y_m_d + ' ' + h_m}</span>
-                 <div class="comments-content">
-                     ${content}
-                 </div>
-                 <div class="delete">
-                     <input class="pw-check" type="password" placeholder="비밀번호"></input>
-                     <button type="button" class="deletebtn">삭제</button>
-                 </div>
-                 </div>
-               `;
+          <div class="recorded-comments-box">
+              <div class="userinfo">
+                  <div class="name">${nickname}</div>
+                  <div class="date">${y_m_d + ' ' + h_m}</div>
+              </div>
+              <textarea class="comments-area" readonly>${content}</textarea>
+              <input class="docId" type="hidden" value="${doc.id}">
+              <div class="delete">
+                  <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                  <button type="button" class="deletebtn">삭제</button>
+                  <button type="button" class="modifyBtn">수정</button>
+                  <button type="button" class="confirmBtn">수정완료</button>
+                  <button type="button" class="cancelBtn">수정취소</button>
+              </div>
+          </div>
+          `;
       $('#recorded-comments').append(temp_html);
-      console.log(row);
     });
 
-    //     }
-    //     loadGuestbookContents();
-    // })
+    let prevData = ''; //수정 전 데이터
 
+    // 방명록 수정
+    $('.modifyBtn').on('click', async function(e){
+      const target = e.target;
+      const parent = target.parentElement.parentElement;
+      prevData = parent.querySelector('.comments-area').value;
+      target.style.display = "none";
+      parent.querySelector('.comments-area').removeAttribute("readonly");
+      parent.querySelector('.comments-area').focus();
+      parent.querySelector('.cancelBtn').style.display = "inline-block";
+      parent.querySelector('.confirmBtn').style.display = "inline-block";
+
+    });
+
+    //방명록 수정완료
+    $('.confirmBtn').on('click', async function(e){
+      const target = e.target;
+      const parent = target.parentElement.parentElement;
+      const password = parent.querySelector('.pw-check').value;
+      const id = parent.querySelector('.docId').value;
+      const contents = parent.querySelector('.comments-area').value;
+      const docRef = doc(db, "guestbook_contents", id);
+      const docSnap = await getDoc(docRef);
+      const data = docSnap.data();
+      
+      //내용 변경사항 유무 체크
+      if(prevData === contents){
+        alert('변경 사항이 없습니다. 수정 후 완료를 눌러주세요.');
+        parent.querySelector('.comments-area').focus();
+        return;
+      }
+      //비밀번호 입력 유무 체크
+      if(!password){
+        alert('비밀번호를 입력해주세요.');
+        parent.querySelector('.pw-check').focus();
+        return;
+      }
+      //비밀번호 검증
+      if(password != data.pw){
+        alert('비밀번호가 다릅니다. 비밀번호 확인 후 다시 입력해주세요.');
+        parent.querySelector('.pw-check').focus();
+        return;
+      }
+      
+      await updateDoc(doc(db, "guestbook_contents", id), {
+        content: contents
+      });
+
+      alert('수정이 완료되었습니다.');
+      window.location.reload();
+    });
+
+    //방명록 수정 취소
+    $('.cancelBtn').on('click', function(e){
+      const target = e.target;
+      const parent = target.parentElement.parentElement;
+      parent.querySelector('.comments-area').value = prevData;
+      prevData = '';
+      target.style.display = "none";
+      parent.querySelector('.confirmBtn').style.display = "none";
+      parent.querySelector('.comments-area').setAttribute('readonly', true);
+      parent.querySelector('.pw-check').value = '';
+      parent.querySelector('.modifyBtn').style.display = "inline-block";
+    });
+
+    // 방명록 삭제
+    $('.deletebtn').on('click', async function (e) {
+      const target = e.target;
+      const parent = target.closest('.recorded-comments-box');
+      const password = $(parent).find('.pw-check').val();
+      const id = $(parent).find('.docId').val();
+      const docRef = doc(db, "guestbook_contents", id);
+      const docSnap = await getDoc(docRef);
+      const data = docSnap.data();
+
+      // 비밀번호 입력 유무 체크
+      if (!password) {
+          alert('비밀번호를 입력해주세요.');
+          return;
+      }
+      // 비밀번호 검증
+      if (password != data.pw) {
+          alert('비밀번호가 다릅니다. 비밀번호 확인 후 다시 입력해주세요.');
+          return;
+      }
+
+      // 비밀번호가 맞으면 삭제
+      await deleteDoc(docRef);
+
+      alert('댓글이 삭제되었습니다.');
+      window.location.reload();
+    });
   </script>
 
   <script>
