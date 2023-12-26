@@ -553,13 +553,19 @@
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
 
+      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
+      $("#close-btn").click(async function () {
+        document.getElementById("modal-card").style.display = "none";
+        document.getElementById("modal-cardwrap").style.display = "none";
+      });
       //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
       //멤버별 데이터 가져오기
       //1.모달창을 보여주며(document.style.display = "block")
       $(".cardBtn1").click(async function (event) {
+        //event.currentTarget으로 클릭한 타겟을 인지 시켜주고
+        //클릭해서 event.currentTarget에 들어온 dataset의 id값 가져오기
         const cardId =
           event.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
-        // console.log(event.currentTarget.getElementsByClassName("cardId"));
 
         // window.selectedId =
         document.getElementById("modal-cardwrap").style.display = "block";
@@ -573,7 +579,7 @@
         //가져온 member컬렉션- 문서 꺼내기
         const memberDocs = memberColl.docs;
         console.log(memberDocs);
-
+        //문서를 하나씩 훑어보면서 안에 if문 조건에 해당하는 값 도출하기
         for (let i = 0; i < memberDocs.length; i++) {
           //문서들
           let modaldata =
@@ -598,8 +604,6 @@
           const id = modaldata["id"].stringValue;
           const name = modaldata["name"].stringValue;
           const photo = modaldata["photo"].stringValue;
-          const text1 = modaldata["text1"].stringValue;
-          const text2 = modaldata["text2"].stringValue;
           const goodPoint1 = modaldata["goodPoint1"].stringValue;
           const goodPoint2 = modaldata["goodPoint2"].stringValue;
           const workStyle = modaldata["workStyle"].stringValue;
@@ -671,13 +675,6 @@
         }
       });
 
-      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
-      $("#close-btn").click(async function (e) {
-        e.preventDefault();
-        alert(1);
-        document.getElementById("modal-card").style.display = "none";
-        document.getElementById("modal-cardwrap").style.display = "none";
-      });
       //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
       $("#modal-cardwrap").click(async function () {
         $("#modal-card").empty();
