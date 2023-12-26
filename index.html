@@ -585,17 +585,6 @@
           let modaldata =
             memberColl.docs[i]._document.data.value.mapValue.fields;
 
-          //가져온 member컬렉션- 문서 ID
-          const docId = modaldata.id;
-          //현재 사용하진 않는 값.
-
-          //사용할 id 값 - dataset값 가져오기
-          //1. DOM접근 메서드인 getElementById()메소드로
-          //해당 id명을 가진 태그 요소인 div가져오기
-          // let divId = document.getElementById("cardId");
-          // const cardIds = document.querySelectorAll(".cardId");
-          // const divId = cardIds[i];
-
           //데이터셋으로 해당 div id값 가져오기
           // let cardId = e.target.dataset["id"];
           // console.log({ cardId });
@@ -681,6 +670,8 @@
         document.getElementById("modal-cardwrap").style.display = "none";
         document.getElementById("modal-card").style.display = "none";
       });
+
+      //모달 & 방명록 구분============================================
 
       //방명록 남기기
       $("#savebtn").click(async function () {
