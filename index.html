@@ -523,8 +523,6 @@
         $("#modal-card").empty();
         $("#modal-cardwrap").hide();
         $("#modal-card").hide();
-        // document.getElementById("modal-cardwrap").style.display = "none";
-        // document.getElementById("modal-card").style.display = "none";
       });
     </script>
 
@@ -533,11 +531,7 @@
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
       import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
       import {
-        FieldPath,
-        documentId,
         getDocs,
-        orderBy,
-        where,
         collection,
         addDoc,
         query,
@@ -567,6 +561,7 @@
       $(".cardBtn1").click(async function (event) {
         //event.currentTarget으로 클릭한 타겟을 인지 시켜주고
         //클릭해서 event.currentTarget에 들어온 dataset의 id값 가져오기
+        $("#modal-card").empty();
         const cardId =
           event.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
 
@@ -587,10 +582,6 @@
           //문서들
           let modaldata =
             memberColl.docs[i]._document.data.value.mapValue.fields;
-
-          //데이터셋으로 해당 div id값 가져오기
-          // let cardId = e.target.dataset["id"];
-          // console.log({ cardId });
 
           //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
           const id = modaldata["id"].stringValue;
@@ -661,6 +652,7 @@
           //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
           // console.log({ i, cardId, id });
           if (id === cardId) {
+            $("#modal-card").empty();
             $("#modal-card").append(data_html);
           } else {
             // return;
@@ -668,19 +660,7 @@
         }
       });
       //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
-      // $("#close-btn").on("click", function () {
-      //   console.log(1);
-      //   // $("#modal-card").empty();
-      //   document.getElementById("modal-card").style.display = "none";
-      //   document.getElementById("modal-cardwrap").style.display = "none";
-      // });
-
-      // $("#close-btn").click(async function () {
-      //   console.log(2);
-      // });
-      // $(document).on("click", "button[name='close']", function () {
-      $(document).on("click", "button[name='close']", function () {
-        $("#modal-card").empty();
+      $(document).on("click", "button[id='close-btn']", function () {
         document.getElementById("modal-cardwrap").style.display = "none";
         document.getElementById("modal-card").style.display = "none";
       });
