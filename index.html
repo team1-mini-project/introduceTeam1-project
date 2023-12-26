@@ -402,39 +402,39 @@
         <!-- 모달 -->
         <div class="modal-box" id="modal-card">
           <!-- 모달창 - 내용물 -->
-          <h3>팀원명</h3>
-          <button type="button" class="closebtn" id="close-btn">&times;</button>
+          <!-- <div>id : 1</div> -->
+          <!-- <h3>name</h3> -->
+          <!-- <button type="button" class="closebtn" id="close-btn">&times;</button> -->
 
-          <div class="modal-profile">
-            <!-- 모달창 - 프로필사진 -->
-            <div class="modal-pic">
+          <!-- <div class="modal-profile"> -->
+          <!-- 모달창 - 프로필사진 -->
+          <!-- <div class="modal-pic">
               <img
                 src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="팀원이름"
               />
-            </div>
-            <!-- 모달창 - 장점과 협업스타일 -->
-            <div class="twopoint">
-              <!-- 모달창 - 장점 -->
-              <div class="good-point">
+            </div> -->
+          <!-- 모달창 - 장점과 협업스타일 -->
+          <!-- <div class="twopoint"> -->
+          <!-- 모달창 - 장점 -->
+          <!-- <div class="good-point">
                 <h4>장점</h4>
                 <ul>
-                  <li>"적극적으로 협력합니다."</li>
-                  <li>"기운이 넘칩니다."</li>
+                  <li>goodPoint1</li>
+                  <li>goodPoint2</li>
                 </ul>
-              </div>
-              <!-- 모달창 - 협업스타일 -->
-              <div class="style-point">
+              </div> -->
+          <!-- 모달창 - 협업스타일 -->
+          <!-- <div class="style-point">
                 <h4>협업스타일</h4>
                 <ul>
                   <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
-                  <li>경청한 후 소신껏 필요한 의견을 비춥니다.</li>
                 </ul>
-              </div>
-            </div>
-          </div>
+              </div> -->
+          <!-- </div> -->
+          <!-- </div> -->
           <!-- 모달창 - TMI -->
-          <div class="tmi-info">
+          <!-- <div class="tmi-info">
             <h4>TMI</h4>
             <div class="tmi-content">
               <div class="modal-tmiphoto">
@@ -450,7 +450,7 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div>  -->
         </div>
 
         <!-- 모달 -->
@@ -518,23 +518,6 @@
           behavior: "smooth",
         });
       }
-
-      //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
-      $(".cardBtn1").click(async function () {
-        $("#modal-cardwrap").show();
-        $("#modal-card").show();
-      });
-
-      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
-      $("#close-btn").click(async function () {
-        $("#modal-card").hide();
-        $("#modal-cardwrap").hide();
-      });
-      //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
-      $("#modal-cardwrap").click(async function () {
-        $("#modal-cardwrap").hide();
-        $("#modal-card").hide();
-      });
     </script>
 
     <script type="module">
@@ -570,99 +553,157 @@
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
 
-      //더보기 클릭 시, 파이어 베이스 데이터 가져오기
+      //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
+      //멤버별 데이터 가져오기
+      //1.모달창을 보여주며(document.style.display = "block")
+      $(".cardBtn1").click(async function () {
+        document.getElementById("modal-cardwrap").style.display = "block";
+        document.getElementById("modal-card").style.display = "block";
 
-      //<시도>
-      // await getDocs(collection(db, "albums"));
-      // let modaldata = await getDocs(
-      //   collection(db, "member").doc("dcWn8qP4bLIEuURNLV8f")
+        //더보기 클릭 시, 파이어 베이스 데이터 가져오기
+        //모달창-가져온 모달 컨텐츠들 담기
+        //member 컬렉션 가져오기
+        const memberColl = await getDocs(collection(db, "member"));
+        //2.데이터를 가져오고========
+        //가져온 member컬렉션- 문서 꺼내기
+        const memberDocs = memberColl.docs;
+        console.log(memberDocs);
+        // for (let i = 0; i < memberDocs; i++) {
+        //문서들
+        let modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
+        console.log("modaldata :", modaldata);
+        //가져온 member컬렉션- 문서 ID
+        const docId = modaldata.id;
+        console.log("문서고유ID:", docId);
+
+        //dataset값 가져오기
+        //1. DOM접근 메서드인 getElementById()메소드로
+        //해당 id명을 가진 태그 요소인 div가져오기
+        let divId = document.getElementById("cardId");
+        let cardId = divId.dataset["id"];
+        console.log(cardId); //1 (string)
+        console.log("------------------------------------------------");
+        //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
+        const id = modaldata["id"];
+        const name = modaldata["name"];
+        const photo = modaldata["photo"];
+        const text1 = modaldata["text1"];
+        const text2 = modaldata["text2"];
+        const goodPoint1 = modaldata["goodPoint1"];
+        const goodPoint2 = modaldata["goodPoint2"];
+        const workStyle = modaldata["workStyle"];
+        const tmiPhoto1 = modaldata["tmiPhoto1"];
+        const tmiPhoto2 = modaldata["tmiPhoto2"];
+        const tmiText1 = modaldata["tmiText1"];
+        const tmiText2 = modaldata["tmiText2"];
+        console.log(
+          "modaldata` id : ",
+          id,
+          "=========",
+          ",modaldata` name : ",
+          name
+        );
+
+        let data_html = `
+          <div>id : ${id}</div>
+          <h3>${name}</h3>
+          <button type="button" class="closebtn" id="close-btn">&times;</button>
+
+          <div class="modal-profile">
+            <!-- 모달창 - 프로필사진 -->
+            <div class="modal-pic">
+              <img
+                src="${photo}"
+              />
+            </div>
+            <!-- 모달창 - 장점과 협업스타일 -->
+            <div class="twopoint">
+              <!-- 모달창 - 장점 -->
+              <div class="good-point">
+                <h4>장점</h4>
+                <ul>
+                  <li>${goodPoint1}</li>
+                  <li>${goodPoint2}</li>
+                </ul>
+              </div>
+              <!-- 모달창 - 협업스타일 -->
+              <div class="style-point">
+                <h4>협업스타일</h4>
+                <ul>
+                  <li>${workStyle}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 모달창 - TMI -->
+          <div class="tmi-info">
+            <h4>TMI</h4>
+            <div class="tmi-content">
+              <div class="modal-tmiphoto">
+                <img
+                  src="${tmiPhoto1}"
+                  alt="tmi사진"
+                />
+              </div>
+              <div class="tmi-comment">
+                <ul>
+                  <li>${tmiText1}</li>
+                  <li>${tmiText2}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+        console.log(data_html);
+        //3.클릭한 더보기(this)의 카드 id와 데이터 id가 같으면========
+        //4.모달창의 데이터를 붙여넣는다
+        //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
+        if (!id === cardId) {
+          return;
+        } else {
+          $("#modal-card").append(data_html);
+        }
+        console.log(1);
+        // }
+      });
+
+      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
+      $("#close-btn").click(async function () {
+        document.getElementById("modal-card").style.display = "none";
+        document.getElementById("modal-cardwrap").style.display = "none";
+      });
+      //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
+      $("#modal-cardwrap").click(async function () {
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
+      });
+
+      // /* 문서 id값 가져오는 방법 2번째 */
+      // // /*
+      // //2번째 방법 - map함수, doc.data() 이용
+      // //1.member컬렉션 가져오기
+      // // const memberColl = await getDocs(collection(db, "member"));
+      // //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
+      // const memberDocs = memberColl.docs;
+      // console.log(memberDocs);
+      // //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
+      // const modalArrData = memberDocs.map((doc) => ({
+      //   ...doc.data(),
+      //   docsId: doc.id,
+      // }));
+
+      // console.log(modalArrData);
+
+      // //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
+      // const [modalContents] = modalArrData;
+
+      // console.log(
+      //   "id : ",
+      //   modalContents["id"],
+      //   ", docsId :",
+      //   modalContents["docsId"]
       // );
-      // console.log(modaldata);
-
-      //모달창-가져온 모달 컨텐츠들 담기
-      //member 컬렉션 가져오기
-      const memberColl = await getDocs(collection(db, "member"));
-      console.log(memberColl);
-
-      //가져온 member컬렉션- 문서 꺼내기
-      const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
-      const docId = modaldata.id;
-      //가져온 member컬렉션- 문서 ID
-      console.log("문서 고유 ID :", docId);
-      //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
-      console.log(modaldata);
-      //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
-      console.log("modaldata :", modaldata);
-      console.log("id :", modaldata["id"]);
-      console.log("goodPoint1 :", modaldata["goodPoint1"]);
-      console.log("goodPoint2 :", modaldata["goodPoint2"]);
-      console.log("name :", modaldata["name"]);
-      console.log("photo :", modaldata["photo"]);
-      console.log("tmi :", modaldata["tmi"]);
-      console.log("workStyle :", modaldata["workStyle"]);
-      //modaldata 자료의 형태
-      //let modaldata = {
-      //id : 3,
-      //igoodPoint1 : "적극적으로 협력합니다.",
-      //igoodPoint2 : "줏대있고 인정이 빠릅니다.",
-      // name : "남해리",
-      // photo : "https://www.notion.so/1-E1I5-35e48ba2ed7045d987f34e611ccb246b?pvs=4#0a748a5c41a842aeb5c684935621c034",
-      // tmi : "재즈를 제일 좋아하고 인디밴드, 팝송, k팝 등 멜로디 좋으면 다 듣습니다.",
-      // workStyle : "경청한 후 소신껏 필요한 의견을 비춥니다.",
-      // }
-
-      const id = modaldata["id"];
-      const goodPoint1 = modaldata["goodPoint1"];
-      const goodPoint2 = modaldata["goodPoint2"];
-      const name = modaldata["name"];
-      const photo = modaldata["photo"];
-      const tmi = modaldata["tmi"];
-      const workStyle = modaldata["workStyle"];
-      console.log("------------------------------------------------");
-
-      //dataset값 가져오기
-      //1. DOM접근 메서드인 getElementById()메소드로
-      //해당 id명을 가진 태그 요소인 div가져오기
-      let divId = document.getElementById("cardId");
-      //2.데이터셋의 id의 값(value)가져오기
-      let cardId = divId.dataset["id"];
-      console.log(cardId); //1 (string)
-
-      /* 문서 id값 가져오는 방법 2번째 */
-      // /*
-      //2번째 방법 - map함수, doc.data() 이용
-      //1.member컬렉션 가져오기
-      // const memberColl = await getDocs(collection(db, "member"));
-      //2.member컬렉션 안에 있는 문서꾸러미 꺼내기
-      const memberDocs = memberColl.docs;
-      console.log(memberDocs);
-      //3. 배열(Arr)로 감싸진 필드내용에 문서 ID 값 넣어서 다시 재배열해서 내보내기
-      const modalArrData = memberDocs.map((doc) => ({
-        //spread operator 전개구문을 이용해서 원래 필드 내용을 채워주고,
-        //새로운 데이터인 doc.id를 이어넣어줌.
-        ...doc.data(),
-        docsId: doc.id,
-      }));
-
-      console.log(modalArrData);
-
-      //modalContents =배열로 된 자료 =>구조분해 할당으로 필요한 값을 가진 key를 이용해서 꺼내오기
-      const [modalContents] = modalArrData;
-
-      console.log(
-        "id : ",
-        modalContents["id"],
-        ", docsId :",
-        modalContents["docsId"]
-      );
-      //  */
-      //조건 로직
-      //1.더보기 클릭 시
-      //2.모달창을 보여주고(document.style.display === "block")
-      //3.데이터를 가져오고
-      //4.클릭한 더보기의 카드 id와 데이터 id가 같으면
-      //5.모달창의 데이터를 붙여넣는다
-      //6.
+      // //  */
 
       //방명록 남기기
       $("#savebtn").click(async function () {
