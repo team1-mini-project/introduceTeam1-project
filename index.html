@@ -239,63 +239,63 @@
           </div>
         </div>
       </div>
-
+      
       <div class="modal_wrap" id="modal_cardwrap">
-        <div class="modal-box" id="modal_card">
-          <div class="mybtn">
+      <div class="modal-box" id="modal_card">
+        <div class="mybtn">
             <button type="button" class="closebtn" id="close_btn">
               X
             </button>
           </div>
-          <h3>팀원명</h3>
-          <!-- 모달 - 프로필사진 -->
+        <h3>팀원명</h3>
+        <!-- 모달 - 프로필사진 -->
           <div class="modal_profile">
             <div class="modal_pic">
-              <img
-                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="팀원이름" />
-            </div>
-            <!-- 장점과 협업스타일 -->
-            <div class="twopoint">
-              <div class="good_point">
-                <h4>장점</h4>
-                <ul>
-                  <li>내용입니다1</li>
-                  <li>내용입니다2</li>
+            <img
+              src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="팀원이름" />
+          </div>
+          <!-- 장점과 협업스타일 -->
+          <div class="twopoint">
+            <div class="good_point">
+              <h4>장점</h4>
+              <ul>
+                <li>내용입니다1</li>
+                <li>내용입니다2</li>
                   <li>내용입니다3</li>
-                </ul>
-              </div>
-
-              <div class="style_point">
-                <h4>협업스타일</h4>
-                <ul>
-                  <li>내용1</li>
-                  <li>내용2</li>
+              </ul>
+            </div>
+            
+            <div class="style_point">
+              <h4>협업스타일</h4>
+              <ul>
+                <li>내용1</li>
+                <li>내용2</li>
                   <li>내용3</li>
-                </ul>
-              </div>
+              </ul>
             </div>
           </div>
-          <!-- tmi -->
-          <div class="tmi_info">
-            <h4>나의 TMI</h4>
-            <div class="tmi_content">
-              <div class="modal_tmiphoto">
-                <img
-                  src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="tmi사진" />
-              </div>
-              <div class="tmi_comment">
-                <ul>
+        </div>
+        <!-- tmi -->
+        <div class="tmi_info">
+          <h4>나의 TMI</h4>
+          <div class="tmi_content">
+            <div class="modal_tmiphoto">
+              <img
+                src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="tmi사진" />
+            </div>
+            <div class="tmi_comment">
+              <ul>
+                <li>내용입니다1</li>
+                <li>내용입니다1</li>
                   <li>내용입니다1</li>
-                  <li>내용입니다1</li>
-                  <li>내용입니다1</li>
-                </ul>
-              </div>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+</div>
 
       <div id="box3" class="guestbook">
         <div class="guestbook-start">방명록을 남겨보세요.</div>
@@ -358,7 +358,7 @@
     //postingbox-닫기버튼
     $("#close_btn").click(async function () {
       $("#modal_cardwrap").hide();
-    });
+          });
   </script>
 
   <script type="module">
@@ -369,14 +369,15 @@
     import { getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     // Firebase 구성 정보 설정
+    //해리님 DB - /member 컬렉션 존재
     const firebaseConfig = {
       apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
-      authDomain: "sparta-b8657.firebaseapp.com",
-      projectId: "sparta-b8657",
-      storageBucket: "sparta-b8657.appspot.com",
-      messagingSenderId: "1016311234399",
-      appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
-      measurementId: "G-1GHRMFVCCF"
+    authDomain: "sparta-b8657.firebaseapp.com",
+    projectId: "sparta-b8657",
+    storageBucket: "sparta-b8657.appspot.com",
+    messagingSenderId: "1016311234399",
+    appId: "1:1016311234399:web:c8dbdc89a07ecb8b9c80ea",
+    measurementId: "G-1GHRMFVCCF"
     };
 
     // Firebase 인스턴스 초기화
@@ -433,18 +434,18 @@
 
       //console.log(y_m_d + ' ' + h_m);
       let temp_html = `
-          <div class="recorded-comments-box">
-          <span class="name">${nickname}</span>
-          <span class="date">${y_m_d + ' ' + h_m}</span>
-          <div class="comments-content">
-              ${content}
-          </div>
-          <div class="delete">
-              <input class="pw-check" type="password" placeholder="비밀번호"></input>
-              <button type="button" class="deletebtn">삭제</button>
-          </div>
-          </div>
-        `;
+                 <div class="recorded-comments-box">
+                 <span class="name">${nickname}</span>
+                 <span class="date">${y_m_d + ' ' + h_m}</span>
+                 <div class="comments-content">
+                     ${content}
+                 </div>
+                 <div class="delete">
+                     <input class="pw-check" type="password" placeholder="비밀번호"></input>
+                     <button type="button" class="deletebtn">삭제</button>
+                 </div>
+                 </div>
+               `;
       $('#recorded-comments').append(temp_html);
       console.log(row);
     });
@@ -464,7 +465,7 @@
       alert('📘 저는 velog를 사용합니다. 📘')
     }
   </script>
-  
+
 </body>
 
 </html>
