@@ -22,6 +22,7 @@
     <!-- 프로필 카드 6장 시작-->
     <div class="profileCards">
       <div id="profileCards" class="row row-cols-1 row-cols-md-3 g-4">
+        
         <!-- 프로필 카드 1번 -->
         <div class="col cardEach profile-card">
           <div class="card h-100">
@@ -147,7 +148,7 @@
             <div class="profileBtn">
               <a href="https://tearcode.tistory.com/" target="_blank"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="javascript:;" id="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="javascript:;"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="https://github.com/byjun8932" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
@@ -179,6 +180,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -245,16 +247,16 @@
       let github = row['github'];
 
       let card_html = `
-    <div class="col cardEach">
+      <div class="col cardEach">
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div class="cardId hide" data-id="${id}">id : ${id}</div>
+              <div class="cardId hide" data-id="5">id : 5</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
             <!-- 프로필 이미지 -->
-            <img src="${image}" class="card-img-top" alt="..." style="display: block; ">
+            <img src="${image}" alt="..." style="display: block; ">
             <!-- 프로필 소개 -->
             <div class="card-body" style="padding: 0px;">
               <h5 class="card-title">이름 : ${name}</h5>
@@ -262,16 +264,30 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="${tistory}" target="_blank"><img class="btnImg" src="./images/icon-tistory.png"
-                  alt=""></a>
-              <a href="${velog}" onclick="tistory()"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="${tistory}" class="velog" target="_blank"><img class="btnImg"
+                  src="./images/icon-tistory.png" alt=""></a>
+              <a href="${velog}" class="tistory" target="_blank"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
               <a href="${github}" target="_blank"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
           </div>
         </div>`;
 
-        
+
+      if (tistory === 'javascript:;') {
+        $(document).on('click', '.velog', function () {
+          console.log("반응 테스트");
+        });
+
+        // $('.velog').click(async function () {
+        //   alert('📘 저는 velog를 사용합니다. 📘');
+        // })
+      } else if (velog === 'javascript:;') {
+        $('.tistory').click(async function () {
+          alert('📙 저는 tistory를 사용합니다. 📙');
+        })
+      }
+
 
       $('#profileCards').append(card_html);
     });
