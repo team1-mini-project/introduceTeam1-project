@@ -27,7 +27,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="1" class="hide">id : 1</div>
+              <div class="cardId hide" data-id="1">id : 1</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -53,7 +53,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="2" class="hide">id : 2</div>
+              <div class="cardId hide" data-id="2">id : 2</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -79,7 +79,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="3" class="hide">id : 3</div>
+              <div class="cardId hide" data-id="3">id : 3</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -105,7 +105,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="4" class="hide">id : 4</div>
+              <div class="cardId hide" data-id="4">id : 4</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -132,7 +132,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="5" class="hide">id : 5</div>
+              <div class="cardId hide" data-id="5">id : 5</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -158,7 +158,7 @@
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
-              <div id="cardId" data-id="6" class="hide">id : 6</div>
+              <div class="cardId hide" data-id="6">id : 6</div>
               <button type="button" class="imgbtn">이미지 변경</button>
               <button type="button" class="morebtn">더보기</button>
             </div>
@@ -215,51 +215,28 @@
 
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
-    const db = getFirestore();
+    const db = getFirestore(app);
 
-    //컬렉션 가져오기
+
+    //문서 가져오기
     const docRef = doc(db, "profile", "1");
     const docSnap = await getDoc(docRef);
-    console.log(docSnap);
-//     docSnap.data();
+    const profileColl = docSnap.data();
+    console.log(profileColl);
 
-//     try {
-//     const docSnap = await getDoc(docRef);
-//     if(docSnap.exists()) {
-//         console.log(docSnap.data());
-//     } else {
-//         console.log("Document does not exist")
-//     }
+    //가져온 member컬렉션- 문서 꺼내기
+    // const modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
+      //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
 
-// } catch(error) {
-//     console.log(error)
-// }
-
-    // 1차시도(해리님 코드)
-    // const profile = await getDocs(collection(db, "profile"));
-    //   console.log(profile);
-
-    //2차시도(스파르타플릭스)
-    // let docs = await getDocs(collection(db, "profile"));
-    // docs.forEach((doc) => {
-    //   const profile = doc.data();
-    //   console.log(profile);
-    // });
-
-          //가져온 member컬렉션- 문서 꺼내기
-          const profiledata = profile.docs[0]._document.data.value.mapValue.fields;
-          console.log(profiledata);
-      // //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
-
-      // //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
-      // console.log("profile :", modaldata);
-      // console.log("modaldata :", modaldata["id"]);
-      // console.log("modaldata :", modaldata["goodPoint1"]);
-      // console.log("modaldata :", modaldata["goodPoint2"]);
-      // console.log("modaldata :", modaldata["name"]);
-      // console.log("modaldata :", modaldata["photo"]);
-      // console.log("modaldata :", modaldata["tmi"]);
-      // console.log("modaldata :", modaldata["workStyle"]);
+    // //아래 콘솔은 확인하신 후 지우셔도 좋고, 주석처리 하셔도 좋습니다!
+    // console.log("profile :", modaldata);
+    // console.log("modaldata :", modaldata["id"]);
+    // console.log("modaldata :", modaldata["goodPoint1"]);
+    // console.log("modaldata :", modaldata["goodPoint2"]);
+    // console.log("modaldata :", modaldata["name"]);
+    // console.log("modaldata :", modaldata["photo"]);
+    // console.log("modaldata :", modaldata["tmi"]);
+    // console.log("modaldata :", modaldata["workStyle"]);
 
 
 
