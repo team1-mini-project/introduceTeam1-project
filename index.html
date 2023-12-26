@@ -402,7 +402,7 @@
         <!-- 모달 -->
         <div class="modal-box" id="modal-card">
           <!-- 모달창 - 내용물 -->
-          <!-- <div>id : 1</div> -->
+          <!-- <div class="modal-idValue">id : 1</div> -->
           <!-- <h3>name</h3> -->
           <!-- <button type="button" class="closebtn" id="close-btn">&times;</button> -->
 
@@ -518,6 +518,14 @@
           behavior: "smooth",
         });
       }
+      $("#close-btn").click(async function () {
+        console.log(1);
+        $("#modal-card").empty();
+        $("#modal-cardwrap").hide();
+        $("#modal-card").hide();
+        // document.getElementById("modal-cardwrap").style.display = "none";
+        // document.getElementById("modal-card").style.display = "none";
+      });
     </script>
 
     <script type="module">
@@ -553,11 +561,6 @@
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
 
-      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
-      $("#close-btn").click(async function () {
-        document.getElementById("modal-card").style.display = "none";
-        document.getElementById("modal-cardwrap").style.display = "none";
-      });
       //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
       //멤버별 데이터 가져오기
       //1.모달창을 보여주며(document.style.display = "block")
@@ -603,8 +606,9 @@
 
           let data_html = `
           <h3>${name}</h3>
-          <div class="modal-idValue">id : ${id}</div>
-          <button type="button" class="closebtn" id="close-btn">&times;</button>
+          <!-- <div class="modal-idValue">id : ${id}</div> -->
+          <!-- <div class="closebtn" id="close-btn">&times;</div> -->
+          <button name="close" type="button" class="closebtn" id="close-btn">&times;</button>
 
           <div class="modal-profile">
             <!-- 모달창 - 프로필사진 -->
@@ -662,6 +666,23 @@
             // return;
           }
         }
+      });
+      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
+      // $("#close-btn").on("click", function () {
+      //   console.log(1);
+      //   // $("#modal-card").empty();
+      //   document.getElementById("modal-card").style.display = "none";
+      //   document.getElementById("modal-cardwrap").style.display = "none";
+      // });
+
+      // $("#close-btn").click(async function () {
+      //   console.log(2);
+      // });
+      // $(document).on("click", "button[name='close']", function () {
+      $(document).on("click", "button[name='close']", function () {
+        $("#modal-card").empty();
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
       });
 
       //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
