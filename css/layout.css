@@ -489,7 +489,7 @@
 
   text-align: center;
 }
-
+/* 모달창 - 닫기 버튼 호버시 색변환 */
 .modal-box > button:hover,
 .modal-box > button:focus {
   background-color: rgba(0, 0, 0, 0.3);
@@ -544,7 +544,7 @@
 /* 모달창 - 장점과 협업스타일 ul설정 */
 .twopoint > div > ul {
   border-radius: 10px;
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 /* 모달창 - tmi 정보 */

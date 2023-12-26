@@ -348,11 +348,13 @@
           </div>
         </div>
       </div>
-      
+      <!-- 모달 -->
+      <!-- 모달 배경 -->
       <div class="modal-wrap" id="modal-cardwrap"></div>
+      <!-- 모달 -->
       <div class="modal-box" id="modal-card">
         <!-- 모달창 - 내용물 -->
-        <!-- <div>id : 1</div> -->
+        <!-- <div class="modal-idValue">id : 1</div> -->
         <!-- <h3>name</h3> -->
         <!-- <button type="button" class="closebtn" id="close-btn">&times;</button> -->
 
@@ -447,23 +449,18 @@
               behavior: 'smooth'
           });
       }
-
-      //모달 열기
-      $(".profile-card").click(async function () {
-          $("#modal_cardwrap").show();
-          $("#modal_card").show();
+      $("#close-btn").click(async function () {
+        console.log(1);
+        $("#modal-card").empty();
+        $("#modal-cardwrap").hide();
+        $("#modal-card").hide();
       });
-
-      //postingbox-닫기버튼
-      $("#close_btn").click(async function () {
-        $("#modal_cardwrap").hide();
-      });
-  </script>
+    </script>
 
   <script type="module">
     // Firebase SDK 라이브러리 가져오기
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
     import {
       FieldPath,
       documentId,
@@ -474,9 +471,9 @@
       addDoc,
       query,
       onSnapshot
-    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-    import { doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-    import { deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
     // Firebase 구성 정보 설정
     // const firebaseConfig = {
@@ -490,17 +487,6 @@
     // };
 
     //지수
-    const firebaseConfig = {
-      apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
-      authDomain: "sparta-c39c2.firebaseapp.com",
-      projectId: "sparta-c39c2",
-      storageBucket: "sparta-c39c2.appspot.com",
-      messagingSenderId: "1028108196971",
-      appId: "1:1028108196971:web:01dcec06932dbae246252e",
-      measurementId: "G-VQFLN6KE5W"
-    };
-
-    //해리님 DB - /member 컬렉션 존재
     // const firebaseConfig = {
     //   apiKey: "AIzaSyDfq7Ep7WMjUPga7fQpSFylUZWDygsrSEU",
     //   authDomain: "sparta-c39c2.firebaseapp.com",
@@ -511,6 +497,17 @@
     //   measurementId: "G-VQFLN6KE5W"
     // };
 
+    //해리님 DB - /member 컬렉션 존재
+    const firebaseConfig = {
+      apiKey: "AIzaSyBFdIOtbPNQSA3Kc1QuQrY4yYeTUO5E9cw",
+      authDomain: "team1-mini-project-6e821.firebaseapp.com",
+      projectId: "team1-mini-project-6e821",
+      storageBucket: "team1-mini-project-6e821.appspot.com",
+      messagingSenderId: "890610614383",
+      appId: "1:890610614383:web:f8c969ada04ee4d31a4d9a",
+      measurementId: "G-J1SET2NDRK",
+    };
+
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
@@ -519,10 +516,12 @@
     //멤버별 데이터 가져오기
     //1.모달창을 보여주며(document.style.display = "block")
     $(".cardBtn1").click(async function (event) {
+      //event.currentTarget으로 클릭한 타겟을 인지 시켜주고
+      //클릭해서 event.currentTarget에 들어온 dataset의 id값 가져오기
+      $("#modal-card").empty();
       const cardId =
-          event.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
-      // console.log(event.currentTarget.getElementsByClassName("cardId"));
-
+        event.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
+      
       // window.selectedId =
       document.getElementById("modal-cardwrap").style.display = "block";
       document.getElementById("modal-card").style.display = "block";
@@ -535,33 +534,16 @@
       //가져온 member컬렉션- 문서 꺼내기
       const memberDocs = memberColl.docs;
       console.log(memberDocs);
-      
+      //문서를 하나씩 훑어보면서 안에 if문 조건에 해당하는 값 도출하기
       for (let i = 0; i < memberDocs.length; i++) {
         //문서들
         let modaldata =
-            memberColl.docs[i]._document.data.value.mapValue.fields;
-
-        //가져온 member컬렉션- 문서 ID
-        const docId = modaldata.id;
-        //현재 사용하진 않는 값.
-
-        //사용할 id 값 - dataset값 가져오기
-        //1. DOM접근 메서드인 getElementById()메소드로
-        //해당 id명을 가진 태그 요소인 div가져오기
-        // let divId = document.getElementById("cardId");
-        // const cardIds = document.querySelectorAll(".cardId");
-        // const divId = cardIds[i];
-
-        //데이터셋으로 해당 div id값 가져오기
-        // let cardId = e.target.dataset["id"];
-        // console.log({ cardId });
+          memberColl.docs[i]._document.data.value.mapValue.fields;
 
         //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
         const id = modaldata["id"].stringValue;
         const name = modaldata["name"].stringValue;
         const photo = modaldata["photo"].stringValue;
-        const text1 = modaldata["text1"].stringValue;
-        const text2 = modaldata["text2"].stringValue;
         const goodPoint1 = modaldata["goodPoint1"].stringValue;
         const goodPoint2 = modaldata["goodPoint2"].stringValue;
         const workStyle = modaldata["workStyle"].stringValue;
@@ -572,8 +554,9 @@
 
         let data_html = `
           <h3>${name}</h3>
-          <div class="modal-idValue">id : ${id}</div>
-          <button type="button" class="closebtn" id="close-btn">&times;</button>
+          <!-- <div class="modal-idValue">id : ${id}</div> -->
+          <!-- <div class="closebtn" id="close-btn">&times;</div> -->
+          <button name="close" type="button" class="closebtn" id="close-btn">&times;</button>
 
           <div class="modal-profile">
             <!-- 모달창 - 프로필사진 -->
@@ -621,31 +604,32 @@
           </div>
         `;
 
-        //3.클릭한 더보기의 카드 id와 데이터 id가 같으면========
-        //4.모달창의 데이터를 붙여넣는다
-        //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
-        // console.log({ i, cardId, id });
-        if (id === cardId) {
-          $("#modal-card").append(data_html);
-        } else {
-          // return;
+          //3.클릭한 더보기의 카드 id와 데이터 id가 같으면========
+          //4.모달창의 데이터를 붙여넣는다
+          //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
+          // console.log({ i, cardId, id });
+          if (id === cardId) {
+            $("#modal-card").empty();
+            $("#modal-card").append(data_html);
+          } else {
+            // return;
+          }
         }
-      }
-    });
+      });
 
-    //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
-    $("#close-btn").click(async function (e) {
-      e.preventDefault();
-      alert(1);
-      document.getElementById("modal-card").style.display = "none";
-      document.getElementById("modal-cardwrap").style.display = "none";
-    });
-    //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
-    $("#modal-cardwrap").click(async function () {
-      $("#modal-card").empty();
-      document.getElementById("modal-cardwrap").style.display = "none";
-      document.getElementById("modal-card").style.display = "none";
-    });
+      //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
+      $(document).on("click", "button[id='close-btn']", function () {
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
+      });
+      //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
+      $("#modal-cardwrap").click(async function () {
+        $("#modal-card").empty();
+        document.getElementById("modal-cardwrap").style.display = "none";
+        document.getElementById("modal-card").style.display = "none";
+      });
+
+    //모달 & 방명록 구분============================================
 
     /* 방명록 남기기 기능 */
     $('#savebtn').click(async function () {
