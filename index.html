@@ -98,7 +98,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="1">id : 1</div>
+                    <div class="cardId" data-id="1">id : 1</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -148,7 +148,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="2">id : 2</div>
+                    <div class="cardId" data-id="2">id : 2</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -198,7 +198,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="3">id : 3</div>
+                    <div class="cardId" data-id="3">id : 3</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -248,7 +248,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="4">id : 4</div>
+                    <div class="cardId" data-id="4">id : 4</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -298,7 +298,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="5">id : 5</div>
+                    <div class="cardId" data-id="5">id : 5</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -348,7 +348,7 @@
                 <div class="card h-100">
                   <!-- 이미지 변경, 더보기 버튼 -->
                   <div class="cardBtn1">
-                    <div id="cardId" data-id="6">id : 6</div>
+                    <div class="cardId" data-id="6">id : 6</div>
                     <button
                       type="button"
                       class="btn btn-info"
@@ -556,7 +556,11 @@
       //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
       //멤버별 데이터 가져오기
       //1.모달창을 보여주며(document.style.display = "block")
-      $(".cardBtn1").click(async function () {
+      $(".cardBtn1").click(async function (e) {
+        const cardId =
+          e.currentTarget.getElementsByClassName("cardId")[0].dataset.id;
+
+        // window.selectedId =
         document.getElementById("modal-cardwrap").style.display = "block";
         document.getElementById("modal-card").style.display = "block";
 
@@ -564,47 +568,47 @@
         //모달창-가져온 모달 컨텐츠들 담기
         //member 컬렉션 가져오기
         const memberColl = await getDocs(collection(db, "member"));
-        //2.데이터를 가져오고========
+        //2.데이터를 가져오고========================================
         //가져온 member컬렉션- 문서 꺼내기
         const memberDocs = memberColl.docs;
         console.log(memberDocs);
-        // for (let i = 0; i < memberDocs; i++) {
-        //문서들
-        let modaldata = memberColl.docs[0]._document.data.value.mapValue.fields;
-        console.log("modaldata :", modaldata);
-        //가져온 member컬렉션- 문서 ID
-        const docId = modaldata.id;
-        console.log("문서고유ID:", docId);
+        // memberDocs.forEach((docs) => {
+        //   console.log("docs, ", docs);
+        // });
+        for (let i = 0; i < memberDocs.length; i++) {
+          //문서들
+          let modaldata =
+            memberColl.docs[i]._document.data.value.mapValue.fields;
 
-        //dataset값 가져오기
-        //1. DOM접근 메서드인 getElementById()메소드로
-        //해당 id명을 가진 태그 요소인 div가져오기
-        let divId = document.getElementById("cardId");
-        let cardId = divId.dataset["id"];
-        console.log(cardId); //1 (string)
-        console.log("------------------------------------------------");
-        //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
-        const id = modaldata["id"];
-        const name = modaldata["name"];
-        const photo = modaldata["photo"];
-        const text1 = modaldata["text1"];
-        const text2 = modaldata["text2"];
-        const goodPoint1 = modaldata["goodPoint1"];
-        const goodPoint2 = modaldata["goodPoint2"];
-        const workStyle = modaldata["workStyle"];
-        const tmiPhoto1 = modaldata["tmiPhoto1"];
-        const tmiPhoto2 = modaldata["tmiPhoto2"];
-        const tmiText1 = modaldata["tmiText1"];
-        const tmiText2 = modaldata["tmiText2"];
-        console.log(
-          "modaldata` id : ",
-          id,
-          "=========",
-          ",modaldata` name : ",
-          name
-        );
+          //가져온 member컬렉션- 문서 ID
+          const docId = modaldata.id;
+          //현재 사용하진 않는 값.
 
-        let data_html = `
+          //사용할 id 값 - dataset값 가져오기
+          //1. DOM접근 메서드인 getElementById()메소드로
+          //해당 id명을 가진 태그 요소인 div가져오기
+          // let divId = document.getElementById("cardId");
+          // const cardIds = document.querySelectorAll(".cardId");
+          // const divId = cardIds[i];
+
+          //데이터셋으로 해당 div id값 가져오기
+          // let cardId = divId.dataset["id"];
+
+          //꺼낸 자료 console.log로 어떤 값이 들었는 지 파악하기
+          const id = modaldata["id"].stringValue;
+          const name = modaldata["name"].stringValue;
+          const photo = modaldata["photo"].stringValue;
+          const text1 = modaldata["text1"].stringValue;
+          const text2 = modaldata["text2"].stringValue;
+          const goodPoint1 = modaldata["goodPoint1"].stringValue;
+          const goodPoint2 = modaldata["goodPoint2"].stringValue;
+          const workStyle = modaldata["workStyle"].stringValue;
+          const tmiPhoto1 = modaldata["tmiPhoto1"].stringValue;
+          const tmiPhoto2 = modaldata["tmiPhoto2"].stringValue;
+          const tmiText1 = modaldata["tmiText1"].stringValue;
+          const tmiText2 = modaldata["tmiText2"].stringValue;
+
+          let data_html = `
           <div>id : ${id}</div>
           <h3>${name}</h3>
           <button type="button" class="closebtn" id="close-btn">&times;</button>
@@ -654,17 +658,17 @@
             </div>
           </div>
         `;
-        console.log(data_html);
-        //3.클릭한 더보기(this)의 카드 id와 데이터 id가 같으면========
-        //4.모달창의 데이터를 붙여넣는다
-        //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
-        if (!id === cardId) {
-          return;
-        } else {
-          $("#modal-card").append(data_html);
+
+          //3.클릭한 더보기(this)의 카드 id와 데이터 id가 같으면========
+          //4.모달창의 데이터를 붙여넣는다
+          //id가 다르면 보여주지 말고 같으면 내용물으 보여줘.
+          console.log({ i, cardId, id });
+          if (id === cardId) {
+            $("#modal-card").append(data_html);
+          } else {
+            // return;
+          }
         }
-        console.log(1);
-        // }
       });
 
       //모달 -닫기버튼 클릭 시, 모달 배경과 모달 닫기
@@ -674,6 +678,7 @@
       });
       //모달 - 모달 배경 클릭 시, 모달 배경과 모달 닫기
       $("#modal-cardwrap").click(async function () {
+        $("#modal-card").empty();
         document.getElementById("modal-cardwrap").style.display = "none";
         document.getElementById("modal-card").style.display = "none";
       });
