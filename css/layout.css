@@ -121,17 +121,24 @@
     margin: 10px 10px auto auto;
 }
 /* 이미지 변경, 더보기 버튼 크기 및 글꼴 */
-.cardBtn1 > button {
-    width: 70px;
+.imgbtn, .morebtn {
+	width: 70px;
     height: 30px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
-
-    font-size: 12px;
+	background-color: rgb(85, 224, 255);
+    font-size: 13px;
     color: white;
+
+	border: 0px;
+	border-radius: 5px;
+}
+.imgbtn {
+	width: 110px;
+	display: none;
 }
 /* 프로필 카드 내 이미지 */
 .h-100 > img {
