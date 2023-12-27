@@ -43,14 +43,66 @@
 }
 
 /* 방명록 */
-.comments-area{padding:15px; width: 100%; height: 100px; border:1px solid lightgray; border-radius: 6px; resize: none; box-sizing: border-box;}
+.comments-area {
+  padding: 15px;
+  width: 100%;
+  height: 100px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  resize: none;
+  box-sizing: border-box;
+}
 /* 방명록 수정 및 수정완료 버튼 */
-.modifyBtn{margin: 10px 5px 0 0; width: 94px; height: 41px; background-color: #244ac7; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.modifyBtn:hover{background-color: #1336a9;}
-.confirmBtn{margin: 10px 5px 0 0; display: none; width: 94px; height: 41px; background-color: #262626; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.confirmBtn:hover{background-color: #121212;}
-.cancelBtn{margin: 10px 5px 0 0; display: none; width: 94px; height: 41px; background-color: #999; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.cancelBtn:hover{background-color: #8f8f8f;}
+.modifyBtn {
+  margin: 10px 5px 0 0;
+  width: 94px;
+  height: 41px;
+  background-color: #244ac7;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.modifyBtn:hover {
+  background-color: #1336a9;
+}
+.confirmBtn {
+  margin: 10px 5px 0 0;
+  display: none;
+  width: 94px;
+  height: 41px;
+  background-color: #262626;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.confirmBtn:hover {
+  background-color: #121212;
+}
+.cancelBtn {
+  margin: 10px 5px 0 0;
+  display: none;
+  width: 94px;
+  height: 41px;
+  background-color: #999;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cancelBtn:hover {
+  background-color: #8f8f8f;
+}
 /* ================================== */
 /* 메인 제목 */
 .title-main {
@@ -93,7 +145,7 @@
   width: 90px;
   height: 90px;
   border-radius: 30%;
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .introduce-image,
@@ -133,9 +185,9 @@
 /* ================================== */
 /* 프로필 카드 전체 영역 */
 .profileCards {
-    width: 1000px;
-    margin: auto;
-    padding: 30px 0px 30px 0px;
+  width: 1000px;
+  margin: auto;
+  padding: 30px 0px 30px 0px;
 }
 /* 각 프로필 카드 높이 */
 .cardEach {
@@ -144,11 +196,11 @@
 /* 카드 hover 적용 */
 .h-100:hover {
   background-color: rgb(245, 235, 245);
-	box-shadow: 1px 2px 7px 0px purple;
+  box-shadow: 1px 2px 7px 0px purple;
 }
 /* 이미지 변경, 더보기 버튼 전체 영역 */
 .hide {
-	display: none;
+  display: none;
 }
 .cardBtn1 {
   display: flex;
@@ -158,24 +210,25 @@
   margin: 10px 10px auto auto;
 }
 /* 이미지 변경, 더보기 버튼 크기 및 글꼴 */
-.imgbtn, .morebtn {
-	width: 70px;
-	height: 30px;
+.imgbtn,
+.morebtn {
+  width: 70px;
+  height: 30px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5px;
-	background-color: rgb(85, 224, 255);
+  background-color: rgb(85, 224, 255);
   font-size: 13px;
   color: white;
 
-	border: 0px;
-	border-radius: 5px;
+  border: 0px;
+  border-radius: 5px;
 }
 .imgbtn {
-	width: 110px;
-	display: none;
+  width: 110px;
+  display: none;
 }
 /* 프로필 카드 내 이미지 */
 .h-100 > img {
@@ -184,7 +237,7 @@
   margin: 7px auto 13px auto;
   width: 300px;
   height: 220px;
-	object-fit: cover;
+  object-fit: cover;
 }
 /* 프로필 카드 본인 소개 */
 .card-body {
@@ -215,27 +268,27 @@
 
 /* ================================== */
 .guestbook {
-	width: 1280px;
-	margin: 50px 50px;
+  width: 1280px;
+  margin: 50px 50px;
 }
 
 .line {
-	margin: 0 auto 30px auto;
-	width: 1200px;
+  margin: 0 auto 30px auto;
+  width: 1200px;
 }
 
 .guestbook-start {
-	font-size: 30px;
-	text-align: center;
-	margin-bottom: 60px;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .guestbook-box {
-	width: 1280px;
-	height: 260px;
-	background-color: #FFE8A3;
-	border-radius: 5px;
-	border: 1px solid #ecc759c4;
+  width: 1280px;
+  height: 260px;
+  background-color: #ffe8a3;
+  border-radius: 5px;
+  border: 1px solid #ecc759c4;
 }
 
 .nickname-pw-box {
@@ -248,19 +301,19 @@
 }
 
 .savebtn {
-	width: 94px;
-	height: 41px;
-	background-color: #F24822;
-	border-radius: 10px;
-	border: 1px solid #e23f1b;
-	float: right;
-	margin: 15px 30px 0 0;
-	color: white;
-	font-size: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	line-height: 45px;
+  width: 94px;
+  height: 41px;
+  background-color: #f24822;
+  border-radius: 10px;
+  border: 1px solid #e23f1b;
+  float: right;
+  margin: 15px 30px 0 0;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
 }
 
 .box-text {
@@ -295,25 +348,25 @@
 }
 
 .recorded-comments-box {
-	width: 1210px;
+  width: 1210px;
 }
 
 .name {
-	padding: 10px 9px 5px 10px;
-	font-weight: bold;
-	font-size: 18px;
+  padding: 10px 9px 5px 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .date {
-	color: grey;
-	font-size: 15px;
-	margin-top: 12px;
+  color: grey;
+  font-size: 15px;
+  margin-top: 12px;
 }
 
 .userinfo {
-	padding-bottom: 3px;
-	display: flex;
-	flex-direction: row;
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: row;
 }
 /* textarea로 변경하여 삭제하였습니다. */
 /* .comments-content {
@@ -333,21 +386,21 @@
 } */
 
 .deletebtn {
-	width: 94px;
-	height: 41px;
-	background-color: #F24822;
-	border-radius: 10px;
-	border-color: transparent;
-	float: right;
-	margin: 10px 5px 0 0;
-	color: white;
-	font-size: 15px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	line-height: 45px;
-	border: 1px solid #e23f1b;
+  width: 94px;
+  height: 41px;
+  background-color: #f24822;
+  border-radius: 10px;
+  border-color: transparent;
+  float: right;
+  margin: 10px 5px 0 0;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
+  border: 1px solid #e23f1b;
 }
 
 .btn-success {
@@ -367,12 +420,14 @@
   line-height: 45px;
 }
 
-.deletebtn:hover, .savebtn:hover {
-	background-color: #ec3810;
+.deletebtn:hover,
+.savebtn:hover {
+  background-color: #ec3810;
 }
 
-.deletebtn:active, .savebtn:active {
-	background-color: #e63916;
+.deletebtn:active,
+.savebtn:active {
+  background-color: #e63916;
 }
 
 .pw-check {
@@ -428,7 +483,7 @@
   transform: translate(-50%, -50%);
 
   min-width: 500px;
-  max-width: 800px;
+  max-width: 600px;
   height: 60%;
 
   padding: 40px;
@@ -436,7 +491,7 @@
   overflow: scroll;
 
   border: 1px solid gray;
-  border-radius: 20px;
+  border-radius: 40px;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -561,7 +616,6 @@
 /* 모달창 - TMI 헤더 */
 .tmi-info > h4 {
   width: 100%;
-  margin-bottom: 0;
   text-align: left;
 }
 
