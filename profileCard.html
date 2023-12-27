@@ -25,9 +25,9 @@
     <!-- 프로필 카드 6장 시작-->
     <div class="profileCards">
       <div id="profileCards" class="row row-cols-1 row-cols-md-3 g-4">
-        
+
         <!-- 프로필 카드 1번 -->
-        <div class="col cardEach profile-card">
+        <div class="col cardEach profile-card" style="background-color: orange;">
           <div class="card h-100">
             <!-- 이미지 변경, 더보기 버튼 -->
             <div class="cardBtn1">
@@ -183,7 +183,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -269,35 +269,40 @@
             <div class="profileBtn">
               <a href="${tistory}" target="_blank" class="velog"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="${velog}" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
-              <a href="${github}"><img class="btnImg" src="./images/icon-github.png"
+              <a href="${velog}" target="_blank" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="${github}" target="_blank" ><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
           </div>
         </div>`;
       $('#profileCards').append(card_html);
 
-
       if (tistory === 'javascript:;') {
         $(document).on('click', '.velog', function () {
-          console.log("반응 테스트");
-          alert('📘 저는 velog를 사용합니다. 📘');
-          $('a[target="_blank"]').removeAttr('target');
-        })} else {
-          return;
-        }
-
-        if (velog === 'javascript:;') {
-        $(document).on('click', '.tistory', function () {
-          console.log("반응 테스트");
-          alert('📙 저는 tistory를 사용합니다. 📙');
-          $('a[target="_blank"]').removeAttr('target');
-        })} else {
-          return;
-        }
+          
+            console.log("반응 테스트");
+            alert('📘 저는 velog를 사용합니다. 📘');
+            $('a[target="_blank"]').removeAttr('target');
+          })
+      } else if (velog === 'javascript:;') {
+      $(document).on('click', '.tistory', function () {
+        console.log("반응 테스트");
+        alert('📙 저는 tistory를 사용합니다. 📙');
+        $('a[target="_blank"]').removeAttr('target');
+      })}
 
 
-      
+      // if (velog === 'javascript:;') {
+      // $(document).on('click', '.tistory', function () {
+      //   console.log("반응 테스트");
+      //   alert('📙 저는 tistory를 사용합니다. 📙');
+      //   $('a[target="_blank"]').removeAttr('target');
+      // })} else {
+      //   return;
+      // }
+
+
+
     });
 
 
