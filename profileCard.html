@@ -267,32 +267,37 @@
             </div>
             <!-- url 버튼 -->
             <div class="profileBtn">
-              <a href="${tistory}" class="velog" target="_blank"><img class="btnImg"
+              <a href="${tistory}" target="_blank" class="velog"><img class="btnImg"
                   src="./images/icon-tistory.png" alt=""></a>
-              <a href="${velog}" class="tistory" target="_blank"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
-              <a href="${github}" target="_blank"><img class="btnImg" src="./images/icon-github.png"
+              <a href="${velog}" class="tistory"><img class="btnImg" src="./images/icon-velog.png" alt=""></a>
+              <a href="${github}"><img class="btnImg" src="./images/icon-github.png"
                   alt=""></a>
             </div>
           </div>
         </div>`;
+      $('#profileCards').append(card_html);
 
 
       if (tistory === 'javascript:;') {
         $(document).on('click', '.velog', function () {
           console.log("반응 테스트");
-        });
+          alert('📘 저는 velog를 사용합니다. 📘');
+          $('a[target="_blank"]').removeAttr('target');
+        })} else {
+          return;
+        }
 
-        // $('.velog').click(async function () {
-        //   alert('📘 저는 velog를 사용합니다. 📘');
-        // })
-      } else if (velog === 'javascript:;') {
-        $('.tistory').click(async function () {
+        if (velog === 'javascript:;') {
+        $(document).on('click', '.tistory', function () {
+          console.log("반응 테스트");
           alert('📙 저는 tistory를 사용합니다. 📙');
-        })
-      }
+          $('a[target="_blank"]').removeAttr('target');
+        })} else {
+          return;
+        }
 
 
-      $('#profileCards').append(card_html);
+      
     });
 
 
