@@ -19,7 +19,6 @@
   padding: 15px 0;
   box-shadow: 0px 1px 7px 2px #f7f7f7;
   color: #000;
-  
   position: fixed;
   top: 0;
   display: flex;
@@ -51,14 +50,66 @@
 }
 
 /* 방명록 */
-.comments-area{padding:15px; width: 100%; height: 100px; border:1px solid lightgray; border-radius: 6px; resize: none; box-sizing: border-box;}
+.comments-area {
+  padding: 15px;
+  width: 100%;
+  height: 100px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  resize: none;
+  box-sizing: border-box;
+}
 /* 방명록 수정 및 수정완료 버튼 */
-.modifyBtn{margin: 10px 5px 0 0; width: 94px; height: 41px; background-color: #244ac7; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.modifyBtn:hover{background-color: #1336a9;}
-.confirmBtn{margin: 10px 5px 0 0; display: none; width: 94px; height: 41px; background-color: #262626; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.confirmBtn:hover{background-color: #121212;}
-.cancelBtn{margin: 10px 5px 0 0; display: none; width: 94px; height: 41px; background-color: #999; border-radius: 10px; border-color: transparent; color: white; font-size: 15px; font-weight: bold; text-align: center; transition: all .3s;}
-.cancelBtn:hover{background-color: #8f8f8f;}
+.modifyBtn {
+  margin: 10px 5px 0 0;
+  width: 94px;
+  height: 41px;
+  background-color: #244ac7;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.modifyBtn:hover {
+  background-color: #1336a9;
+}
+.confirmBtn {
+  margin: 10px 5px 0 0;
+  display: none;
+  width: 94px;
+  height: 41px;
+  background-color: #262626;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.confirmBtn:hover {
+  background-color: #121212;
+}
+.cancelBtn {
+  margin: 10px 5px 0 0;
+  display: none;
+  width: 94px;
+  height: 41px;
+  background-color: #999;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cancelBtn:hover {
+  background-color: #8f8f8f;
+}
 /* ================================== */
 /* 메인 제목 */
 .title-main {
@@ -102,7 +153,7 @@
   width: 90px;
   height: 90px;
   border-radius: 30%;
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .introduce-image,
@@ -142,10 +193,11 @@
 /* ================================== */
 /* 프로필 카드 전체 영역 */
 .profileCards {
-    width: 1000px;
-    margin: auto;
-    padding: 30px 0px 30px 0px;
+  width: 1000px;
+  margin: auto;
+  padding: 30px 0px 30px 0px;
 }
+.profileCards > .row{justify-content: center;}
 /* 각 프로필 카드 높이 */
 .cardEach {
   height: 450px;
@@ -153,11 +205,11 @@
 /* 카드 hover 적용 */
 .h-100:hover {
   background-color: rgb(245, 235, 245);
-	box-shadow: 1px 2px 7px 0px purple;
+  box-shadow: 1px 2px 7px 0px purple;
 }
 /* 이미지 변경, 더보기 버튼 전체 영역 */
 .hide {
-	display: none;
+  display: none;
 }
 .cardBtn1 {
   display: flex;
@@ -167,24 +219,25 @@
   margin: 10px 10px auto auto;
 }
 /* 이미지 변경, 더보기 버튼 크기 및 글꼴 */
-.imgbtn, .morebtn {
-	width: 70px;
-	height: 30px;
+.imgbtn,
+.morebtn {
+  width: 70px;
+  height: 30px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5px;
-	background-color: rgb(85, 224, 255);
+  background-color: rgb(85, 224, 255);
   font-size: 13px;
   color: white;
 
-	border: 0px;
-	border-radius: 5px;
+  border: 0px;
+  border-radius: 5px;
 }
 .imgbtn {
-	width: 110px;
-	display: none;
+  width: 110px;
+  display: none;
 }
 /* 프로필 카드 내 이미지 */
 .h-100 > img {
@@ -193,13 +246,14 @@
   margin: 7px auto 13px auto;
   width: 300px;
   height: 220px;
-	object-fit: cover;
+  object-fit: cover;
 }
 /* 프로필 카드 본인 소개 */
 .card-body {
   margin: 0px 30px 0px 30px;
   padding: 0px;
 }
+.card-text{line-height: 21px;}
 /* 프로필 카드 아래 url 버튼의 전체 영역 */
 .profileBtn {
   display: flex;
@@ -235,9 +289,9 @@
 }
 
 .guestbook-start {
-	font-size: 30px;
-	text-align: center;
-	margin-bottom: 60px;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .guestbook-box {
@@ -258,25 +312,25 @@
 }
 
 .savebtn {
-	width: 94px;
-	height: 41px;
-	background-color: #F24822;
-	border-radius: 10px;
-	border: 1px solid #e23f1b;
-	float: right;
-	margin: 15px 30px 0 0;
-	color: white;
-	font-size: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	line-height: 45px;
+  width: 94px;
+  height: 41px;
+  background-color: #f24822;
+  border-radius: 10px;
+  border: 1px solid #e23f1b;
+  float: right;
+  margin: 15px 30px 0 0;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
 }
 
 .box-text {
   outline: 1px solid lightgray;
   width: 167px;
-  height: 42px;
+  height: 40px;
   background-color: white;
   border-radius: 5px;
   text-align: left;
@@ -310,21 +364,21 @@
 }
 
 .name {
-	padding: 10px 9px 5px 10px;
-	font-weight: bold;
-	font-size: 18px;
+  padding: 10px 9px 5px 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .date {
-	color: grey;
-	font-size: 15px;
-	margin-top: 12px;
+  color: grey;
+  font-size: 15px;
+  margin-top: 13px;
 }
 
 .userinfo {
-	padding-bottom: 3px;
-	display: flex;
-	flex-direction: row;
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: row;
 }
 /* textarea로 변경하여 삭제하였습니다. */
 /* .comments-content {
@@ -344,24 +398,6 @@
 } */
 
 .deletebtn {
-	width: 94px;
-	height: 41px;
-	background-color: #F24822;
-	border-radius: 10px;
-	border-color: transparent;
-	float: right;
-	margin: 10px 5px 0 0;
-	color: white;
-	font-size: 15px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	line-height: 45px;
-	border: 1px solid #e23f1b;
-}
-
-.btn-success {
   width: 94px;
   height: 41px;
   background-color: #f24822;
@@ -376,14 +412,34 @@
   align-items: center;
   justify-content: center;
   line-height: 45px;
+  border: 1px solid #e23f1b;
 }
 
-.deletebtn:hover, .savebtn:hover {
-	background-color: #ec3810;
+.btn-success {
+  width: 94px;
+  height: 41px;
+  background-color: #f24822;
+  border-radius: 10px;
+  border-color: transparent; 
+  float: right;
+  margin: 10px 5px 0 0;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
 }
 
-.deletebtn:active, .savebtn:active {
-	background-color: #e63916;
+.deletebtn:hover,
+.savebtn:hover {
+  background-color: #ec3810;
+}
+
+.deletebtn:active,
+.savebtn:active {
+  background-color: #e63916;
 }
 
 .pw-check {
@@ -438,7 +494,7 @@
   transform: translate(-50%, -50%);
 
   min-width: 500px;
-  max-width: 800px;
+  max-width: 600px;
   height: 60%;
 
   padding: 40px;
@@ -446,7 +502,7 @@
   overflow: scroll;
 
   border: 1px solid gray;
-  border-radius: 20px;
+  border-radius: 40px;
   box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -542,7 +598,7 @@
 .twopoint > div > h4,
 .tmi-info > h4 {
   background-color: #ffefee;
-  padding: 8px 4px 0px 8px;
+  padding: 8px 4px 6px 8px;
   border-radius: 40px 10px;
 }
 /* 모달창 -장점과 협업 스타일 */
@@ -550,11 +606,12 @@
   width: 50%;
   padding: 10px 10px 0px 10px;
   border-radius: 20px;
+  line-height: 18px;
 }
 /* 모달창 - 장점과 협업스타일 ul설정 */
 .twopoint > div > ul {
   border-radius: 10px;
-  padding-left: 10px;
+  padding: 6px 10px 24px 10px;
 }
 
 /* 모달창 - tmi 정보 */
@@ -571,8 +628,9 @@
 /* 모달창 - TMI 헤더 */
 .tmi-info > h4 {
   width: 100%;
-  margin-bottom: 0;
+  /* padding: 8px 4px 6px 8px; */
   text-align: left;
+  line-height: 18px;
 }
 
 /* 모달창 - TMI 사진, 설명을 담은 상자*/
@@ -605,6 +663,9 @@
 /* tmi - 설명들 */
 .tmi-comment > ul {
   padding: 10px;
-  margin-bottom: 0px;
   border-radius: 20px;
+  line-height: 18px;
+}
+.tmi-comment li {
+  padding-bottom: 6px;
 }
