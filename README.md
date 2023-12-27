@@ -53,7 +53,7 @@
 |                            남해리                            |                            곽인해                            |                            서지원                            |                            강지수                            |                            김지민                            |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |                          Enfp, Infp                          |                          isfp, infp                          |                             isfp                             |                             isfp                             |                             istj                             |
-| <p><img src="https://lh7-us.googleusercontent.com/Ysape_5NRn4N32ZU7oOgrQmrfIAjTdQXKka5lOI6M6JxrEWg48DNhLQEXET56SbLP6f4CEJsn5RpDDoHgM9m6eDLyUolLBdP_xbLnp0gftdJg0hYUrKGwSXXVQxNO02AiSTl_4Wp0nHn9CSfQBblXhM" style="zoom: 33%;" /></p> | <p><img src="https://lh7-us.googleusercontent.com/7thifMUc80aVI0Ll-icekBashXLOqIDUozwOWEgFVpjP9ORjxxuiiUMrROZ1e_Uc8_bCRW4mVlOkI6gf2cY6VavakloMjHnXvJdPdzi_58ebcPXiA4GLtIVyF9bYhIYf3YdrAIZ-OGjRB3klZsboUZU" /></p> | <p><img src="https://lh7-us.googleusercontent.com/OASGM4bsLW8e2bpX-hc9fdzZ4_AyT1Z62r2-RgbfjaBayh-TKAMQGcls9XKVzS7asGfouJWeahIs2pVcIxE-PzKoLpKkLT-lSWMGbaPdluf57u4kE_M0qfh7KsVb7EsBVxAaArWHfUbDLDeG3YoSCa0" style="zoom: 67%;" /></p> | <p><img src="https://lh7-us.googleusercontent.com/I0NBhBaLHMPoihWc7-B_kzYaggxMtJVFP1vOqkp-riK6ivJIPyFN1ZFrqHShO0i9_iq0JIPDpQD0dMsxYj_A_7a84SWqjoXyyhhrnbX-BwG6gSdKsJaSti5vYDdFCVP9ziG9Qtp-KpRaX3ec8ujto_I"></p> | <p><img src="https://lh7-us.googleusercontent.com/bqf-nkOsPjTxJsSVrBsyCG8hIjs39XNQ816oRElrS6ruKLUtjW8XvleyS8atfYpMDkc_aw-OrLoWoYGMD1sZq2p3KIF9xb2QjQzWi9Iq3yJqi5cJ2DSFWeRGRbwPlC9MeskSJFIpOsD_1m4rNnEGJEI" /></p> |
+| <p><img src="https://lh7-us.googleusercontent.com/Ysape_5NRn4N32ZU7oOgrQmrfIAjTdQXKka5lOI6M6JxrEWg48DNhLQEXET56SbLP6f4CEJsn5RpDDoHgM9m6eDLyUolLBdP_xbLnp0gftdJg0hYUrKGwSXXVQxNO02AiSTl_4Wp0nHn9CSfQBblXhM" width="50%" height="50%" /></p> | <p><img src="https://lh7-us.googleusercontent.com/7thifMUc80aVI0Ll-icekBashXLOqIDUozwOWEgFVpjP9ORjxxuiiUMrROZ1e_Uc8_bCRW4mVlOkI6gf2cY6VavakloMjHnXvJdPdzi_58ebcPXiA4GLtIVyF9bYhIYf3YdrAIZ-OGjRB3klZsboUZU" /></p> | <p><img src="https://lh7-us.googleusercontent.com/OASGM4bsLW8e2bpX-hc9fdzZ4_AyT1Z62r2-RgbfjaBayh-TKAMQGcls9XKVzS7asGfouJWeahIs2pVcIxE-PzKoLpKkLT-lSWMGbaPdluf57u4kE_M0qfh7KsVb7EsBVxAaArWHfUbDLDeG3YoSCa0" style="zoom: 67%;" /></p> | <p><img src="https://lh7-us.googleusercontent.com/I0NBhBaLHMPoihWc7-B_kzYaggxMtJVFP1vOqkp-riK6ivJIPyFN1ZFrqHShO0i9_iq0JIPDpQD0dMsxYj_A_7a84SWqjoXyyhhrnbX-BwG6gSdKsJaSti5vYDdFCVP9ziG9Qtp-KpRaX3ec8ujto_I"></p> | <p><img src="https://lh7-us.googleusercontent.com/bqf-nkOsPjTxJsSVrBsyCG8hIjs39XNQ816oRElrS6ruKLUtjW8XvleyS8atfYpMDkc_aw-OrLoWoYGMD1sZq2p3KIF9xb2QjQzWi9Iq3yJqi5cJ2DSFWeRGRbwPlC9MeskSJFIpOsD_1m4rNnEGJEI" /></p> |
 |          [@r03181231](https://github.com/r03181231)          |            [@innes-k](https://github.com/innes-k)            |           [@seopport](https://github.com/seopport)           |             [@jigico](https://github.com/jigico)             |          [@gggimmmin](https://github.com/gggimmmin)          |
 |                          E1I5 팀장                           |                          E1I5 팀원                           |                          E1I5 팀원                           |                          E1I5  팀원                          |                          E1I5  팀원                          |
 |                           FrontEnd                           |                           FrontEnd                           |                           FrontEnd                           |                           FrontEnd                           |                           FrontEnd                           |
@@ -129,15 +129,26 @@ $ cd introduceTeam1-project
 
 ## 와이어 프레임
 
-<p><img src="https://www.notion.so/1-E1I5-35e48ba2ed7045d987f34e611ccb246b?pvs=4#1e14e447bd254d2ab4bd56657ccda7cd" alt=""></p>
-
- 
-
-<p><img src="https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/401ddce0-81f3-49ef-bfaf-5e3fb9820910/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-12-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.40.14.png?id=1e14e447-bd25-4d2a-b4bd-56657ccda7cd&table=block&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1703779200000&signature=nrxyoPJv_UKEW0E_cQ70g-An_P72CUabXkvJ65QO048&downloadName=%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-12-21+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+5.40.14.png"><p>
-
+<p><img src="https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/401ddce0-81f3-49ef-bfaf-5e3fb9820910/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-12-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.40.14.png?id=1e14e447-bd25-4d2a-b4bd-56657ccda7cd&table=block&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1703779200000&signature=nrxyoPJv_UKEW0E_cQ70g-An_P72CUabXkvJ65QO048&downloadName=%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-12-21+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+5.40.14.png" align="left" width="40%" height="40%" ><img src="https://lh7-us.googleusercontent.com/1hyKKCe1jKCpve8LheAefx0HnGw7yDiFxncYP9YBF3ZBHGgR5F36zpt8bDNgQrkhpgFXnlMcQHFbBT89Vp2H-PzCNu60HzupFHHa-h9oUDbGmVdMLPYfcm5NuCrCeWKhWNNoT46mgQSXorHHcbd3gDs" align="rigtht" width="50%" height="50%"></div><p>
 
 
 <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 
 ## 프로젝트 화면 구성 및 기능
 
