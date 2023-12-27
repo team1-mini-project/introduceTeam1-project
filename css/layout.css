@@ -588,7 +588,7 @@
 .twopoint > div > h4,
 .tmi-info > h4 {
   background-color: #ffefee;
-  padding: 8px 4px 0px 8px;
+  padding: 8px 4px 6px 8px;
   border-radius: 40px 10px;
 }
 /* 모달창 -장점과 협업 스타일 */
@@ -596,11 +596,12 @@
   width: 50%;
   padding: 10px 10px 0px 10px;
   border-radius: 20px;
+  line-height: 18px;
 }
 /* 모달창 - 장점과 협업스타일 ul설정 */
 .twopoint > div > ul {
   border-radius: 10px;
-  padding-left: 10px;
+  padding: 6px 10px 24px 10px;
 }
 
 /* 모달창 - tmi 정보 */
@@ -617,7 +618,9 @@
 /* 모달창 - TMI 헤더 */
 .tmi-info > h4 {
   width: 100%;
+  /* padding: 8px 4px 6px 8px; */
   text-align: left;
+  line-height: 18px;
 }
 
 /* 모달창 - TMI 사진, 설명을 담은 상자*/
@@ -650,6 +653,9 @@
 /* tmi - 설명들 */
 .tmi-comment > ul {
   padding: 10px;
-  margin-bottom: 0px;
   border-radius: 20px;
+  line-height: 18px;
+}
+.tmi-comment li {
+  padding-bottom: 6px;
 }
