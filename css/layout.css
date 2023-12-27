@@ -197,6 +197,7 @@
   margin: auto;
   padding: 30px 0px 30px 0px;
 }
+.profileCards > .row{justify-content: center;}
 /* 각 프로필 카드 높이 */
 .cardEach {
   height: 450px;
@@ -252,6 +253,7 @@
   margin: 0px 30px 0px 30px;
   padding: 0px;
 }
+.card-text{line-height: 21px;}
 /* 프로필 카드 아래 url 버튼의 전체 영역 */
 .profileBtn {
   display: flex;
