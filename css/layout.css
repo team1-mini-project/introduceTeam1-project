@@ -25,7 +25,7 @@
   justify-content: space-around;
   background-color: white;
   z-index: 99999;
-  width: 100%
+  width: 100%;
 }
 .header .layout-1280 {
   display: flex;
@@ -121,7 +121,43 @@
 #title-main-big {
   font-size: 100px;
   margin-bottom: 15px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+/* .title-main-move > span {
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out; */
+/* animation-iteration-count: 1; */
+/* text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  animation: bounce 0.3s ease infinite alternate;
+} */
+/* @keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc, 0 1px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent,
+      0 8px 0 transparent, 0 9px 0 transparent, 0 50px 20px rgba(0, 0, 0, 0.4);
+  }
+} */
+
+/* .title-main-move > span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.title-main-move > span:nth-child(2) {
+  animation-delay: 0.13s;
+}
+.title-main-move > span:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.title-main-move > span:nth-child(4) {
+  animation-delay: 0.19s;
+} */
 
 #title-main-small {
   font-size: 30px;
@@ -197,7 +233,9 @@
   margin: auto;
   padding: 30px 0px 30px 0px;
 }
-.profileCards > .row{justify-content: center;}
+.profileCards > .row {
+  justify-content: center;
+}
 /* 각 프로필 카드 높이 */
 .cardEach {
   height: 450px;
@@ -253,7 +291,9 @@
   margin: 0px 30px 0px 30px;
   padding: 0px;
 }
-.card-text{line-height: 21px;}
+.card-text {
+  line-height: 21px;
+}
 /* 프로필 카드 아래 url 버튼의 전체 영역 */
 .profileBtn {
   display: flex;
@@ -278,13 +318,13 @@
 
 /* ================================== */
 .guestbook {
-	margin: 50px 50px;
+  margin: 50px 50px;
 }
 
 .line {
-	margin: 0 auto 30px auto;
-  padding:0 20px;
-	width: 1200px;
+  margin: 0 auto 30px auto;
+  padding: 0 20px;
+  width: 1200px;
   max-width: 100%;
 }
 
@@ -295,11 +335,11 @@
 }
 
 .guestbook-box {
-  padding:0 30px;
-	height: 260px;
-	background-color: #FFE8A3;
-	border-radius: 5px;
-	border: 1px solid #ecc759c4;
+  padding: 0 30px;
+  height: 260px;
+  background-color: #ffe8a3;
+  border-radius: 5px;
+  border: 1px solid #ecc759c4;
 }
 
 .nickname-pw-box {
@@ -359,8 +399,8 @@
 }
 
 .recorded-comments-box {
-	width: 100%;
-  padding:0 30px;
+  width: 100%;
+  padding: 0 30px;
 }
 
 .name {
@@ -420,7 +460,7 @@
   height: 41px;
   background-color: #f24822;
   border-radius: 10px;
-  border-color: transparent; 
+  border-color: transparent;
   float: right;
   margin: 10px 5px 0 0;
   color: white;
