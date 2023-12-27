@@ -389,6 +389,8 @@
     import { doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
     import { deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+
+
     // Firebase 구성 정보 설정
     // const firebaseConfig = {
     //     apiKey: "AIzaSyCsyJwGvrCuJzB6OIY9tOT589uRIzLZfvM",
@@ -425,6 +427,8 @@
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+    //const db1 = firebase.firestore();
+    
 
     //프로필 카드 -각 카드의 더보기 버튼 클릭 시, 모달배경과 모달 열기
     //멤버별 데이터 가져오기
@@ -447,7 +451,6 @@
       //2.데이터를 가져오고========================================
       //가져온 member컬렉션- 문서 꺼내기
       const memberDocs = memberColl.docs;
-      console.log(memberDocs);
       //문서를 하나씩 훑어보면서 안에 if문 조건에 해당하는 값 도출하기
       for (let i = 0; i < memberDocs.length; i++) {
         //문서들
@@ -599,6 +602,13 @@
       }
     });
 
+    // const doctest = collection(db, "guesbook_contents");
+    // doctest.doc("nickname").onSnapshot((doc) => {
+    //     console.log("Current data: ", doc.data());
+    // });
+
+    //db.collection("guestbook_contents").doc("nickname")
+    
 
     /* 방명록 날짜순으로 정렬 */
     const doc_sort = collection(db, "guestbook_contents"); //doc에 방명록 컬렉션 데이터 저장
