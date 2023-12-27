@@ -319,7 +319,7 @@
 .box-text {
   outline: 1px solid lightgray;
   width: 167px;
-  height: 42px;
+  height: 40px;
   background-color: white;
   border-radius: 5px;
   text-align: left;
@@ -360,7 +360,7 @@
 .date {
   color: grey;
   font-size: 15px;
-  margin-top: 12px;
+  margin-top: 13px;
 }
 
 .userinfo {
@@ -408,7 +408,7 @@
   height: 41px;
   background-color: #f24822;
   border-radius: 10px;
-  border-color: transparent;
+  border-color: transparent; 
   float: right;
   margin: 10px 5px 0 0;
   color: white;
