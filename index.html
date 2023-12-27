@@ -414,25 +414,14 @@
     // };
 
     //해리님 DB - /member 컬렉션 존재
-    // const firebaseConfig = {
-    //   apiKey: "AIzaSyBFdIOtbPNQSA3Kc1QuQrY4yYeTUO5E9cw",
-    //   authDomain: "team1-mini-project-6e821.firebaseapp.com",
-    //   projectId: "team1-mini-project-6e821",
-    //   storageBucket: "team1-mini-project-6e821.appspot.com",
-    //   messagingSenderId: "890610614383",
-    //   appId: "1:890610614383:web:f8c969ada04ee4d31a4d9a",
-    //   measurementId: "G-J1SET2NDRK",
-    // };
-
-    //인해 DB
     const firebaseConfig = {
-      apiKey: "AIzaSyDcTZVdy8HlTssTG_RqzqY0LTb578HrO6o",
-      authDomain: "team-project1-c1b38.firebaseapp.com",
-      projectId: "team-project1-c1b38",
-      storageBucket: "team-project1-c1b38.appspot.com",
-      messagingSenderId: "30366087131",
-      appId: "1:30366087131:web:1525015b96f48440b199fe",
-      measurementId: "G-8G2XQGWYB6"
+      apiKey: "AIzaSyBFdIOtbPNQSA3Kc1QuQrY4yYeTUO5E9cw",
+      authDomain: "team1-mini-project-6e821.firebaseapp.com",
+      projectId: "team1-mini-project-6e821",
+      storageBucket: "team1-mini-project-6e821.appspot.com",
+      messagingSenderId: "890610614383",
+      appId: "1:890610614383:web:f8c969ada04ee4d31a4d9a",
+      measurementId: "G-J1SET2NDRK",
     };
 
     // Firebase 인스턴스 초기화
@@ -752,72 +741,6 @@
       alert('댓글이 삭제되었습니다.');
       window.location.reload();
     });
-
-    // 프로필카드 append test
-    let profileDoc = await getDocs(collection(db, "profile"));
-    profileDoc.forEach((doc) => {
-      let row = doc.data();
-      console.log(row);
-
-      let id = row['id'];
-      let image = row['img'];
-      let name = row['name'];
-      let introduce = row['introduce'];
-      let tistory = row['tistory'];
-      let velog = row['velog'];
-      let github = row['github'];
-
-      let card_html = `
-      <div class="col cardEach profile-card">
-              <div class="card h-100">
-                <!-- 이미지 변경, 더보기 버튼 -->
-                <div class="cardBtn1">
-                  <div class="cardId hide" data-id="1">id : 1</div>
-                  <button type="button" class="imgbtn">이미지 변경</button>
-                  <button type="button" class="morebtn">더보기</button>
-                </div>
-                <!-- 프로필 이미지 -->
-                <img src="${image}" class="card-img-top" alt="..." style="display: block" />
-                <!-- 프로필 소개 -->
-                <div class="card-body" style="padding: 0px">
-                  <h5 class="card-title">이름 : ${name}</h5>
-                  <p class="card-text">
-                    ${introduce}
-                  </p>
-                </div>
-                <!-- url 버튼 -->
-                <div class="profileBtn">
-                  <a href="${tistory}" class="velog"><img class="btnImg" src="./images/icon-tistory.png" alt="" /></a>
-                  <a href="${velog}" target="_blank"><img class="btnImg"
-                      src="./images/icon-velog.png" alt="" /></a>
-                  <a href="${github}" target="_blank"><img class="btnImg"
-                      src="./images/icon-github.png" alt="" /></a>
-                </div>
-              </div>
-            </div>`;
-
-
-      if (tistory === 'javascript:;') {
-        $(document).on('click', '.velog', function () {
-          console.log("반응 테스트");
-          alert('📘 저는 velog를 사용합니다. 📘')
-        });
-
-        // $('.velog').click(async function () {
-        //   alert('📘 저는 velog를 사용합니다. 📘');
-        // })
-      } else if (velog === 'javascript:;') {
-        $(document).on('click', '.tistory', function () {
-          console.log("반응 테스트");
-          alert('📙 저는 tistory를 사용합니다. 📙');
-        });
-      }
-
-
-      $('#profileCards').append(card_html);
-    });
-
-
   </script>
 
   <script>
