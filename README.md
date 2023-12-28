@@ -91,8 +91,8 @@
 #### **개발 환경**
 
 - **environment :** Visual Studio Code, git, github
-- **development :** HTML, CSS, Javascript, jQuery, bootstrap 
-- **DB :** Firebase
+- **development :** HTML, CSS3, Javascript, jQuery, bootstrap5.0.2
+- **DB :** Firebase10.7.1
 - **communication** : figma, slack, notion, zep, google docs
 
 
