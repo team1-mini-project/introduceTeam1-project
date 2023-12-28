@@ -336,11 +336,43 @@ $ cd introduceTeam1-project
 
 - 곽인해님
 
+문제1
+
+
+
 | 문제 | 다른 팀원분께서 본인 branch에는 push를 하셨는데 막상 내 컴퓨터에서 해당 branch로 checkout 하여 열면 코드 최신화가 안됨 |
 | ---- | ------------------------------------------------------------ |
 | 시도 | \- git remote update : 오류없이 실행은 됐지만 최신화는 안됨<br/>\- git pull : 오류<br/>\- git pull 브랜치이름 : conflict 발생 |
 | 해결 | \- 보고 싶은 코드의 branch로 checkout (git checkout 브랜치이름)<br/>-> 그 branch 안에서 pull 해오기 (git pull origin 브랜치이름) |
 
 <br />
+
+문제2 - <a태그 내 alert 실행시 자동 새로고침 이슈>
+
+
+
+| 문제        | -a태그에 onclick으로 alert창을 띄웠는데, alert창을 닫으면 다시 원래 페이지가 새로고침돼서 페이지 맨 상단으로 돌아감<br/>(새로고침을 없애고 싶음)<br /><br /><p><img src="https://lh7-us.googleusercontent.com/kUsHKUmFPjPjuvhancJlrMNRGoqPoUHiUz_BhEuPD9PWDZWAORDMuVLWAbZnmbeR3jEGY1VjsmWoPR4Lc-PlfcHOqf4gvU4du49yNh6fIEVsw7okCDxWupQx_IJUeyOIv-1xRSip_vk50jQqP62GwH4"></p> |
+| ----------- | ------------------------------------------------------------ |
+| 원인        | a 태그 속 href 속성이 비어 있으면 자기페이지로 계속 이동시키기 때문에 onclick 함수를 탄 후 계속 새로 고침이 됨 |
+| 해결방안    | <p><img src="https://lh7-us.googleusercontent.com/Pds7UMi9fHG5xpIcemaw6jvoNTqxeCXc9obnYomFBHPY7WblmxrJY-_O8Lgf_lxD9R7CqhOSrjpoDqhf8QiBa96Uo1LtnE0bLf1zx2mU2f9K1--2Xvg-sbvKhANJfojxZcL1M5OLwln4jS9VSpI_Fmw"></p><br />\- href 속성에 이렇게 명시를 해주면 새로고침되지 않고 클릭 이벤트만 발생됨 |
+| 선택한 방법 | <p><img src="https://lh7-us.googleusercontent.com/H1bWnnhcDC6xT6J89x2zorII8bMJuZmR2Jy3y9Dn9PLyMtoRJOhrjEhLLSHP7PFtTUMsAW2seGHUiLAT2ihwncEF8vJ231niFagTPnxYtQupCAlCegZj2mHORkfza1ETQOI6daDCldcnzqbefSCeb8c"></p> |
+| 선택한 이유 | 모두 같은 기능을 하는데 해당 방법이 가장 코드 길이가 가장 짧아 효율적이라서 작성 |
+
+
+
+
+
+<br />
+
+- 서지원님
+
+
+
+| 문제     | 사용자에게 값을 받아서 넣었을 때 파이어베이스에 순서대로 저장되지 않고 무작위로 저장됨. 그렇기 때문에 파이어베이스를 조회하여 페이지에 데이터를 추가하였을 때도 순서대로 기록되지 않음. |
+| -------- | ------------------------------------------------------------ |
+| 시도     | new Date()로 작성시간을 같이 저장하고 그것을 기준으로 정렬해보기 |
+| 해결방안 | 데이터를 넘길 때 작성 시간도 같이 저장하여 시간을 기준으로 orderBy 메소드를 사용함.<br/>그러나 데이터가 오래된 순으로 정렬되어서 desc를 추가로 작성하여 댓글을 최신순으로 볼 수 있게 함 |
+|          | <p><img src="https://lh7-us.googleusercontent.com/y1bCq2sMjUBaPs_kCpUi7UWm_sBp3pGFkp7nQP6GjwRLixxaHhGkb2KsX1WrBgmsja_Km7aNhWhd9JyabJsgh6yRP66yVnNnEHeXW8AHz0qLwHGAZbTB37qRXFRairX50GQEKgEyyJ0I6FcXxIw-ppo"></p> |
+
 
 
