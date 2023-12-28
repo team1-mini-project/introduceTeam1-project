@@ -357,12 +357,11 @@ $ cd introduceTeam1-project
 
 문제1
 
-
-
 | 문제 | 다른 팀원분께서 본인 branch에는 push를 하셨는데 막상 내 컴퓨터에서 해당 branch로 checkout 하여 열면 코드 최신화가 안됨 |
-| ---- | ------------------------------------------------------------ |
+| :--: | ------------------------------------------------------------ |
 | 시도 | \- git remote update : 오류없이 실행은 됐지만 최신화는 안됨<br/>\- git pull : 오류<br/>\- git pull 브랜치이름 : conflict 발생 |
 | 해결 | \- 보고 싶은 코드의 branch로 checkout (git checkout 브랜치이름)<br/>-> 그 branch 안에서 pull 해오기 (git pull origin 브랜치이름) |
+
 
 <br />
 
