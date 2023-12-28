@@ -332,5 +332,15 @@ $ cd introduceTeam1-project
 | 선택한 방법 | 3번째 방안                                                   |
 | 선택한 이유 | 3번 방안이 개발하기에 괜찮고 사용자 입장도 고려할 수 있어서 선택 |
 
+<br />
+
+- 곽인해님
+
+| 문제 | 다른 팀원분께서 본인 branch에는 push를 하셨는데 막상 내 컴퓨터에서 해당 branch로 checkout 하여 열면 코드 최신화가 안됨 |
+| ---- | ------------------------------------------------------------ |
+| 시도 | \- git remote update : 오류없이 실행은 됐지만 최신화는 안됨<br/>\- git pull : 오류<br/>\- git pull 브랜치이름 : conflict 발생 |
+| 해결 | \- 보고 싶은 코드의 branch로 checkout (git checkout 브랜치이름)<br/>-> 그 branch 안에서 pull 해오기 (git pull origin 브랜치이름) |
+
+<br />
 
 
