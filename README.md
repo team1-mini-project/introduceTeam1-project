@@ -321,7 +321,23 @@ $ cd introduceTeam1-project
 
 
 
-- 강지수님  
+- **강지수님** 
+
+문제1 - [setAttribute로 ui 상에서 업데이트 되지 않는 textarea readonly]
+*setAttribute() : 속성이 이미 있을 경우 값이 업데이트 된다. 없다면 새 속성이 추가된다.
+
+| 문제        | setAttribute('readonly', false) 로 textarea readonly 속성을 false로 변경하여 작성할 수 있게 활성화하려 했으나 변화가 없었다.<br/>개발자 도구로 확인해보니 속성은 false로 변경되어 있었고 ui 상에서는 그대로 비활성화 상태였다. |
+| ----------- | ------------------------------------------------------------ |
+| 시도        | setAttribute('readonly', false);                             |
+| 해결방안    | 1.  removeAttribute('readonly') 로 해결.<br />2.  parent.querySelector('.comments-area').readOnly = false; readonly 속성으로 제어하여 해결. |
+| 선택한 방법 | 해결 방안은 2가지가 있다.                                    |
+
+
+<br />
+
+
+문제2  
+
 
 
 |    문제     | 수정버튼을 눌렀을 때, 바로 input창이 뜨게 해서 수정하는 방법과 방명록 등록(쓰기) input에서 input창에 수정할 내용을 DB에서 받아와 수정하고 확인 버튼을 눌러서 다시 저장하는 것 중에 어느 위치에서 구현을 해야 수정기능을 사용했을 때 더 편리한 가입니다. |
@@ -332,9 +348,12 @@ $ cd introduceTeam1-project
 | 선택한 방법 | 3번째 방안                                                   |
 | 선택한 이유 | 3번 방안이 개발하기에 괜찮고 사용자 입장도 고려할 수 있어서 선택 |
 
+
+<br />
 <br />
 
-- 곽인해님
+
+- **곽인해님**
 
 문제1
 
@@ -361,10 +380,10 @@ $ cd introduceTeam1-project
 
 
 
-
+<br />
 <br />
 
-- 서지원님
+- **서지원님**
 
 
 
@@ -373,6 +392,28 @@ $ cd introduceTeam1-project
 | 시도     | new Date()로 작성시간을 같이 저장하고 그것을 기준으로 정렬해보기 |
 | 해결방안 | 데이터를 넘길 때 작성 시간도 같이 저장하여 시간을 기준으로 orderBy 메소드를 사용함.<br/>그러나 데이터가 오래된 순으로 정렬되어서 desc를 추가로 작성하여 댓글을 최신순으로 볼 수 있게 함 |
 |          | <p><img src="https://lh7-us.googleusercontent.com/y1bCq2sMjUBaPs_kCpUi7UWm_sBp3pGFkp7nQP6GjwRLixxaHhGkb2KsX1WrBgmsja_Km7aNhWhd9JyabJsgh6yRP66yVnNnEHeXW8AHz0qLwHGAZbTB37qRXFRairX50GQEKgEyyJ0I6FcXxIw-ppo"></p> |
+
+
+
+<br />
+<br />
+
+
+- **김지민님**
+
+문제 - <방명록 삭제 버튼 클릭시 삭제되지 않는 오류>
+
+| 문제 | 알맞게 비밀번호를 입력하고, 방명록 삭제 버튼을 클릭했을 때 삭제가 안됨. <br />콘솔 창에 'deleteDoc is not defined' error 발생. |
+| ---- | ------------------------------------------------------------ |
+| 시도 | 정의되지 않은 deleteDoc의 생성을 위해 Firebase 에서 새로운 컬렉션 항목 생성 : 여전히 'not defined' error 발생. |
+| 해결 | 코드 내에서 Firebase SDK 라이브러리 가져오기 항목 중 import { } 안에 deleteDoc이 존재하지 않는 것을 발견. <br /> import { deleteDoc } 생성을 통해 삭제가 정상적으로 이루어지게 해결. |
+|      | <p><img src="https://lh7-us.googleusercontent.com/Sa0aXUtHPYPUGBMn1Y9ySXhjWzu-rDmf8aQ7R81y0z-6Ai0DT53GwCHsqf9l7u0ExmjjwMVdNEvfnsM-YYyZxrJuKCUy0BfskKKa6faTZdhXUawIrqqm6LFX33dAkWLZgTBsm97kCBmsUsKwAkW_X_4"></p> |
+
+
+
+<br />
+<br />
+<br />
 
 
 
