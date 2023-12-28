@@ -326,11 +326,11 @@ $ cd introduceTeam1-project
 문제1 - [setAttribute로 ui 상에서 업데이트 되지 않는 textarea readonly]
 *setAttribute() : 속성이 이미 있을 경우 값이 업데이트 된다. 없다면 새 속성이 추가된다.
 
-| 문제        | setAttribute('readonly', false) 로 textarea readonly 속성을 false로 변경하여 작성할 수 있게 활성화하려 했으나 변화가 없었다.<br/>개발자 도구로 확인해보니 속성은 false로 변경되어 있었고 ui 상에서는 그대로 비활성화 상태였다. |
-| ----------- | ------------------------------------------------------------ |
-| 시도        | setAttribute('readonly', false);                             |
-| 해결방안    | 1.  removeAttribute('readonly') 로 해결.<br />2.  parent.querySelector('.comments-area').readOnly = false; readonly 속성으로 제어하여 해결. |
-| 선택한 방법 | 해결 방안은 2가지가 있다.                                    |
+|       문제        | setAttribute('readonly', false) 로 textarea readonly 속성을 false로 변경하여 작성할 수 있게 활성화하려 했으나 변화가 없었다.<br/>개발자 도구로 확인해보니 속성은 false로 변경되어 있었고 ui 상에서는 그대로 비활성화 상태였다. |
+| :---------------: | :----------------------------------------------------------- |
+|       시도        | setAttribute('readonly', false);                             |
+|     해결방안      | 1.  removeAttribute('readonly') 로 해결.<br />2.  parent.querySelector('.comments-area').readOnly = false; readonly 속성으로 제어하여 해결. |
+| 선택한 <br />방법 | 해결 방안은 2가지가 있다.                                    |                                    |
 
 
 <br />
@@ -370,10 +370,10 @@ $ cd introduceTeam1-project
 
 
 
-| 문제        | -a태그에 onclick으로 alert창을 띄웠는데, alert창을 닫으면 다시 원래 페이지가 새로고침돼서 페이지 맨 상단으로 돌아감<br/>(새로고침을 없애고 싶음)<br /><br /><p><img src="https://lh7-us.googleusercontent.com/kUsHKUmFPjPjuvhancJlrMNRGoqPoUHiUz_BhEuPD9PWDZWAORDMuVLWAbZnmbeR3jEGY1VjsmWoPR4Lc-PlfcHOqf4gvU4du49yNh6fIEVsw7okCDxWupQx_IJUeyOIv-1xRSip_vk50jQqP62GwH4"></p> |
-| ----------- | ------------------------------------------------------------ |
-| 원인        | a 태그 속 href 속성이 비어 있으면 자기페이지로 계속 이동시키기 때문에 onclick 함수를 탄 후 계속 새로 고침이 됨 |
-| 해결방안    | <p><img src="https://lh7-us.googleusercontent.com/Pds7UMi9fHG5xpIcemaw6jvoNTqxeCXc9obnYomFBHPY7WblmxrJY-_O8Lgf_lxD9R7CqhOSrjpoDqhf8QiBa96Uo1LtnE0bLf1zx2mU2f9K1--2Xvg-sbvKhANJfojxZcL1M5OLwln4jS9VSpI_Fmw"></p><br />\- href 속성에 이렇게 명시를 해주면 새로고침되지 않고 클릭 이벤트만 발생됨 |
+|    문제     | -a태그에 onclick으로 alert창을 띄웠는데, alert창을 닫으면 다시 원래 페이지가 새로고침돼서 페이지 맨 상단으로 돌아감<br/>(새로고침을 없애고 싶음)<br /><br /><p><img src="https://lh7-us.googleusercontent.com/kUsHKUmFPjPjuvhancJlrMNRGoqPoUHiUz_BhEuPD9PWDZWAORDMuVLWAbZnmbeR3jEGY1VjsmWoPR4Lc-PlfcHOqf4gvU4du49yNh6fIEVsw7okCDxWupQx_IJUeyOIv-1xRSip_vk50jQqP62GwH4"></p> |
+| :---------: | ------------------------------------------------------------ |
+|    원인     | a 태그 속 href 속성이 비어 있으면 자기페이지로 계속 이동시키기 때문에 onclick 함수를 탄 후 계속 새로 고침이 됨 |
+|  해결방안   | <p><img src="https://lh7-us.googleusercontent.com/Pds7UMi9fHG5xpIcemaw6jvoNTqxeCXc9obnYomFBHPY7WblmxrJY-_O8Lgf_lxD9R7CqhOSrjpoDqhf8QiBa96Uo1LtnE0bLf1zx2mU2f9K1--2Xvg-sbvKhANJfojxZcL1M5OLwln4jS9VSpI_Fmw"></p><br />\- href 속성에 이렇게 명시를 해주면 새로고침되지 않고 클릭 이벤트만 발생됨 |
 | 선택한 방법 | <p><img src="https://lh7-us.googleusercontent.com/H1bWnnhcDC6xT6J89x2zorII8bMJuZmR2Jy3y9Dn9PLyMtoRJOhrjEhLLSHP7PFtTUMsAW2seGHUiLAT2ihwncEF8vJ231niFagTPnxYtQupCAlCegZj2mHORkfza1ETQOI6daDCldcnzqbefSCeb8c"></p> |
 | 선택한 이유 | 모두 같은 기능을 하는데 해당 방법이 가장 코드 길이가 가장 짧아 효율적이라서 작성 |
 
@@ -387,11 +387,12 @@ $ cd introduceTeam1-project
 
 
 
-| 문제     | 사용자에게 값을 받아서 넣었을 때 파이어베이스에 순서대로 저장되지 않고 무작위로 저장됨. 그렇기 때문에 파이어베이스를 조회하여 페이지에 데이터를 추가하였을 때도 순서대로 기록되지 않음. |
-| -------- | ------------------------------------------------------------ |
-| 시도     | new Date()로 작성시간을 같이 저장하고 그것을 기준으로 정렬해보기 |
+|   문제   | 사용자에게 값을 받아서 넣었을 때 파이어베이스에 순서대로 저장되지 않고 무작위로 저장됨. 그렇기 때문에 파이어베이스를 조회하여 페이지에 데이터를 추가하였을 때도 순서대로 기록되지 않음. |
+| :------: | ------------------------------------------------------------ |
+|   시도   | new Date()로 작성시간을 같이 저장하고 그것을 기준으로 정렬해보기 |
 | 해결방안 | 데이터를 넘길 때 작성 시간도 같이 저장하여 시간을 기준으로 orderBy 메소드를 사용함.<br/>그러나 데이터가 오래된 순으로 정렬되어서 desc를 추가로 작성하여 댓글을 최신순으로 볼 수 있게 함 |
 |          | <p><img src="https://lh7-us.googleusercontent.com/y1bCq2sMjUBaPs_kCpUi7UWm_sBp3pGFkp7nQP6GjwRLixxaHhGkb2KsX1WrBgmsja_Km7aNhWhd9JyabJsgh6yRP66yVnNnEHeXW8AHz0qLwHGAZbTB37qRXFRairX50GQEKgEyyJ0I6FcXxIw-ppo"></p> |
+
 
 
 
@@ -404,10 +405,11 @@ $ cd introduceTeam1-project
 문제 - <방명록 삭제 버튼 클릭시 삭제되지 않는 오류>
 
 | 문제 | 알맞게 비밀번호를 입력하고, 방명록 삭제 버튼을 클릭했을 때 삭제가 안됨. <br />콘솔 창에 'deleteDoc is not defined' error 발생. |
-| ---- | ------------------------------------------------------------ |
+| :--: | ------------------------------------------------------------ |
 | 시도 | 정의되지 않은 deleteDoc의 생성을 위해 Firebase 에서 새로운 컬렉션 항목 생성 : 여전히 'not defined' error 발생. |
 | 해결 | 코드 내에서 Firebase SDK 라이브러리 가져오기 항목 중 import { } 안에 deleteDoc이 존재하지 않는 것을 발견. <br /> import { deleteDoc } 생성을 통해 삭제가 정상적으로 이루어지게 해결. |
 |      | <p><img src="https://lh7-us.googleusercontent.com/Sa0aXUtHPYPUGBMn1Y9ySXhjWzu-rDmf8aQ7R81y0z-6Ai0DT53GwCHsqf9l7u0ExmjjwMVdNEvfnsM-YYyZxrJuKCUy0BfskKKa6faTZdhXUawIrqqm6LFX33dAkWLZgTBsm97kCBmsUsKwAkW_X_4"></p> |
+
 
 
 
