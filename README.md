@@ -129,9 +129,13 @@ $ cd introduceTeam1-project
 
 ## 와이어 프레임
 
-<p><img src="https://file.notion.so/f/f/83c75a39-3aba-4ba4-a792-7aefe4b07895/401ddce0-81f3-49ef-bfaf-5e3fb9820910/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-12-21_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.40.14.png?id=1e14e447-bd25-4d2a-b4bd-56657ccda7cd&table=block&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&expirationTimestamp=1703779200000&signature=nrxyoPJv_UKEW0E_cQ70g-An_P72CUabXkvJ65QO048&downloadName=%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2023-12-21+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+5.40.14.png" align="left" width="40%" height="40%" ><img src="https://lh7-us.googleusercontent.com/1hyKKCe1jKCpve8LheAefx0HnGw7yDiFxncYP9YBF3ZBHGgR5F36zpt8bDNgQrkhpgFXnlMcQHFbBT89Vp2H-PzCNu60HzupFHHa-h9oUDbGmVdMLPYfcm5NuCrCeWKhWNNoT46mgQSXorHHcbd3gDs" align="rigtht" width="50%" height="50%"></div><p>
+<p><img src="https://lh7-us.googleusercontent.com/LCe94RiyWe2tHnmgwh9B43KihrUFRPfpFJ6bED9FEwHjfiYCfmDdkUo8frwWN_rYRmVq3PD047MXESzffTN3hwnfq5u3LO6XtMmH2m-JZZ7-QihW4ejeInW4_ulfgeJE1T1GW1EcAsBv9AsCg20NVjQ" align="left" width="40%" height="40%" ><img src="https://lh7-us.googleusercontent.com/1hyKKCe1jKCpve8LheAefx0HnGw7yDiFxncYP9YBF3ZBHGgR5F36zpt8bDNgQrkhpgFXnlMcQHFbBT89Vp2H-PzCNu60HzupFHHa-h9oUDbGmVdMLPYfcm5NuCrCeWKhWNNoT46mgQSXorHHcbd3gDs" align="rigtht" width="50%" height="50%"></div><p>
 
 
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />
